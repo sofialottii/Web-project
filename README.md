@@ -23,8 +23,13 @@ git status -> questo è un comando un po' opzionale che ti serve per vedere qual
 
 RIASSUNTO BREVISSIMO:
 -per aggiornarti delle modifiche ha fatto Sofia fai: git pull
+
 -per salvare le tue modifiche e farmele vedere fai: "git add -A", poi "git commit -m "nome salvataggio" ", poi "git push"
+
 FINE
+
 -ricordati di fare git pull subito prima di salvare le tue modifiche
+
 -tutto questo si fa da terminale su vscode perché è comodissimo
+
 -ciao ciao
