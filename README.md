@@ -21,7 +21,10 @@ git push -> questo è l'ultimo comando che devi fare, subito dopo aver fatto "gi
 
 git status -> questo è un comando un po' opzionale che ti serve per vedere quali file hai modificato. In particolare, se hai modificato dei file vedrai i nomi uno sotto l'altro. Se i file sono colorati di rosso, vuol dire che non li hai ancora aggiunti al salvataggio (cioè non hai fatto git add). Se sono verdi, vuol dire che li hai aggiunti al salvataggio. Se i file sono tutti verdi vuol dire che probabilmente hai appena fatto un "git add -A"
 
+
+
 RIASSUNTO BREVISSIMO:
+
 -per aggiornarti delle modifiche ha fatto Sofia fai: git pull
 
 -per salvare le tue modifiche e farmele vedere fai: "git add -A", poi "git commit -m "nome salvataggio" ", poi "git push"
