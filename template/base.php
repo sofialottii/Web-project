@@ -3,22 +3,24 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Prima pagina</title>
-        <link rel="stylesheet" type="text/css" href="./css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
     </head>
     <body>
         <header>
-
+            <!--pannello per aprire canvas-->
+            <h1>La frutta di Grimilde</h1>
         </header>
 
         <main>
-            <!--parte di php che cambia a
-            seconda della pagina-->
+            <?php
+                require($templateParams["nome"]);
+            ?>
         </main>
 
         <footer>
             <p>
                 LafruttadiGrimilde.com<br>
-                Contattaci<br>
+                <a href="#">Contattaci</a><br>
                 Privacy Policy | Cookie Policy | Info Legali
             </p>
         </footer>
