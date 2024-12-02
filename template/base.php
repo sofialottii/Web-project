@@ -13,7 +13,7 @@
 
         <main>
             <?php
-                require($templateParams["nome"]);
+                //require($templateParams["nome"]);
             ?>
         </main>
 
