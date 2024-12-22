@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS fruttivendoli;
 -- *********************************************
 -- * Standard SQL generation                   
 -- *--------------------------------------------
