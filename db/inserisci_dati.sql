@@ -172,5 +172,5 @@ INSERT INTO cliente (E_mail, `Password`, Nome, Cognome, DataNascita, Sesso) VALU
 ('sebastiano.lucarelli@gmail.com','ciao5678','Sebastiano','Lucarelli','2003-05-23','Uomo');
 
 INSERT INTO recensione (NumeroStelle, DataRecensione, TestoRecensione, E_mail) VALUES
-(5.0, '2021-05-18', 'Ottimo prodotto', 'sofialotti17@gmail.com');
+(5.0, '2021-05-18', 'Ottimo prodotto! Riacquisterò sicuramente, 5 stelle meritate.', 'sofialotti17@gmail.com');
 
