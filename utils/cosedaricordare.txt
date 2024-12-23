@@ -15,3 +15,6 @@ query alter table in inserisci_dati. Alla fine del
 progetto si ptorebbe andare a modificare direttamente
 fruttivendolilun in maniera da togliere quelle query
 (non obbligatorio)
+
+5. dall'ordine effettuato non è possibile arrivare ai prodotti
+acquistati in quell'ordine. Andrebbe cambiato il database
