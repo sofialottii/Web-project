@@ -1,0 +1,17 @@
+1. nella popolazione del database, in tariffario,
+è richiesto IDProdotto, peso, e prezzo. Si potrebbe fare
+per ogni id un solo prezzo con un peso standard tipo 1kg
+o 100 grammi e a seconda della quantità che viene richiesta
+verrà fatta una proporzione.
+
+2. Va cambiato il tipo dell'immagine in Prodotto
+
+3. Peso e PrezzoProdotto vanno cambiati da decimal a float
+
+4. Tanti altri attributi devono essere modificati di tipo. 
+
+per ora i problemi 2, 3, 4 sono risolti usando le prime
+query alter table in inserisci_dati. Alla fine del 
+progetto si ptorebbe andare a modificare direttamente
+fruttivendolilun in maniera da togliere quelle query
+(non obbligatorio)
