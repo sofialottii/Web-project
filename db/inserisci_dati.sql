@@ -49,6 +49,15 @@ ALTER TABLE recensione
 ALTER TABLE recensione
  MODIFY TestoRecensione varchar(300);
 
+ALTER TABLE ordine
+ ADD COLUMN IdOrdine int(4);
+
+ALTER TABLE ordine
+DROP PRIMARY KEY;
+
+ALTER TABLE ordine
+ADD PRIMARY KEY (IdOrdine, E_mail);
+
 
 INSERT INTO prodotto (IDProdotto,NomeProdotto,Immagine) VALUES
 (001, 'Mela', 'M'),
