@@ -1,89 +1,28 @@
-ALTER TABLE prodotto
- MODIFY Immagine varchar(100);
-
-ALTER TABLE tariffario
- MODIFY Peso float(5);
-
-ALTER TABLE tariffario
- MODIFY PrezzoProdotto float(5);
-
-ALTER TABLE cliente
- MODIFY Password varchar(20);
-
-ALTER TABLE cliente
- MODIFY E_mail varchar(50);
-
-ALTER TABLE CartaDiCredito
- MODIFY E_mail varchar(50);
-
-ALTER TABLE carrello
- MODIFY E_mail varchar(50);
-
-ALTER TABLE notifica
- MODIFY E_mail varchar(50);
-
-ALTER TABLE ordine
- MODIFY E_mail varchar(50);
-
-ALTER TABLE preferito
- MODIFY E_mail varchar(50);
-
-ALTER TABLE recensione
- MODIFY E_mail varchar(50);
-
-ALTER TABLE ordine
- MODIFY ImportoTotale float(7);
-
-ALTER TABLE ordine
- MODIFY Costo_spedizione float(5);
-
-ALTER TABLE ordine
- MODIFY Ora datetime;
-
-ALTER TABLE recensione
- MODIFY NumeroStelle int(2);
-
-ALTER TABLE recensione
- ADD PRIMARY KEY (TestoRecensione, E_mail);
-
-ALTER TABLE recensione
- MODIFY TestoRecensione varchar(300);
-
-ALTER TABLE ordine
- ADD COLUMN IdOrdine int(4);
-
-ALTER TABLE ordine
-DROP PRIMARY KEY;
-
-ALTER TABLE ordine
-ADD PRIMARY KEY (IdOrdine, E_mail);
-
-
-INSERT INTO prodotto (IDProdotto,NomeProdotto,Immagine) VALUES
-(001, 'Mela', 'M'),
-(002, 'Pera', 'P'),
-(003, 'Banana', 'B'),
-(004, 'Kiwi', 'K'),
-(005, 'Ananas', 'A'),
-(006, 'Fragola', 'F'),
-(007, 'Ciliegia', 'C'),
-(008, 'Uva', 'U'),
-(009, 'Pesca', 'P'),
-(010, 'Mango', 'M'),
-(011, 'Melone', 'M'),
-(012, 'Anguria', 'A'),
-(013, 'Limone', 'L'),
-(014, 'Arancia', 'A'),
-(015, 'Pompelmo', 'P'),
-(016, 'Mandarino', 'M'),
-(017, 'Clementina', 'C'),
-(018, 'Ribes', 'R'),
-(019, 'Lampone', 'L'),
-(020, 'Mirtillo', 'M'),
-(021, 'Fico', 'F'),
-(022, 'Caco', 'C'),
-(023, 'Prugna', 'P'),
-(024, 'Susina', 'S');
+INSERT INTO prodotto (IDProdotto,NomeProdotto,ImmagineProdotto,DescrizioneProdotto) VALUES
+(001, 'Mela', 'M', 'Croccante e succosa, ricca di fibre e vitamine. Perfetta come snack sano o per torte. Per 100 g: 52 kcal.'),
+(002, 'Pera', 'P', 'Dolce e succosa, con polpa morbida e ricca di fibre. Perfetta come spuntino o nei dolci. Per 100 g: 35 kcal.'),
+(003, 'Banana', 'B', 'Morbida e nutriente, ricca di potassio ed energia. Ottima per spuntini o frullati. Per 100 g: 65 kcal.'),
+(004, 'Kiwi', 'K', 'Ricco di vitamina C e antiossidanti, con un gusto acidulo. Ideale per insalate o smoothie. Per 100 g: 44 kcal.'),
+(005, 'Ananas', 'A', 'Esotico e succoso, dal sapore dolce e rinfrescante. Ottimo fresco o nei dessert. Per 100 g: 40 kcal.'),
+(006, 'Fragola', 'F', 'Dolce e profumata, ricca di antiossidanti. Deliziosa in dessert o da sola. Per 100 g: 27 kcal.'),
+(007, 'Ciliegia', 'C', 'Piccola e succosa, con un gusto dolce e irresistibile. Perfetta da sola o nelle crostate. Per 100 g: 63 kcal.'),
+(008, 'Uva', 'U', 'Dolci chicchi succosi, ricchi di vitamine e polifenoli. Perfetta per snack o marmellate. Per 100 g: 60 kcal.'),
+(009, 'Pesca', 'P', 'Polpa morbida e profumata, ricca di vitamine. Deliziosa al naturale o in confetture. Per 100 g: 30 kcal.'),
+(010, 'Mango', 'M', 'Esotico e dolce, con polpa succosa e ricca di vitamina A. Ottimo nei frullati o al naturale. Per 100 g: 53 kcal.'),
+(011, 'Melone', 'M', "Fresco e dolce, ricco di acqua e minerali. Perfetto per l'estate o come antipasto. Per 100 g: 34 kcal."),
+(012, 'Anguria', 'A', 'Succosa e rinfrescante, con polpa ricca di acqua. Ideale per le giornate calde. Per 100 g: 30 kcal.'),
+(013, 'Limone', 'L', 'Fresco e aspro, ricco di vitamina C. Perfetto per insaporire piatti e bevande. Per 100 g: 11 kcal.'),
+(014, 'Arancia', 'A', 'Dolce e succosa, una fonte eccellente di vitamina C. Ideale per spremute fresche. Per 100 g: 34 kcal.'),
+(015, 'Pompelmo', 'P', 'Gusto agrumato e leggermente amaro, ricco di vitamine. Ottimo a colazione. Per 100 g: 26 kcal.'),
+(016, 'Mandarino', 'M', 'Dolce e succoso. Ricco di vitamina C, perfetto per spuntini veloci. Per 100 g: 72 kcal.'),
+(017, 'Clementina', 'C', 'Simile al mandarino, ma senza semi. Delicata e dolce. Per 100 g: 40 kcal.'),
+(018, 'Ribes', 'R', 'Dal sapore dolce-acidulo, ricche di antiossidanti. Perfette per dessert e decorazioni. Per 100 g: 28 kcal.'),
+(019, 'Lampone', 'L', 'Morbido e dolce, con un tocco acidulo. Ottimo per dolci e smoothie. Per 100 g: 34 kcal.'),
+(020, 'Mirtillo', 'M', 'Piccolo e gustoso, ricco di antiossidanti. Perfetto nei dolci o come spuntino salutare. Per 100 g: 25 kcal.'),
+(021, 'Fico', 'F', 'Dolce e succoso, con polpa morbida e ricca di fibre. Ottimo fresco o nei dessert. Per 100 g: 47 kcal.'),
+(022, 'Caco', 'C', 'Morbido e dolcissimo, con polpa vellutata. Ricco di zuccheri naturali e vitamine. Per 100 g: 70 kcal.'),
+(023, 'Prugna', 'P', 'Polpa succosa e saporita, con un gusto dolce e leggermente acidulo. Per 100 g: 42 kcal.'),
+(024, 'Susina', 'S', 'Variante della prugna, dal sapore dolce e delicato. Perfetta per snack e marmellate. Per 100 g: 35 kcal.');
 
 INSERT INTO stagione (NomeStagione) VALUES
 ('Primavera'),
@@ -176,9 +115,9 @@ INSERT INTO spedizione (StatoSpedizione) VALUES
 ('InTransito'),
 ('Consegnato');
 
-INSERT INTO cliente (E_mail, `Password`, Nome, Cognome, DataNascita, Sesso) VALUES
-('sofialotti17@gmail.com','ciao1234','Sofia','Lotti','2003-10-10','Donna'),
-('sebastiano.lucarelli@gmail.com','ciao5678','Sebastiano','Lucarelli','2003-05-23','Uomo');
+INSERT INTO cliente (E_mail, `Password`, Nome, Cognome, DataNascita, Sesso, ImmagineProfilo) VALUES
+('sofialotti17@gmail.com','ciao1234','Sofia','Lotti','2003-10-10','Donna', 'X'),
+('sebastiano.lucarelli@gmail.com','ciao5678','Sebastiano','Lucarelli','2003-05-23','Uomo', 'Y');
 
 INSERT INTO recensione (NumeroStelle, DataRecensione, TestoRecensione, E_mail) VALUES
 (5.0, '2021-05-18', 'Ottimo prodotto! Riacquisterò sicuramente, 5 stelle meritate.', 'sofialotti17@gmail.com');
