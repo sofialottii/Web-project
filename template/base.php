@@ -10,7 +10,7 @@
             <!--pannello per aprire canvas-->
             <h1>Emporio di Grimilde</h1>
         </header>
-
+<!-- il main contiena la pagina specifica dove si trova il contenuto (tipo contenutoIndex (nota non index ma contenuto...))  -->
         <main>
             <?php
                 require($templateParams["nome"]);
