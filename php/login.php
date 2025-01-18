@@ -14,12 +14,6 @@ if(isset($_POST["accedi"])){
     }
     //login riuscito:
     else{
-        /*
-        $_SESSION["E_mail"] = $login_result[0]["E_mail"];
-        $_SESSION["nome"] = $login_result[0]["nome"];
-        $_SESSION["cognome"] = $login_result[0]["cognome"];
-        $_SESSION["dataNascita"] = $login_result[0]["dataNascita"];
-        $_SESSION["sesso"] = $login_result[0]["sesso"];*/
         registerLoggedUser($login_result[0]);
 
         header("location: index.php");

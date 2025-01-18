@@ -2,7 +2,7 @@
 <img src="../utils/img/frutta.jpg" alt="background" />
 
 <form action="">
-    <input type="button" value="COMPRA ORA" />
+    <a href="acquisto.php"><input type="button" value="COMPRA ORA" /></a>
 </form>
 
 <article>

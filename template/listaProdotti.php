@@ -6,8 +6,9 @@
     </form>
     <?php foreach($templateParams["prodotti"] as $prodotto): ?>
     <article>
-        <header>    
-            <img src="../utils/img/icons/cuore_vuoto.png" alt="cuore-vuoto" />
+        <header>
+            <img src="<?php echo checkPreferito($prodotto["IDProdotto"]); ?>" alt="cuore-vuoto" />
+            <!--<img src="../utils/img/icons/cuore_vuoto.png" alt="cuore-vuoto" />-->
         </header>
         <section>
             <img src="<?php echo $prodotto["ImmagineProdotto"]; ?>" alt="<?php echo $prodotto["NomeProdotto"]; ?>" />
