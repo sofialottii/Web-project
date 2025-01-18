@@ -20,7 +20,7 @@
     <?php foreach($templateParams["recensioni"] as $recensione): ?>
     <article>
         <header>    <!-- questo per i contenuti delle liste da db: il foreach è per iterare la lista. templateParams contiene il risultato delle
-            query. quindi per ogni recensione (che è il nome della tabella, quindi per ogni riga della tabella) prende nome, numerostelle...git -->
+            query. quindi per ogni recensione (che è il nome della tabella, quindi per ogni riga della tabella) prende nome, numerostelle...gitgoit -->
             <p><?php echo $recensione["Nome"]; ?> <?php echo $recensione["Cognome"]; ?></p>
             <p><?php echo $recensione["NumeroStelle"]; ?></p>
         </header>

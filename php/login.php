@@ -1,6 +1,6 @@
 <?php 
 require_once("bootstrap.php");
-
+//tutta la gestione dei bottoni e dell'iscriviti
 if(isset($_POST["accedi"])){
     $email = $_POST["E_mail"];
     $password = $_POST["password"];
