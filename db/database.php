@@ -39,6 +39,19 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getProdotti($cercaProdotto){
+        $cercaProdotto = "%".$cercaProdotto."%";
+        $stmt = $this->db->prepare("SELECT NomeProdotto, ImmagineProdotto, Peso, PrezzoProdotto 
+                                        FROM PRODOTTO P, TARIFFARIO T
+                                        WHERE P.IDProdotto = T.IDProdotto
+                                        AND NomeProdotto = ?");
+        $stmt->bind_param("s", $cercaProdotto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
 
 
 }

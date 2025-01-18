@@ -4,17 +4,28 @@ per ogni id un solo prezzo con un peso standard tipo 1kg
 o 100 grammi e a seconda della quantità che viene richiesta
 verrà fatta una proporzione.
 
-2. Va cambiato il tipo dell'immagine in Prodotto
+PAGINE SOFIA:
 
-3. Peso e PrezzoProdotto vanno cambiati da decimal a float
+INDEX -> fare la barra laterale
+ACCESSO
+ISCRIVITI
+AGGIUNGI_ORDINE
+SINGOLO_ORDINE
+FRUTTA_PREFERITA
+CARRELLO
+TRACCIAMENTO_ORDINE
+AGGIUNGI_RECENSIONE
 
-4. Tanti altri attributi devono essere modificati di tipo. 
 
-per ora i problemi 2, 3, 4 sono risolti usando le prime
-query alter table in inserisci_dati. Alla fine del 
-progetto si ptorebbe andare a modificare direttamente
-fruttivendolilun in maniera da togliere quelle query
-(non obbligatorio)
 
-5. dall'ordine effettuato non è possibile arrivare ai prodotti
-acquistati in quell'ordine. Andrebbe cambiato il database
+PAGINE SEBASTIANO:
+
+PROFILO
+PROFILO_MODIFICA_PASSWORD
+PROFILO_MODIFICA_CAMPI
+PROCEDI_PAGAMENTO
+PAGAMENTO_EFFETTUATO
+STORICO_NOTIFICHE
+STORICO_ORDINI
+AGGIUNGI_RECENSIONE
+
