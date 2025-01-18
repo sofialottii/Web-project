@@ -1,5 +1,7 @@
 <?php 
 require_once("bootstrap.php");
+
+session_start();
 //tutta la gestione dei bottoni e dell'iscriviti
 if(isset($_POST["accedi"])){
     $email = $_POST["E_mail"];
@@ -19,6 +21,7 @@ if(isset($_POST["accedi"])){
         $_SESSION["dataNascita"] = $login_result[0]["dataNascita"];
         $_SESSION["sesso"] = $login_result[0]["sesso"];*/
         registerLoggedUser($login_result[0]);
+
         header("location: index.php");
         exit;
     }

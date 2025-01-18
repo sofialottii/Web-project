@@ -9,4 +9,8 @@ function registerLoggedUser($user){
 
 }
 
+function isUserLoggedIn(){
+    return !empty($_SESSION['E_mail']);
+}
+
 ?>
