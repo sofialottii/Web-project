@@ -73,6 +73,20 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    /* FRUTTA PREFERITA */
+
+    public function getProdottiPreferiti(){
+        $stmt = $this->db->prepare("SELECT P.IDProdotto, NomeProdotto, ImmagineProdotto, Peso, PrezzoProdotto 
+                                        FROM PRODOTTO P, TARIFFARIO T, PREFERITO pref
+                                        WHERE P.IDProdotto = T.IDProdotto
+                                        AND P.IDProdotto = pref.IDProdotto
+                                        AND pref.E_mail = ?");
+        $stmt->bind_param("s", $_SESSION["E_mail"]);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function rimuoviProdottoPreferito($IDprodotto){
         $stmt = $this->db->prepare("DELETE FROM PREFERITO
                                         WHERE IDProdotto = ?

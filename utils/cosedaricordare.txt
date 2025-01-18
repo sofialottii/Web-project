@@ -1,9 +1,3 @@
-1. nella popolazione del database, in tariffario,
-è richiesto IDProdotto, peso, e prezzo. Si potrebbe fare
-per ogni id un solo prezzo con un peso standard tipo 1kg
-o 100 grammi e a seconda della quantità che viene richiesta
-verrà fatta una proporzione.
-
 PAGINE SOFIA:
 
 INDEX -> fare la barra laterale
@@ -17,7 +11,6 @@ TRACCIAMENTO_ORDINE
 AGGIUNGI_RECENSIONE
 
 
-
 PAGINE SEBASTIANO:
 
 PROFILO+
@@ -28,4 +21,16 @@ PAGAMENTO_EFFETTUATO
 STORICO_NOTIFICHE
 STORICO_ORDINI
 AGGIUNGI_RECENSIONE
+
+
+
+COSE DA AGGIUNGERE:
+-possibilità di recuperare la password se viene dimenticata
+-lato admin
+
+COSE SU CUI RIFLETTERE:
+-attualmente, quando nella pagina dei preferiti un prodotto viene tolto dai preferiti, quel prodotto rimane
+visibile, con il cuore vuoto anziché pieno. Scompare solo quando ricaricata la pagina. Ho pensato che ci stesse fare
+questa cosa in maniera tale che se qualcuno cliccasse il cuore pieno per errore, poi il prodotto non scomparisse (in questo
+modo, per rimetterlo nei preferiti bisognerebbe tornare nella pagina di acquisto generale). Cosa preferiamo fare?
 

@@ -1,8 +1,3 @@
-<form action="#" method="GET">
-    <input type="search" name="CercaProdotto" placeholder="Cerca per nome..."/>
-    <br/>
-    <input type="submit" value="Invia richiesta"/>
-</form>
 <?php foreach($templateParams["prodotti"] as $prodotto): ?>
 <article>
     <header>
@@ -41,5 +36,3 @@
     </footer>
 </article>
 <?php endforeach; ?>
-<!-- bottone carrello -->
-
