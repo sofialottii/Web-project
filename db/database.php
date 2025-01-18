@@ -52,8 +52,7 @@ class DatabaseHelper{
     }
 
     public function getProfilo(){
-        //$utente = $_SESSION["E_mail"];
-        $utente="sebastiano.lucarelli@gmail.com";
+        $utente = $_SESSION["E_mail"];
         $stmt = $this->db->prepare("SELECT E_mail, Nome, Cognome, DataNascita
                                     FROM CLIENTE
                                     WHERE E_mail=?");
