@@ -24,6 +24,13 @@ class DatabaseHelper{
     return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function registrazione($nome, $cognome, $email, $password, $dataNascita, $sesso){
+        $stmt = $this->db->prepare("INSERT INTO CLIENTE (Nome, Cognome, E_mail, Password, DataNascita, Sesso)
+                                            VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $nome, $cognome, $email, $password, $dataNascita, $sesso);
+        $stmt->execute();
+    }
+
 
 
 }

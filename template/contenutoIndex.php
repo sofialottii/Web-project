@@ -8,8 +8,8 @@
 <article>
     <h2>CHI SIAMO?</h2>
     <p>
-        L'emporio di Grimilde è un servizio di <b>spesa online</b> su cui puoi acquistare
-        prodotti sostenibili e di qualità e riceverli a casa in <b>meno di 48h.</b><br>
+        L'emporio di Grimilde è un servizio di <em>spesa online</em> su cui puoi acquistare
+        prodotti sostenibili e di qualità e riceverli a casa in <em>meno di 48h.</em><br>
         Portiamo sulla tua tavola solo prodotti autentici e genuini,
         di cui sosteniamo e valorizziamo la tracciabilità
     </p>
