@@ -8,7 +8,7 @@
     <body>
         <header>
             <!--pannello per aprire canvas-->
-            <h1>EMPORIO DI GRIMILDEg</h1>
+            <h1>EMPORIO DI GRIMILDE</h1>
         </header>
 <!-- il main contiena la pagina specifica dove si trova il contenuto (tipo contenutoIndex (nota non index ma contenuto...))  -->
         <main>

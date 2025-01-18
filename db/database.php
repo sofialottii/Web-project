@@ -51,6 +51,17 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getProfilo(){
+        //$utente = $_SESSION["E_mail"];
+        $utente="sebastiano.lucarelli@gmail.com";
+        $stmt = $this->db->prepare("SELECT E_mail, Nome, Cognome, DataNascita
+                                    FROM CLIENTE
+                                    WHERE E_mail=?");
+        $stmt->bind_param("s", $utente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
 
 
