@@ -66,6 +66,21 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function aggiungiProdottoPreferito($IDprodotto){
+        $stmt = $this->db->prepare("INSERT INTO PREFERITO (IDProdotto, E_mail)
+                                        VALUES (?, ?)");
+        $stmt->bind_param("ss", $IDprodotto, $_SESSION["E_mail"]);
+        $stmt->execute();
+    }
+
+    public function rimuoviProdottoPreferito($IDprodotto){
+        $stmt = $this->db->prepare("DELETE FROM PREFERITO
+                                        WHERE IDProdotto = ?
+                                        AND E_mail = ?");
+        $stmt->bind_param("ss", $IDprodotto, $_SESSION["E_mail"]);
+        $stmt->execute();
+    }
+
     /* PROFILO */
     public function getProfilo(){
         $utente = $_SESSION["E_mail"];
