@@ -2,8 +2,6 @@
 require_once("bootstrap.php");
 
 session_start();
-echo $_SESSION["E_mail"] ?? "NESSUN ACCESSO";
-
 
 $templateParams["titolo"] = "Grimilde's - Pagina Acquisto";
 $templateParams["nome"] = "listaProdotti.php";
@@ -13,6 +11,21 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
     $cercaProdotto = $_GET["CercaProdotto"] ?? "";
 } else {
     $cercaProdotto = "";
+}
+
+if (isset($_GET['IDProdotto'])) {
+    $IDProdotto = $_GET['IDProdotto'];
+    $preferito = $dbh->checkProdottoPreferito($IDProdotto);
+    if (empty($preferito)){
+        $dbh->aggiungiProdottoPreferito($IDProdotto);
+    } else {
+        $dbh->rimuoviProdottoPreferito($IDProdotto);
+    }
+    echo checkPreferito($IDProdotto);
+    exit;
+    //error_log("Percorso immagine restituito: " . $path);
+    //echo $path;
+
 }
 
 $templateParams["prodotti"] = $dbh->getProdotti($cercaProdotto);
