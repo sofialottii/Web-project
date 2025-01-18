@@ -1,7 +1,7 @@
 <form action="#" method="POST">
     <h2>ISCRIVITI</h2>
-    <?php if(isset($templateParams["errorelogin"])): ?>
-    <p><?php echo $templateParams["errorelogin"]; ?></p>
+    <?php if(isset($templateParams["erroreRegister"])): ?>
+    <p><?php echo $templateParams["erroreRegister"]; ?></p>
     <?php endif; ?>
     <ul>
         <li>
@@ -34,7 +34,7 @@
             <input type="submit" name="iscriviti" value="Iscriviti" />
         </li>
         <li>
-            <a href="index.php">Hai già un account? Accedi</a>
+            <a href="login.php">Hai già un account? Accedi</a>
         </li>
     </ul>
 </form>

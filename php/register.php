@@ -14,16 +14,16 @@ if(isset($_POST["iscriviti"])){
     foreach ($lista_parametri as $parametro){
         if($parametro == ""){
             $errore = true;
-            $templateParams["errorelogin"] = "Compilare tutti i campi";
+            $templateParams["erroreRegister"] = "Compilare tutti i campi";
         }
     }
     if($password != $conferma_password){
         $errore = true;
-        $templateParams["errorelogin"] = "Le password non coincidono";
+        $templateParams["erroreRegister"] = "Le password non coincidono";
     }
     if ($sesso == "Nessuno"){
         $errore = true;
-        $templateParams["errorelogin"] = "Scegliere un sesso";
+        $templateParams["erroreRegister"] = "Scegliere un sesso";
     }
     if(!$errore){
         $dbh->registrazione($nome, $cognome, $email, $password, $dataNascita, $sesso);
