@@ -33,6 +33,16 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function checkEmail($email){
+        $stmt = $this->db->prepare("SELECT E_mail
+                                        FROM CLIENTE
+                                        WHERE E_mail = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     /* LOGIN */
     public function checkLogin($email, $password){
         $stmt = $this->db->prepare("SELECT * FROM CLIENTE WHERE E_mail = ? AND Password = ?");

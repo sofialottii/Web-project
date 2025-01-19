@@ -23,9 +23,6 @@ if (isset($_GET['IDProdotto'])) {
     }
     echo checkPreferito($IDProdotto);
     exit;
-    //error_log("Percorso immagine restituito: " . $path);
-    //echo $path;
-
 }
 
 $templateParams["prodotti"] = $dbh->getProdotti($cercaProdotto);

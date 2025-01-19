@@ -15,10 +15,15 @@ function isUserLoggedIn(){
     return !empty($_SESSION['E_mail']);
 }
 
+function checkPassword($p1, $p2){
+    return $p1 == $p2;
+}
+
 function logout(){
     session_destroy();
 }
 
+/*cambia l'immagine del cuore a seconda che il prodotto sia preferito o meno*/
 function checkPreferito($IDprodotto){
     global $dbh;
     $preferito = $dbh->checkProdottoPreferito($IDprodotto);

@@ -11,7 +11,7 @@
             <label for="cognome">Cognome</label><input type="text" id="cognome" name="cognome" />
         </li>
         <li>
-            <label for="E_mail">E-mail</label><input type="text" id="E_mail" name="E_mail" />
+            <label for="E_mail">E-mail</label><input type="email" id="E_mail" name="E_mail" />
         </li>
         <li>
             <label for="password">Password</label><input type="password" id="password" name="password" maxlength="20" />
