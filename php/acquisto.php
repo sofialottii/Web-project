@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
     $cercaProdotto = "";
 }
 
+/*aggiungere o rimuovere prodotto preferito*/
 if (isset($_GET['IDProdotto'])) {
     $IDProdotto = $_GET['IDProdotto'];
     $preferito = $dbh->checkProdottoPreferito($IDProdotto);
@@ -24,6 +25,7 @@ if (isset($_GET['IDProdotto'])) {
     echo checkPreferito($IDProdotto);
     exit;
 }
+
 
 $templateParams["prodotti"] = $dbh->getProdotti($cercaProdotto);
 

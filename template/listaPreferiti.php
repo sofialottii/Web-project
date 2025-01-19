@@ -1,3 +1,7 @@
+<?php if (empty($templateParams["prodotti"])) : ?>
+    <h2>La lista dei preferiti è vuota</h2>
+<?php endif; ?>
+
 <?php foreach($templateParams["prodotti"] as $prodotto): ?>
 <article>
     <header>

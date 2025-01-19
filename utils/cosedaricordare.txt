@@ -27,6 +27,8 @@ COSE DA AGGIUNGERE:
 -possibilità di recuperare la password se viene dimenticata
 -lato admin
 -fare una pagina di assistenza
+-su lato admin possiamo aggiornare a database il fatto che ogni prodotto abbia una quantità disponibile in gr o kili
+che l'admin può aumentare quando vuole, e quindi quando ne rimane poco viene segnato per il cliente tipo "disponibile: 200gr"
 
 COSE SU CUI RIFLETTERE:
 -attualmente, quando nella pagina dei preferiti un prodotto viene tolto dai preferiti, quel prodotto rimane
