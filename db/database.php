@@ -76,13 +76,6 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function aggiungiProdottoPreferito($IDprodotto){
-        $stmt = $this->db->prepare("INSERT INTO PREFERITO (IDProdotto, E_mail)
-                                        VALUES (?, ?)");
-        $stmt->bind_param("ss", $IDprodotto, $_SESSION["E_mail"]);
-        $stmt->execute();
-    }
-
     /* FRUTTA PREFERITA */
 
     public function getProdottiPreferiti(){
@@ -97,12 +90,30 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function aggiungiProdottoPreferito($IDprodotto){
+        $stmt = $this->db->prepare("INSERT INTO PREFERITO (IDProdotto, E_mail)
+                                        VALUES (?, ?)");
+        $stmt->bind_param("ss", $IDprodotto, $_SESSION["E_mail"]);
+        $stmt->execute();
+    }
     public function rimuoviProdottoPreferito($IDprodotto){
         $stmt = $this->db->prepare("DELETE FROM PREFERITO
                                         WHERE IDProdotto = ?
                                         AND E_mail = ?");
         $stmt->bind_param("ss", $IDprodotto, $_SESSION["E_mail"]);
         $stmt->execute();
+    }
+
+    /* PRODOTTO */
+    public function getProdotto($IDProdotto){
+        $stmt = $this->db->prepare("SELECT P.IDProdotto, NomeProdotto, DescrizioneProdotto, ImmagineProdotto, Peso, PrezzoProdotto 
+                                        FROM PRODOTTO P, TARIFFARIO T
+                                        WHERE P.IDProdotto = T.IDProdotto
+                                        AND P.IDProdotto = ?");
+        $stmt->bind_param("s", $IDProdotto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     /* PROFILO */

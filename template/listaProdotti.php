@@ -4,7 +4,7 @@
     <input type="submit" value="Invia richiesta"/>
 </form>
 <?php foreach($templateParams["prodotti"] as $prodotto): ?>
-<form action="index.php" method="GET">
+<form action="prodotto.php" method="GET">
     <input type="hidden" name="IDProdotto" value="<?php echo $prodotto['IDProdotto']; ?>" />
     <article id="prodotto_<?php echo $prodotto['IDProdotto']; ?>" class="cliccabile">
         <header>
