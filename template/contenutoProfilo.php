@@ -20,7 +20,7 @@
     <form action="">
         <ul>
             <li><a href="#"> <input type="button" value="Modifica Campi" /></a> </li>
-            <li><a href="#"> <input type="button" value="Modifica Password" /></a></li>
+            <li><a href="modificaPassword.php"> <input type="button" value="Modifica Password" /></a></li>
         </ul>
     </form>
 

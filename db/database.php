@@ -154,7 +154,19 @@ class DatabaseHelper{
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-
+    
+    /* CAMBIA PASSWORD */
+    public function modificaPassword($nuova_pass){
+        $utente = $_SESSION["E_mail"];
+        $pass=$nuova_pass;
+        $stmt = $this->db->prepare("UPDATE CLIENTE 
+                                    SET password=?
+                                    WHERE E_mail=?");
+        $stmt->bind_param("ss",$nuova_pass,$utente);
+        $stmt->execute();
+        //$result=$stmt->get_result();
+        //return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
 
 }
