@@ -164,8 +164,6 @@ class DatabaseHelper{
                                     WHERE E_mail=?");
         $stmt->bind_param("ss",$nuova_pass,$utente);
         $stmt->execute();
-        //$result=$stmt->get_result();
-        //return $result->fetch_all(MYSQLI_ASSOC);
     }
 
 
