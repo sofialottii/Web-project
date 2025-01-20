@@ -1,6 +1,8 @@
 <?php
 require_once("bootstrap.php");
 
+session_start();
+
 if(isset($_POST["iscriviti"])){
     $nome = $_POST["nome"];
     $cognome = $_POST["cognome"];
@@ -31,6 +33,7 @@ if(isset($_POST["iscriviti"])){
     }
     if(!$errore){
         $dbh->registrazione($nome, $cognome, $email, $password, $dataNascita, $sesso);
+        registerLoggedUser($email);
         header("location: index.php");
         exit;
     }
