@@ -252,6 +252,27 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    /* PAGAMENTO */
+
+    public function salvaDati($nome, $cognome, $numero, $cvv, $scadenza){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("INSERT INTO CARTA_REGISTRATA (NomeIntestatario, CognomeIntestatario, NumeroCarta, Cvv, DataScadenza,Email)
+                                        VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssiiss", $NomeIntestatario, $CognomeIntestatario, $NumeroCarta, $Cvv, $DataScadenza, $utente);
+        $stmt->execute();                           
+    }
+
+    public function getDati(){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("SELECT NumeroCarta, DataScadenza, NomeIntestatario, CognomeIntestario
+                                    FROM CARTA_REGISTRATA
+                                    WHERE E_mail=?");
+        $stmt->bind_param("s", $utente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 
 }
 
