@@ -11,7 +11,9 @@
         <div>
             <p><?php echo $prodotto["PrezzoProdotto"]; ?>€</p>
             <input type="number" name="quantita" value=<?php echo $prodotto["QuantitaInCarrello"]; ?> />
-            <input type="submit" name="rimuovi<?php echo $prodotto["IDProdotto"]; ?>" value="Rimuovi"></input>
+            <form action="" method="POST">
+                <input type="submit" name="rimuovi" value="Rimuovi" />
+            </form>
         </div>
 
     <?php endforeach; ?>

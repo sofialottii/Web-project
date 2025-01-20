@@ -177,6 +177,21 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function svuotaCarrello($email){
+        $stmt = $this->db->prepare("DELETE FROM CARRELLO
+                                        WHERE E_mail = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+    }
+
+    public function rimuoviProdottoCarrello($email, $IDProdotto){
+        $stmt = $this->db->prepare("DELETE FROM CARRELLO
+                                        WHERE E_mail = ?
+                                        AND IDProdotto = ?");
+        $stmt->bind_param("ss", $email, $IDProdotto);
+        $stmt->execute();
+    }
+
     /* PROFILO */
     public function getProfilo(){
         $utente = $_SESSION["E_mail"];
