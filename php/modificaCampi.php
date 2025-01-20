@@ -2,8 +2,45 @@
 require_once("bootstrap.php");
 session_start();
 
-$templateParams["titolo"] = "Grimilde's - Profilo"; //title
-$templateParams["nome"] = "contenutioModificaCampi.php";
+if(isUserLoggedIn()){
+    $templateParams["profilo"] = $dbh->getProfilo();
+    }
+    else{
+        header("location: login.php");
+        exit;
+    }
+    if(isset($_POST["ModificaCampi"])){
+        $nome=$_POST["nome"];
+        $cognome=$_POST["cognome"];
+        $data=$_POST["dataNascita"];
+        $sesso=$_POST["sesso"];
+        $lista_parametri = array($nome, $cognome, $data);
+   
+
+        $error=false;
+
+        if($sesso=="Nessuno"){
+            $error=true;
+            $templateParams["erroreDati"]=  "Selezionare un sesso";
+        }
+
+        foreach($lista_parametri as $parametro){
+            if($parametro == "" ){
+                $error=true;
+                $templateParams["erroreDati"]="Inserire tutti i parametri!git p";
+            }
+        }
+
+        if(!$error){
+            $dbh->modificaNome($nome);
+            $dbh->modificaCognome($cognome);
+            $dbh->modificaDataNascita($data);
+            $dbh->modificaSesso($sesso);
+        }
+
+    }
+    $templateParams["titolo"] = "Grimilde's -Profilo - Modifica Dati"; //title
+    $templateParams["nome"] = "contenutioModificaCampi.php";
 
 require("../template/base.php");
 ?>

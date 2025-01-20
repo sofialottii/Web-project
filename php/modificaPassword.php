@@ -2,7 +2,7 @@
 require_once("bootstrap.php");
 session_start();
 
-$templateParams["titolo"] = "Grimilde's - Profilo"; //title
+$templateParams["titolo"] = "Grimilde's - Profilo - Modifica Password"; //title
 $templateParams["nome"] = "contenutoCambiaPassword.php";
 
 if(isUserLoggedIn()){
@@ -23,7 +23,6 @@ if(isset($_POST["aggiornaPassword"])){
     }
 
     if(!checkPassword($nuova_password, $conferma_password)){
-        //$errore = true;
         $templateParams["erroreRegister"] = "Le password non coincidono";
     }
     else{

@@ -1,5 +1,8 @@
 <section>
 <form action="#" method="POST">
+<?php if(isset($templateParams["erroreDati"])): ?>
+    <p><?php echo $templateParams["erroreDati"]; ?></p>
+    <?php endif; ?>
     <h2>MODIFICA IL TUO PROFILO</h2>
     <ul>
         <li>
@@ -20,10 +23,10 @@
             </select>
         </li>
         <li>
-            <input type="submit" name="Salva" value="Salva Modifiche" />
+            <input type="submit" name="ModificaCampi" value="Salva Modifiche" />
         </li>
+        <li><a href="profilo.php"> <input type="button" value="Ho Cambiato idea" /></a> </li>
     </ul>
 </form>
-<a href="profilo.php">Ho cambiato idea </a>
 <img src="../utils/img/Grimilde-CestoMele.png" alt="Grimilde con un cesto di mele">
 </section>

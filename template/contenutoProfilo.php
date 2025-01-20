@@ -21,6 +21,8 @@
         <ul>
             <li><a href="modificaCampi.php"> <input type="button" value="Modifica Campi" /></a> </li>
             <li><a href="modificaPassword.php"> <input type="button" value="Modifica Password" /></a></li>
+            <li><a href="https://studenti.unibo.it/sol/studenti/nuoveRichieste.htm?execution=e2s1"> <input
+            type="button" value="Rinuncia Agli Studi" /></a> </li>
         </ul>
     </form>
 
