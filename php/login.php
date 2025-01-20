@@ -14,7 +14,7 @@ if(isset($_POST["accedi"])){
     }
     //login riuscito:
     else{
-        registerLoggedUser($login_result[0]);
+        registerLoggedUser($login_result[0]["E_mail"]);
 
         header("location: index.php");
         exit;

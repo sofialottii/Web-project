@@ -1,8 +1,8 @@
 <!--immagina tutto nel main-->
 <img src="../utils/img/frutta.jpg" alt="background" />
 
-<form action="">
-    <a href="acquisto.php"><input type="button" value="COMPRA ORA" /></a>
+<form action="" method="POST">
+    <a href="acquisto.php"><input type="submit" name="acquista" value="COMPRA ORA" /></a>
 </form>
 
 <article>
@@ -32,7 +32,7 @@
         </footer>
     </article>
     <?php endforeach; ?>
-    <form action="">
-        <input type="button" value="Lascia una recensione" />
+    <form action="" method="POST">
+        <input type="submit" name="creaRecensione" value="Lascia una recensione" />
     </form>
 </article>
