@@ -166,6 +166,34 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    /* CAMBIO CAMPI */
+    public function modificaNome($nuovo_nome){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("UPDATE CLIENTE 
+                                    SET Nome=?
+                                    WHERE E_mail=?");
+        $stmt->bind_param("ss",$nuovo_nome,$utente);
+        $stmt->execute();
+    }
+
+    public function modificaCognome($nuovo_cognome){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("UPDATE CLIENTE 
+                                    SET Cognome=?
+                                    WHERE E_mail=?");
+        $stmt->bind_param("ss",$nuovo_cognome,$utente);
+        $stmt->execute();
+    }
+
+    public function modificaDataNascita($nuova_data){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("UPDATE CLIENTE 
+                                    SET DataNascita=?
+                                    WHERE E_mail=?");
+        $stmt->bind_param("ss",$nuova_data,$utente);
+        $stmt->execute();
+    }
+
 
 }
 

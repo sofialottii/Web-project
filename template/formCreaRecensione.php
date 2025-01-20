@@ -6,20 +6,28 @@
         </li>
         <li>
             <label for="numeroStelle">Numero stelle</label><input type="number" id="numeroStelle" name="numeroStelle" required />
-            <div class="rating">
-                <span data-value="5"></span>
-                <span data-value="4.5"></span>
-                <span data-value="4"></span>
-                <span data-value="3.5"></span>
-                <span data-value="3"></span>
-                <span data-value="2.5"></span>
-                <span data-value="2"></span>
-                <span data-value="1.5"></span>
-                <span data-value="1"></span>
-                <span data-value="0.5"></span>
+            
+            <div class="card">
+                <span onclick="gfg(1)"
+                    class="star">★
+                </span>
+                <span onclick="gfg(2)"
+                    class="star">★
+                </span>
+                <span onclick="gfg(3)"
+                    class="star">★
+                </span>
+                <span onclick="gfg(4)"
+                    class="star">★
+                </span>
+                <span onclick="gfg(5)"
+                    class="star">★
+                </span>
+                <p id="output">
+                    voto: 0/5
+                </p>
             </div>
-<input type="hidden" name="rating" id="rating-value" value="0" />
-<p id="rating-text">Valutazione: Nessuna</p>
+            <script src="script.js"></script>
 
         </li>
         <li>
