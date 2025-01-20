@@ -36,6 +36,8 @@ if(isUserLoggedIn()){
             $dbh->modificaCognome($cognome);
             $dbh->modificaDataNascita($data);
             $dbh->modificaSesso($sesso);
+            header("location: profilo.php");
+            exit;
         }
 
     }
