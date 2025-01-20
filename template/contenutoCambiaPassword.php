@@ -18,7 +18,7 @@
                 <a href="#"> <input type="submit" name="aggiornaPassword" value="Salva Password" /></a>
             </li>
         </ul>
-
     </form>
-
+    <a href="profilo.php">Ho cambiato idea </a>
+    <img src="../utils/img/Grimilde-CestoMele.png" alt="Grimilde con un cesto di mele">
 </section>

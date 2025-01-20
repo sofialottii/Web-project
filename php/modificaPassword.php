@@ -28,6 +28,8 @@ if(isset($_POST["aggiornaPassword"])){
     }
     else{
         $dbh->modificaPassword($nuova_password);
+        header("location: profilo.php");
+        exit;
     }
 
 
