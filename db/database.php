@@ -194,6 +194,15 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function modificaSesso($nuovo_sesso){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("UPDATE CLIENTE 
+                                    SET Sesso=?
+                                    WHERE E_mail=?");
+        $stmt->bind_param("ss",$nuovo_sesso,$utente);
+        $stmt->execute();
+    }
+
 
 }
 
