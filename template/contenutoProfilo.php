@@ -26,5 +26,5 @@
         </ul>
     </form>
 
-    <!--<img src="../utils/img/Grimilde-CestoMele.png" alt="Grimilde con un cesto di mele">-->
+    <img src="../utils/img/Grimilde-CestoMele.png" alt="Grimilde con un cesto di mele">
 </section>

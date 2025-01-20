@@ -2,6 +2,7 @@
 Totale:
 <section>
     <h2>Metodo di pagamento</h2>
+    <div>
     <form action="PagamentoEffettuato.php" method="POST">
         <ul>
             <li><label>
@@ -19,8 +20,8 @@ Totale:
                 Contanti
             </label></li>
         </ul>
-
     </form>
+    </div>
 
 
     <div>
@@ -46,4 +47,10 @@ Totale:
         <option value="<//?php echo $info["NumeroCarta"]; ?>"> </option>
 
     </div>-->
+
+    <div>
+        <h2>Indirizzo di Spedizione</h2>
+        Via dell'universit&agrave 30, Cesena
+        <img src="mappa.png" alt="mappa">
+    </div>
 </section>
