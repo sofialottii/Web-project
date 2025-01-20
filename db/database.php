@@ -152,6 +152,31 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function checkRecensioneFattaOggi($email, $data){
+        $stmt = $this->db->prepare("SELECT E_mail
+                                        FROM RECENSIONE
+                                        WHERE E_mail = ?
+                                        AND DataRecensione = ?");
+        $stmt->bind_param("ss", $email, $data);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    /* CARRELLO */
+
+    public function getCarrello($email){
+        $stmt = $this->db->prepare("SELECT C.IDProdotto, NomeProdotto, ImmagineProdotto, DescrizioneProdotto, Peso, PrezzoProdotto, QuantitaInCarrello
+                                        FROM CARRELLO C, PRODOTTO P, TARIFFARIO T
+                                        WHERE C.IDProdotto = P.IDProdotto
+                                        AND P.IDProdotto = T.IDProdotto
+                                        AND C.E_mail = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     /* PROFILO */
     public function getProfilo(){
         $utente = $_SESSION["E_mail"];

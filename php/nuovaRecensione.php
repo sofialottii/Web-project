@@ -5,12 +5,16 @@ require_once("bootstrap.php");
 session_start();
 
 if(isset($_POST["creaRecensione"])){
-    $testoRecensione = $_POST["testoRecensione"];
-    $numeroStelle = $_POST["rating"];
-    $dataOggi = date("Y-m-d");
-    $dbh->creaRecensione($_SESSION["E_mail"], $numeroStelle, $dataOggi, $testoRecensione);
-    header("location: index.php");
-    exit;
+    if ($dbh->checkRecensioneFattaOggi($_SESSION["E_mail"], date("Y-m-d"))) {
+        $templateParams["erroreRecensione"] = "Hai già recensito oggi! Torna domani.";
+    } else {
+        $testoRecensione = $_POST["testoRecensione"];
+        $numeroStelle = $_POST["rating"] ?? 0;
+        $dataOggi = date("Y-m-d");
+        $dbh->creaRecensione($_SESSION["E_mail"], $numeroStelle, $dataOggi, $testoRecensione);
+        header("location: index.php");
+        exit;
+    }
 }
 
 

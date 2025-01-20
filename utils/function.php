@@ -32,4 +32,12 @@ function checkPreferito($IDprodotto){
 
 }
 
+function prezzoTotale($carrello){
+    $totale = 0;
+    foreach($carrello as $prodotto){
+        $totale += $prodotto["PrezzoProdotto"] * $prodotto["QuantitaInCarrello"];
+    }
+    return $totale;
+}
+
 ?>

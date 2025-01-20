@@ -1,5 +1,8 @@
 <form action="#" method="POST">
     <h2>ME LA LASCI UNA RECENSIONE?</h2>
+    <?php if(isset($templateParams["erroreRecensione"])): ?>
+    <p><?php echo $templateParams["erroreRecensione"]; ?></p>
+    <?php endif; ?>
     <ul>
         <li>
             <label for="testoRecensione">Testo recensione</label><textarea id="testoRecensione" name="testoRecensione"></textarea>
@@ -52,7 +55,7 @@
 
         </li>
         <li>
-            <input type="submit" name="creaRecensione" value="Invia recensione" />
+            <input type="submit" name="creaRecensione" value="Pubblica" />
         </li>
         <li>
             <a href="index.php">Indietro</a>
