@@ -143,6 +143,15 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    /* NUOVA RECENSIONE */
+
+    public function creaRecensione($email, $numeroStelle, $dataRecensione, $testoRecensione){
+        $stmt = $this->db->prepare("INSERT INTO RECENSIONE (E_mail, NumeroStelle, DataRecensione, TestoRecensione)
+                                        VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $email, $numeroStelle, $dataRecensione, $testoRecensione);
+        $stmt->execute();
+    }
+
     /* PROFILO */
     public function getProfilo(){
         $utente = $_SESSION["E_mail"];

@@ -10,3 +10,12 @@ body > header, body > footer {
     padding: 20px 0;
 }*/
 
+
+/* roba di star rating che poi verrà modificata */
+
+.star {
+    font-size: 2rem;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s;
+}

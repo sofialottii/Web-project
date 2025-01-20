@@ -5,29 +5,50 @@
             <label for="testoRecensione">Testo recensione</label><textarea id="testoRecensione" name="testoRecensione"></textarea>
         </li>
         <li>
-            <label for="numeroStelle">Numero stelle</label><input type="number" id="numeroStelle" name="numeroStelle" required />
-            
-            <div class="card">
-                <span onclick="gfg(1)"
-                    class="star">★
-                </span>
-                <span onclick="gfg(2)"
-                    class="star">★
-                </span>
-                <span onclick="gfg(3)"
-                    class="star">★
-                </span>
-                <span onclick="gfg(4)"
-                    class="star">★
-                </span>
-                <span onclick="gfg(5)"
-                    class="star">★
-                </span>
-                <p id="output">
-                    voto: 0/5
-                </p>
+            <label for="numeroStelle">Seleziona stelle:</label>
+            <div>
+                <input type="radio" id="star1" name="rating" value="1" hidden />
+                <label for="star1" class="star">★</label>
+
+                <input type="radio" id="star2" name="rating" value="2" hidden />
+                <label for="star2" class="star">★</label>
+
+                <input type="radio" id="star3" name="rating" value="3" hidden />
+                <label for="star3" class="star">★</label>
+
+                <input type="radio" id="star4" name="rating" value="4" hidden />
+                <label for="star4" class="star">★</label>
+
+                <input type="radio" id="star5" name="rating" value="5" hidden />
+                <label for="star5" class="star">★</label>
             </div>
-            <script src="script.js"></script>
+            <p id="output">Voto: 0/5</p>
+
+            <script>
+                let stars = document.querySelectorAll('input[name="rating"]'); // prende tutti gli input con name="rating"
+                let output = document.getElementById("output"); // voto: x/5
+
+                // aggiungo eventListener a ogni input
+                stars.forEach(star => {
+                    star.addEventListener("change", function () {
+                        let rating = this.value; // valore input selezionato
+
+                        output.innerText = "Voto: " + rating + "/5"; // aggiorno il testo
+                        updateStars(rating); // aggiorno il colore delle stelle
+                    });
+                });
+
+                function updateStars(rating) {
+                    stars.forEach(star => {
+                        let starLabel = document.querySelector(`label[for="${star.id}"]`);
+                        if (star.value <= rating) { // se il valore dell'input è minore o uguale al rating
+                            starLabel.style.color = "gold";
+                        } else {
+                            starLabel.style.color = "gray";
+                        }
+                    });
+                }
+            </script>
 
         </li>
         <li>
@@ -38,3 +59,4 @@
         </li>
     </ul>
 </form>
+
