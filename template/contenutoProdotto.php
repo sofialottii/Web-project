@@ -21,21 +21,19 @@
         </ul>
     </section>
     <section>
+        <form action="" method="POST">
         <ul>
             <li>
                 <p>Quantità:</p>
             </li>
             <li>
-                <form action="">
-                    <input type="number" name="quantita" min="1" max="10" value="1" />
-                </form>
+                <input type="number" name="quantita" min="1" max="10" value="1" />
             </li>
             <li>
-                <form action="">
-                    <a href="acquisto.php"><input type="button" value="COMPRA ORA" /></a>
-                </form>
+                <input type="submit" name="aggiungiCarrello" value="AGGIUNGI AL CARRELLO" />
             </li>
         </ul>
+        </form>
     </section>
 
 

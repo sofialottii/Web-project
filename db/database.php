@@ -116,6 +116,33 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function aggiungiCarrello($IDProdotto, $quantita){
+        $stmt = $this->db->prepare("INSERT INTO CARRELLO (E_mail, IDProdotto, QuantitaInCarrello)
+                                        VALUES (?, ?, ?)");
+        $stmt->bind_param("sss",$_SESSION["E_mail"], $IDProdotto, $quantita);
+        $stmt->execute();
+    }
+
+    public function checkProdottoInCarrello($IDProdotto){
+        $stmt = $this->db->prepare("SELECT IDProdotto, QuantitaInCarrello
+                                        FROM carrello
+                                        WHERE IDProdotto = ?
+                                        AND E_mail = ?");
+        $stmt->bind_param("ss", $IDProdotto, $_SESSION["E_mail"]);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function modificaQuantitaCarrello($IDProdotto, $quantita){
+        $stmt = $this->db->prepare("UPDATE CARRELLO
+                                        SET QuantitaInCarrello = ?
+                                        WHERE IDProdotto = ?
+                                        AND E_mail = ?");
+        $stmt->bind_param("sss", $quantita, $IDProdotto, $_SESSION["E_mail"]);
+        $stmt->execute();
+    }
+
     /* PROFILO */
     public function getProfilo(){
         $utente = $_SESSION["E_mail"];
