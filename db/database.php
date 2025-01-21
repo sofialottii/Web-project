@@ -273,6 +273,18 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    /* STORICO NOTIFICHE */ 
+    public function getNotifiche(){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("SELECT IdNotifica, TipoNotifica, TestoNotifica, DataNotifica
+                                    FROM NOTIFICA
+                                    WHERE E_mail=?
+                                    ORDER BY IdNotifica");
+        $stmt->bind_param("s",$utente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
 }
 

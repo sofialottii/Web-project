@@ -11,8 +11,7 @@ if(isset($_POST["iscriviti"])){
     $conferma_password = $_POST["conferma_password"];
     $dataNascita = $_POST["dataNascita"];
     $sesso = $_POST["sesso"];
-    $lista_parametri = array($nome, $cognome, $email, $password, $conferma_password, $dataNascita, $sesso);
-    $errore = false;
+    ; $errore = false;
     if(!checkPassword($password, $conferma_password)){
         $errore = true;
         $templateParams["erroreRegister"] = "Le password non coincidono";
