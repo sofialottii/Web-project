@@ -44,19 +44,19 @@ create table carrello (
      primary key (IDProdotto, E_mail)) ENGINE = INNODB;
 
 create table CARTA_REGISTRATA (
-     NumeroCarta numeric(10) not null,
+     NumeroCarta numeric(16) not null,
      CVC numeric(3) not null,
+     DataScadenza varchar(5) not null,
      NomeIntestatarioCarta varchar(20) not null,
      CognomeIntestatarioCarta varchar(20) not null,
      E_mail varchar(50) not null,
      primary key (NumeroCarta)) ENGINE = INNODB;
 
 create table contiene (
-     Data date not null,
-     Ora datetime not null,
+     DataOra datetime not null,
      IDProdotto numeric(5) not null,
      QuantitaOrdinata numeric(3) not null,
-     primary key (IDProdotto, Data, Ora)) ENGINE = INNODB;
+     primary key (IDProdotto, DataOra)) ENGINE = INNODB;
 
 create table NOTIFICA (
      E_mail varchar(50) not null,
@@ -67,13 +67,12 @@ create table NOTIFICA (
      primary key (E_mail, IdNotifica)) ENGINE = INNODB;
 
 create table ORDINE (
-     Data date not null,
-     Ora datetime not null,
+     DataOra datetime not null,
      ImportoTotale float(7) not null,
      Costo_spedizione float(5),
      E_mail varchar(50) not null,
      StatoSpedizione varchar(20) not null,
-     primary key (Data, Ora)) ENGINE = INNODB;
+     primary key (DataOra)) ENGINE = INNODB;
 
 create table preferito (
      E_mail varchar(50) not null,
@@ -89,7 +88,7 @@ create table RECENSIONE (
      E_mail varchar(50) not null,
      NumeroStelle float(3) not null,
      DataRecensione date not null,
-     TestoRecensione varchar(200) not null,
+     TestoRecensione varchar(250),
      primary key (E_mail, DataRecensione)) ENGINE = INNODB;
 
 create table SPEDIZIONE (
@@ -126,8 +125,8 @@ alter table contiene add constraint FKcon_PRO
      references PRODOTTO(IDProdotto);
 
 alter table contiene add constraint FKcon_ORD_FK
-     foreign key (Data, Ora)
-     references ORDINE(Data, Ora);
+     foreign key (DataOra)
+     references ORDINE(DataOra);
 
 alter table NOTIFICA add constraint FKriceve
      foreign key (E_mail)
@@ -185,16 +184,16 @@ create unique index ID_CLIENTE_IND
      on CLIENTE (E_mail);
 
 create unique index ID_contiene_IND
-     on contiene (IDProdotto, Data, Ora);
+     on contiene (IDProdotto, DataOra);
 
 create index FKcon_ORD_IND
-     on contiene (Data, Ora);
+     on contiene (DataOra);
 
 create unique index ID_NOTIFICA_IND
      on NOTIFICA (E_mail, IdNotifica);
 
 create unique index ID_ORDINE_IND
-     on ORDINE (Data, Ora);
+     on ORDINE (DataOra);
 
 create index FKeffettuazione_IND
      on ORDINE (E_mail);
