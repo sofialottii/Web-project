@@ -8,6 +8,7 @@ SINGOLO_ORDINE
 FRUTTA_PREFERITA
 CARRELLO
 TRACCIAMENTO_ORDINE
+AGGIUNGI_RECENSIONE
 
 
 PAGINE SEBASTIANO:
@@ -19,7 +20,7 @@ PROCEDI_PAGAMENTO-
 PAGAMENTO_EFFETTUATO+
 STORICO_NOTIFICHE
 STORICO_ORDINI
-AGGIUNGI_RECENSIONE
+
 
 
 
@@ -29,6 +30,8 @@ COSE DA AGGIUNGERE:
 -fare una pagina di assistenza
 -su lato admin possiamo aggiornare a database il fatto che ogni prodotto abbia una quantità disponibile in gr o kili
 che l'admin può aumentare quando vuole, e quindi quando ne rimane poco viene segnato per il cliente tipo "disponibile: 200gr"
+-ordinare le recensioni in maniera decrescente
+-mettere un po' di autofocus in giro
 
 COSE SU CUI RIFLETTERE:
 -attualmente, quando nella pagina dei preferiti un prodotto viene tolto dai preferiti, quel prodotto rimane
@@ -36,3 +39,8 @@ visibile, con il cuore vuoto anziché pieno. Scompare solo quando ricaricata la 
 questa cosa in maniera tale che se qualcuno cliccasse il cuore pieno per errore, poi il prodotto non scomparisse (in questo
 modo, per rimetterlo nei preferiti bisognerebbe tornare nella pagina di acquisto generale). Cosa preferiamo fare?
 -capire come gestire il cambiamento dello stato di tracciamento
+
+MODIFICHE FATTE:
+-ho trasformato TestoRecensione in NULL con questa query:
+ALTER TABLE recensione
+MODIFY TestoRecensione varchar(250) NULL;

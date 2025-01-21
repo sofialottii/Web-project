@@ -40,3 +40,10 @@
     </footer>
 </article>
 <?php endforeach; ?>
+
+<!-- bottone carrello -->
+<form action="carrello.php" method="POST">
+    <button type="submit" value="Vai al carrello">
+        <img src="../utils/img/icons/carrello.png" alt="carrello" />
+    </button>
+</form>

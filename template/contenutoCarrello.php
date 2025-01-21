@@ -12,6 +12,7 @@
             <p><?php echo $prodotto["PrezzoProdotto"]; ?>€</p>
             <input type="number" name="quantita" value=<?php echo $prodotto["QuantitaInCarrello"]; ?> />
             <form action="" method="POST">
+                <input type="hidden" name="IDProdotto" value="<?php echo $prodotto["IDProdotto"]; ?>" />
                 <input type="submit" name="rimuovi" value="Rimuovi" />
             </form>
         </div>
@@ -19,6 +20,7 @@
     <?php endforeach; ?>
 </section>
 <p>Totale: €<?php echo prezzoTotale($templateParams["carrello"]); ?></p>
+<a href="acquisto.php">Torna agli acquisti</a>
 <form action="" method="POST">
     <input type="submit" name="vaiInCassa" value="Vai alla cassa" />
 </form>

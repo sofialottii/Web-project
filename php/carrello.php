@@ -13,6 +13,11 @@ if(isset($_POST["rimuovi"])){
     $dbh->rimuoviProdottoCarrello($_SESSION["E_mail"], $_POST["IDProdotto"]);
 }
 
+if (isset($_POST["vaiInCassa"])){
+    header("location: procediPagamento.php");
+    exit;
+}
+
 $templateParams["titolo"] = "Grimilde's - Carrello";
 $templateParams["nome"] = "contenutoCarrello.php";
 $templateParams["carrello"] = $dbh->getCarrello($_SESSION["E_mail"]);
