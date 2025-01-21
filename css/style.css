@@ -1,25 +1,108 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 body, header, h1, h2, h5, ul {
     margin: 0;
     padding: 0;;
 }
 
-h1 {
-    color: yellow;
+h1, h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+}
+
+body > header > h1, article > h2 {
+    color: rgb(194, 31, 31);
+    text-align: center;
+    font-weight: 600;
+}
+
+
+body > footer {
+    background-color: rgb(54,54,54);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+body > main {
+    /*background-color: beige;*/
+    background-color: rgb(255, 214, 138);
+    padding-bottom: 20px;
+}
+
+form > input[type="submit"]:hover {
+
+}
+
+body > main > form {
+    text-align: center;
+}
+
+body > main > form > input[type="submit"] {
+    width: 40%;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: rgb(255, 141, 139);
 }
 
 img {
     max-width: 100%;
 }
-/*
-body > header, body > footer {
-    background-color: rgb(54, 54, 54);
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}*/
+
+/*tutti tranne l'immagine della frutta in index*/
+main > *:not(:first-child img) {
+    margin: 20px 5% 0;
+}
 
 
-/* roba di star rating che poi verrà modificata */
+/* ARTICOLI INDEX */
+
+body > main > article {
+    border: 2px solid rgb(15, 13, 13);
+    border-radius: 5px;
+    padding: 10px 5%;
+    background-color: white;
+}
+
+/* RECENSIONI INDEX */
+
+body > main > article > article {
+    border: 1px solid black;
+    padding: 10px 5%;
+    margin-bottom: 20px;
+    background-color: rgb(255, 242, 242);
+}
+
+body > main > article > article p {
+    margin-bottom: 0;
+}
+
+body > main > article > article >  header > p > span {
+    color: grey;
+    font-size: 24px;
+}
+
+body > main > article > article > header > p > span[data-filled="true"] {
+    color : gold;
+}
+
+body > main > article > article > footer p{
+    text-align: end;
+    color: grey;
+    font-size: 12px;
+}
+
+body>main>article>article>footer form {
+    text-align: end;
+}
+
+
+
 
 .star {
     font-size: 2rem;
