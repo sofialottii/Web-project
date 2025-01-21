@@ -4,6 +4,9 @@ require_once("bootstrap.php");
 
 session_start();
 
+$templateParams["titolo"] = "Grimilde's - Carrello";
+$templateParams["nome"] = "contenutoCarrello.php";
+$templateParams["carrello"] = $dbh->getCarrello($_SESSION["E_mail"]);
 
 if(isset($_POST["svuotaCarrello"])){
     $dbh->svuotaCarrello($_SESSION["E_mail"]);
@@ -14,13 +17,14 @@ if(isset($_POST["rimuovi"])){
 }
 
 if (isset($_POST["vaiInCassa"])){
-    header("location: procediPagamento.php");
-    exit;
+    if (empty($templateParams["carrello"])){
+        $templateParams["errore"] = "Il carrello è vuoto! Aggiungi dei prodotti prima di procedere all'acquisto.";
+    }
+    else {
+        header("location: procediPagamento.php");
+        exit;
+    }
 }
-
-$templateParams["titolo"] = "Grimilde's - Carrello";
-$templateParams["nome"] = "contenutoCarrello.php";
-$templateParams["carrello"] = $dbh->getCarrello($_SESSION["E_mail"]);
 
 require("../template/base.php");
 

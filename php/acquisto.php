@@ -28,6 +28,7 @@ if (isset($_GET['IDProdotto'])) {
 
 
 $templateParams["prodotti"] = $dbh->getProdotti($cercaProdotto);
+$templateParams["carrello"] = $dbh->getCarrello($_SESSION["E_mail"]);
 
 require("../template/base.php");
 

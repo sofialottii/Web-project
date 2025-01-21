@@ -1,6 +1,9 @@
 <form action="" method="POST">
     <input type="submit" name="svuotaCarrello" value="Svuota carrello" />
 </form>
+<?php if(isset($templateParams["errore"])): ?>
+    <p><?php echo $templateParams["errore"]; ?></p>
+<?php endif; ?>
 <section>
     <?php foreach($templateParams["carrello"] as $prodotto): ?>
         <img src="<?php echo UPLOAD_DIR.$prodotto["ImmagineProdotto"]; ?>" alt="immagine <?php echo $prodotto["NomeProdotto"]; ?>" />

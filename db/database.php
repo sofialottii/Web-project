@@ -17,7 +17,8 @@ class DatabaseHelper{
             r.TestoRecensione, c.Nome, c.Cognome
         FROM recensione r
         JOIN cliente c
-        ON r.E_mail = c.E_mail");
+        ON r.E_mail = c.E_mail
+        ORDER BY r.DataRecensione DESC");
 
     $stmt->execute();
     $result = $stmt->get_result();
@@ -191,6 +192,21 @@ class DatabaseHelper{
         $stmt->bind_param("ss", $email, $IDProdotto);
         $stmt->execute();
     }
+
+    /* TRACCIAMENTO */
+
+    public function getOrdine($email, $IDOrdine){
+        $stmt = $this->db->prepare("SELECT IDOrdine, DataOra, ImportoTotale, StatoSpedizione
+                                        FROM ORDINE
+                                        WHERE E_mail = ?
+                                        AND IDOrdine = ?");
+        $stmt->bind_param("si", $email, $IDOrdine);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
 
     /* PROFILO */
     public function getProfilo(){

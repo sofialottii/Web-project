@@ -1,6 +1,5 @@
 <form action="#" method="GET">
     <input type="search" name="CercaProdotto" placeholder="Cerca per nome..."/>
-    <br/>
     <input type="submit" value="Invia richiesta"/>
 </form>
 <?php foreach($templateParams["prodotti"] as $prodotto): ?>
@@ -27,7 +26,7 @@
     //per passare al prodotto specifico
     document.querySelectorAll(".cliccabile").forEach(article => {
         article.addEventListener("click", function () {
-    
+
             this.closest("form").submit(); //cerco il form più vicino e lo invio
         });
     });
@@ -51,6 +50,7 @@
             console.error("Errore:", error);
         });
     });
+
 </script>
 
 <?php endforeach; ?>
@@ -59,5 +59,10 @@
 <form action="carrello.php" method="POST">
     <button type="submit" value="Vai al carrello">
         <img src="../utils/img/icons/carrello.png" alt="carrello" />
+        <nav><?php echo count($templateParams["carrello"]); ?></nav>
     </button>
 </form>
+
+
+
+
