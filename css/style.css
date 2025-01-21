@@ -1,7 +1,15 @@
-/*body, header, h1, h2, h5, ul {
+body, header, h1, h2, h5, ul {
     margin: 0;
-    padding: 0;
-}*/
+    padding: 0;;
+}
+
+h1 {
+    color: yellow;
+}
+
+img {
+    max-width: 100%;
+}
 /*
 body > header, body > footer {
     background-color: rgb(54, 54, 54);

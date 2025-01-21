@@ -1,6 +1,5 @@
 <!--immagina tutto nel main-->
 <img src="../utils/img/frutta.jpg" alt="background" />
-<img src="../utils/img/emily.jpg"  />
 <form action="" method="POST">
     <a href="acquisto.php"><input type="submit" name="acquista" value="COMPRA ORA" /></a>
 </form>
