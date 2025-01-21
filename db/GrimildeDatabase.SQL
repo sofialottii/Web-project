@@ -53,10 +53,11 @@ create table CARTA_REGISTRATA (
      primary key (NumeroCarta)) ENGINE = INNODB;
 
 create table contiene (
+     IDOrdine numeric(5) not null,
      DataOra datetime not null,
      IDProdotto numeric(5) not null,
      QuantitaOrdinata numeric(3) not null,
-     primary key (IDProdotto, DataOra)) ENGINE = INNODB;
+     primary key (IDOrdine, IDProdotto)) ENGINE = INNODB;
 
 create table NOTIFICA (
      E_mail varchar(50) not null,
@@ -67,12 +68,13 @@ create table NOTIFICA (
      primary key (E_mail, IdNotifica)) ENGINE = INNODB;
 
 create table ORDINE (
+     IDOrdine numeric(5) not null,
      DataOra datetime not null,
      ImportoTotale float(7) not null,
      Costo_spedizione float(5),
      E_mail varchar(50) not null,
      StatoSpedizione varchar(20) not null,
-     primary key (DataOra)) ENGINE = INNODB;
+     primary key (IDOrdine, E_mail)) ENGINE = INNODB;
 
 create table preferito (
      E_mail varchar(50) not null,
@@ -125,8 +127,8 @@ alter table contiene add constraint FKcon_PRO
      references PRODOTTO(IDProdotto);
 
 alter table contiene add constraint FKcon_ORD_FK
-     foreign key (DataOra)
-     references ORDINE(DataOra);
+     foreign key (IDOrdine)
+     references ORDINE(IDOrdine);
 
 alter table NOTIFICA add constraint FKriceve
      foreign key (E_mail)
@@ -184,16 +186,16 @@ create unique index ID_CLIENTE_IND
      on CLIENTE (E_mail);
 
 create unique index ID_contiene_IND
-     on contiene (IDProdotto, DataOra);
+     on contiene (IDProdotto, IDOrdine);
 
 create index FKcon_ORD_IND
-     on contiene (DataOra);
+     on contiene (IDOrdine);
 
 create unique index ID_NOTIFICA_IND
      on NOTIFICA (E_mail, IdNotifica);
 
 create unique index ID_ORDINE_IND
-     on ORDINE (DataOra);
+     on ORDINE (IDOrdine, E_mail);
 
 create index FKeffettuazione_IND
      on ORDINE (E_mail);

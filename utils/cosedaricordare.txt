@@ -32,6 +32,7 @@ COSE DA AGGIUNGERE:
 che l'admin può aumentare quando vuole, e quindi quando ne rimane poco viene segnato per il cliente tipo "disponibile: 200gr"
 -ordinare le recensioni in maniera decrescente
 -mettere un po' di autofocus in giro
+-se il carrello è vuoto non si deve avere la possibilità di procedere al pagamento
 
 COSE SU CUI RIFLETTERE:
 -attualmente, quando nella pagina dei preferiti un prodotto viene tolto dai preferiti, quel prodotto rimane
@@ -41,6 +42,3 @@ modo, per rimetterlo nei preferiti bisognerebbe tornare nella pagina di acquisto
 -capire come gestire il cambiamento dello stato di tracciamento
 
 MODIFICHE FATTE:
--ho trasformato TestoRecensione in NULL con questa query:
-ALTER TABLE recensione
-MODIFY TestoRecensione varchar(250) NULL;
