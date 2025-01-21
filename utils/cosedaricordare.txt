@@ -30,7 +30,6 @@ COSE DA AGGIUNGERE:
 -fare una pagina di assistenza
 -su lato admin possiamo aggiornare a database il fatto che ogni prodotto abbia una quantità disponibile in gr o kili
 che l'admin può aumentare quando vuole, e quindi quando ne rimane poco viene segnato per il cliente tipo "disponibile: 200gr"
--ordinare le recensioni in maniera decrescente
 -mettere un po' di autofocus in giro
 
 COSE SU CUI RIFLETTERE:

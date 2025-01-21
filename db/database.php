@@ -206,6 +206,16 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function cambiaStatoOrdine($email, $IDOrdine, $nuovoStato){
+        $stmt = $this->db->prepare("UPDATE ORDINE
+                                    SET StatoSpedizione=?
+                                    WHERE E_mail = ?
+                                    AND IDOrdine = ?");
+        $stmt->bind_param("sss",$nuovoStato, $email, $IDOrdine);
+        $stmt->execute();
+
+    }
+
 
 
     /* PROFILO */
