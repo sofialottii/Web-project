@@ -221,7 +221,7 @@ class DatabaseHelper{
     /* PROFILO */
     public function getProfilo(){
         $utente = $_SESSION["E_mail"];
-        $stmt = $this->db->prepare("SELECT E_mail, Nome, Cognome, DataNascita
+        $stmt = $this->db->prepare("SELECT E_mail, Nome, Cognome, DataNascita, Sesso
                                     FROM CLIENTE
                                     WHERE E_mail=?");
         $stmt->bind_param("s", $utente);

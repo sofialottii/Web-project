@@ -32,6 +32,16 @@ function checkPreferito($IDprodotto){
 
 }
 
+function getImmagineProfilo($sessoUtente){
+    if ($sessoUtente == "Donna"){
+        return "../utils/img/icons/utente-donna.png";
+    } else if ($sessoUtente == "Uomo"){
+        return "../utils/img/icons/utente-uomo.png";
+    } else {
+        return "../utils/img/icons/utente-altro.png";
+    }
+}
+
 function prezzoTotale($carrello){
     $totale = 0;
     foreach($carrello as $prodotto){

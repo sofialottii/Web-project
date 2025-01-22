@@ -10,10 +10,9 @@
     <body>
         <header>
             <!--pannello per aprire canvas-->
-            <?php 
-                require("offcanvas.php");
+            <?php if (isset($templateParams["canvas"])):
+                require($templateParams["canvas"]); endif;
             ?>
-
             <h1>EMPORIO DI GRIMILDE </h1>
         </header>
 <!-- il main contiena la pagina specifica dove si trova il contenuto (tipo contenutoIndex (nota non index ma contenuto...))  -->

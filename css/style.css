@@ -2,9 +2,9 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-body, header, h1, h2, h5, ul {
+body, header, h1, h2, h5, ul{
     margin: 0;
-    padding: 0;;
+    padding: 0;
 }
 
 h1, h2 {
@@ -16,6 +16,25 @@ body > header > h1, article > h2 {
     color: rgb(194, 31, 31);
     text-align: center;
     font-weight: 600;
+}
+
+body > header {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    margin: 0 !important;
+}
+
+button {
+    padding: 10px 0 !important;
+    font-size: 50%;
+    width: 80%;
+    cursor: pointer;
 }
 
 
@@ -102,6 +121,103 @@ body>main>article>article>footer form {
 }
 
 
+/* OFFCANVAS */
+body > header header {
+    padding: 5% 5px;
+}
+
+body > header header div div {
+    align-items: center;
+    padding: 0 !important;
+}
+
+body > header div header h2 {
+    color: black;
+    font-size: 24px;
+    font-weight: 600;
+    text-align:left;
+    align-items: center;
+    
+}
+
+body>header div header img{
+    width: 100%;
+}
+
+body>header div header button {
+    width: 100% !important;
+    padding: 0;
+}
+
+body > header div header div div div:last-child{
+    margin-top: -30px;
+    font-size: 150%;
+
+}
+
+body>header div header button:hover {
+    color: red !important;
+}
+
+/*elenco offcanvas*/
+ul li a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 0 !important;
+}
+
+div div ul>li {
+    margin: 10px 5%;
+}
+
+div div ul>li>a {
+    display: block;
+    color: black;
+    font-size: 1.5em;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+ul>li>a:hover {
+    background-color: lightgray;
+    /*color: white;*/
+    transform: scale(1.05);
+}
+
+ul>li>a:active{
+    transform: scale(0.95);
+}
+
+/*logout offcanvas*/
+header div form{
+    text-align: center;
+}
+
+header div form input[type="submit"] {
+    border-color: #ff4d4d;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 10px 30%;
+    font-size: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+header div form input[type="submit"]:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+}
+
+header div form input[type="submit"]:active {
+    background-color: #cc0000;
+    transform: scale(0.95);
+}
 
 
 .star {
