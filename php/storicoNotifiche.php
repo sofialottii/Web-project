@@ -13,5 +13,21 @@ else{
     exit;
 }
 
+if(empty($templateParams["notifiche"])){
+    $templateParams["errore"] = "Non ci sono notifiche!";
+}
+
+if(isset($_POST["cancellanotifiche"])){
+    $dbh->rimuoviTutteNotifiche();
+   header("location: #");
+    exit;
+}
+
+if(isset($_POST["rimuovi"])){
+    $dbh->rimuoviNotifica($_POST["IdNotifica"]);
+    header("location: storicoNotifiche.php");
+    exit;
+}
+
 require("../template/base.php");
 ?>

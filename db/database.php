@@ -352,6 +352,23 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function rimuoviNotifica($id){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("DELETE FROM notifica
+                                    WHERE E_mail = ?
+                                    AND IdNotifica = ?");
+        $stmt->bind_param("si",$utente,$id);
+        $stmt->execute();                           
+    }
+
+    public function rimuoviTutteNotifiche(){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("DELETE FROM notifica
+                                    WHERE E_mail=?");
+        $stmt->bind_param("s", $utente);
+        $stmt->execute();
+    }
+
 }
 
 ?>
