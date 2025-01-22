@@ -3,6 +3,13 @@ require_once("bootstrap.php");
 
 session_start();
 
+
+if(!isUserLoggedIn()){
+    header("location: login.php");
+    exit;
+}
+
+
 $templateParams["titolo"] = "Grimilde's - Pagina Acquisto";
 $templateParams["nome"] = "listaProdotti.php";
 

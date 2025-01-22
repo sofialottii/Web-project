@@ -50,4 +50,20 @@ function prezzoTotale($carrello){
     return $totale;
 }
 
+function checkErroriCarta($datiVecchiaCarta, $numeroCarta, $cvc, $dataScadenza, $nomeIntestatarioCarta, $cognomeIntestatarioCarta){
+    $errore = 0;
+    if ($datiVecchiaCarta[0]["NumeroCarta"] != $numeroCarta){
+        $errore = $errore + 1;
+    } else if ($datiVecchiaCarta[0]["CVC"] != $cvc) {
+        $errore = $errore + 1;
+    } else if ($datiVecchiaCarta[0]["DataScadenza"] != $dataScadenza) {
+        $errore = $errore + 1;
+    } else if ($datiVecchiaCarta[0]["NomeIntestatarioCarta"] != $nomeIntestatarioCarta) {
+        $errore = $errore + 1;
+    } else if ($datiVecchiaCarta[0]["CognomeIntestatarioCarta"] != $cognomeIntestatarioCarta) {
+        $errore = $errore + 1;
+    }
+    return $errore;
+}
+
 ?>

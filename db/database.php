@@ -193,6 +193,14 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function aggiornaQuantitaCarrello($email, $quantita, $IDProdotto){
+        $stmt = $this->db->prepare("UPDATE carrello
+                                            SET QuantitaInCarrello = ?
+                                            WHERE IDProdotto = ? and E_mail = ?");
+        $stmt->bind_param("sss", $quantita, $IDProdotto, $email);
+        $stmt->execute();
+    }
+
     /* TRACCIAMENTO */
 
     public function getOrdine($email, $IDOrdine){
@@ -280,23 +288,55 @@ class DatabaseHelper{
 
     /* PAGAMENTO */
 
-    public function salvaDati($nome, $cognome, $numero, $cvv, $scadenza){
+    public function salvaDati($numeroCarta, $CVC, $dataScadenza, $nomeIntestatarioCarta, $cognomeIntestatarioCarta){
         $utente = $_SESSION["E_mail"];
-        $stmt = $this->db->prepare("INSERT INTO CARTA_REGISTRATA (NomeIntestatario, CognomeIntestatario, NumeroCarta, Cvv, DataScadenza,Email)
+        $stmt = $this->db->prepare("INSERT INTO CARTA_REGISTRATA (NumeroCarta, CVC, DataScadenza, NomeIntestatarioCarta, CognomeIntestatarioCarta, E_mail)
                                         VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssiiss", $NomeIntestatario, $CognomeIntestatario, $NumeroCarta, $Cvv, $DataScadenza, $utente);
+        $stmt->bind_param("ssssss", $numeroCarta, $CVC, $dataScadenza, $nomeIntestatarioCarta, $cognomeIntestatarioCarta, $utente);
         $stmt->execute();                           
     }
 
     public function getDati(){
         $utente = $_SESSION["E_mail"];
-        $stmt = $this->db->prepare("SELECT NumeroCarta, DataScadenza, NomeIntestatario, CognomeIntestario
+        $stmt = $this->db->prepare("SELECT NumeroCarta, DataScadenza, NomeIntestatarioCarta, CognomeIntestatarioCarta
                                     FROM CARTA_REGISTRATA
                                     WHERE E_mail=?");
         $stmt->bind_param("s", $utente);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    
+    public function riceviDatiDalNumeroCarta($numeroCarta){
+        $stmt = $this->db->prepare("SELECT NumeroCarta, CVC, DataScadenza, NomeIntestatarioCarta, CognomeIntestatarioCarta
+                                            FROM carta_registrata
+                                            WHERE NumeroCarta = ?");
+        $stmt->bind_param("s", $numeroCarta);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getNumeroOrdini($email){
+        $stmt = $this->db->prepare("SELECT IDOrdine FROM ORDINE WHERE E_mail = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function creaOrdine($IDOrdine, $dataOggi, $importoTotale, $costo_Spedizione, $email, $statoSpedizione) {
+        $stmt = $this->db->prepare("INSERT INTO ORDINE (IDOrdine, DataOra, ImportoTotale, Costo_spedizione, E_mail, StatoSpedizione)
+                                    VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("issdss", $IDOrdine, $dataOggi, $importoTotale, $costo_Spedizione, $email, $statoSpedizione);
+        $stmt->execute();
+    }
+
+    public function creaAssociazioneContiene($IDOrdine, $dataOggi, $IDProdotto, $quantita) {
+        $stmt = $this->db->prepare("INSERT INTO CONTIENE (IDOrdine, DataOra, IDProdotto, QuantitaOrdinata)
+                                    VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("isii", $IDOrdine, $dataOggi, $IDProdotto, $quantita);
+        $stmt->execute();
     }
 
     /* STORICO NOTIFICHE */ 

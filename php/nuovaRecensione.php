@@ -4,6 +4,13 @@ require_once("bootstrap.php");
 
 session_start();
 
+
+if(!isUserLoggedIn()){
+    header("location: login.php");
+    exit;
+}
+
+
 if(isset($_POST["creaRecensione"])){
     if ($dbh->checkRecensioneFattaOggi($_SESSION["E_mail"], date("Y-m-d"))) {
         $templateParams["erroreRecensione"] = "Hai già recensito oggi! Torna domani.";
