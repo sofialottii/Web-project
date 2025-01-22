@@ -380,6 +380,17 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    /* STORICO ORDINI */
+    public function getOrdini(){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("SELECT IDOrdine, DataOra, ImportoTotale
+                                    FROM ORDINE
+                                    WHERE E_mail=?");
+        $stmt->bind_param("s", $utente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 
 ?>
