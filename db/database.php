@@ -53,6 +53,17 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function isUtenteAdmin($email){
+        $stmt = $this->db->prepare("SELECT Amministratore
+                                            FROM CLIENTE
+                                            WHERE E_mail = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row['Amministratore'] === 'Y';
+    }
+
     /* ACQUISTO */
     public function getProdotti($cercaProdotto){
         $cercaProdotto = "%".$cercaProdotto."%";

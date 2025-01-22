@@ -25,10 +25,18 @@
                 <li><a href="carrello.php">Notifiche</a></li>
             </ul>
         </section>
-        <?php if(isset($_SESSION["E_mail"])): ?>
+
         <form action="" method="POST">
+        <?php if(isset($_SESSION["E_mail"])): ?>
           <input type="submit" name="logout" value="Logout" />
-        </form>
+        <?php else: ?>
+          <input type="submit" name="login" value="Accedi" />
+          <input type="submit" name="registrati" value="Registrati" />
+          <input type="submit" name="loginAdmin" value="Area Riservata" />
+        
         <?php endif; ?>
+        
+        </form>
+        
       </div>
     </div>

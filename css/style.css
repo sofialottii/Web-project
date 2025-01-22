@@ -24,10 +24,20 @@ body > header {
     align-items: center;
     padding: 10px 5%;
     background-color: #f4f4f4;
+    
 }
 
 h1 {
     margin: 0 !important;
+}
+
+h1>a {
+    all: unset;
+    cursor: pointer;
+}
+
+h1>a:hover {
+    color: #750000;
 }
 
 button {

@@ -31,7 +31,7 @@
             </select>
         </li>
         <li>
-            <input type="submit" name="iscriviti" value="Iscriviti" />
+            <label><input type="submit" name="iscriviti" value="Iscriviti" /></label>
         </li>
         <li>
             <a href="login.php">Hai già un account? Accedi</a>

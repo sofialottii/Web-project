@@ -28,6 +28,7 @@ create table CLIENTE (
      DataNascita date not null,
      Sesso varchar(15) not null,
      ImmagineProfilo varchar(200),
+     Amministratore char not null DEFAULT 'N',
      primary key (E_mail)) ENGINE = INNODB;
      
 create table PRODOTTO (
@@ -43,10 +44,17 @@ create table carrello (
      QuantitaInCarrello numeric(3) not null,
      primary key (IDProdotto, E_mail)) ENGINE = INNODB;
 
+create table rifornimento (
+     IDRifornimento numeric (3) not null,
+     E_mail varchar(50) not null,
+     IDProdotto numeric(5) not null,
+     QuantitaRifornita numeric(4) not null,
+     primary key (IDRifornimento)) ENGINE = INNODB;
+
 create table CARTA_REGISTRATA (
-     NumeroCarta numeric(16) not null,
-     CVC numeric(3) not null,
-     DataScadenza varchar(5) not null,
+     NumeroCarta varchar(16) not null,
+     CVC varchar(3) not null,
+     DataScadenza varchar(7) not null,
      NomeIntestatarioCarta varchar(20) not null,
      CognomeIntestatarioCarta varchar(20) not null,
      E_mail varchar(50) not null,
@@ -65,6 +73,7 @@ create table NOTIFICA (
      TipoNotifica varchar(20) not null,
      TestoNotifica varchar(200) not null,
      DataNotifica date not null,
+     NotificaAdmin char not null DEFAULT 'N',
      primary key (E_mail, IdNotifica)) ENGINE = INNODB;
 
 create table ORDINE (
@@ -108,6 +117,7 @@ create table TARIFFARIO (
      primary key (IDProdotto, Peso)) ENGINE = INNODB;
 
 
+
 -- AGGIUNTA FOREIGN KEY
 
 alter table carrello add constraint FKcar_PRO
@@ -149,6 +159,14 @@ alter table preferito add constraint FKpre_PRO_1
 alter table preferito add constraint FKpre_CLI_FK
      foreign key (E_mail)
      references CLIENTE(E_mail);
+
+alter table rifornimento add constraint FKrif_CLI_FK
+     foreign key (E_mail)
+     references CLIENTE(E_mail);
+
+alter table rifornimento add constraint FKrif_PRO_1
+     foreign key (IDProdotto)
+     references PRODOTTO(IDProdotto);
 
 alter table presente add constraint FKpre_STA_FK
      foreign key (NomeStagione)

@@ -16,6 +16,8 @@ $templateParams["carrello"] = $dbh->getCarrello($_SESSION["E_mail"]);
 
 if(isset($_POST["svuotaCarrello"])){
     $dbh->svuotaCarrello($_SESSION["E_mail"]);
+    header("location: carrello.php");
+    exit;
 }
 
 if(isset($_POST["rimuovi"])){

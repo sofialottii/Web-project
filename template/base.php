@@ -13,7 +13,7 @@
             <?php if (isset($templateParams["canvas"])):
                 require($templateParams["canvas"]); endif;
             ?>
-            <h1>EMPORIO DI GRIMILDE </h1>
+            <h1><a href="index.php">EMPORIO DI GRIMILDE</a></h1>
         </header>
 <!-- il main contiena la pagina specifica dove si trova il contenuto (tipo contenutoIndex (nota non index ma contenuto...))  -->
         <main>
