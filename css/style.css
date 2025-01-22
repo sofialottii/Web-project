@@ -226,3 +226,32 @@ header div form input[type="submit"]:active {
     cursor: pointer;
     transition: color 0.3s;
 }
+
+
+@media screen and (min-width:768px) {
+
+    body > header {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+    } 
+    
+    body > header > div > div {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    body > header > div > div > section{
+        width: 90%;
+    }
+        body>header>div>div>form {
+            width: 10%;
+        }
+
+    body > header > div > div ul {
+        width: 100%;
+        display: inline-flex;
+    }
+    
+}

@@ -35,7 +35,7 @@ if(isset($_POST["pagaConNuovaCarta"])){
             $dbh->creaAssociazioneContiene($IDOrdine, $dataOggi, intval($associazioneCarrello["IDProdotto"]), intval($associazioneCarrello["QuantitaInCarrello"]));
         }
         $dbh->svuotaCarrello($_SESSION["E_mail"]);
-        header ("location: pagamentoEffettuato.php");
+        header ("location: pagamentoEffettuato.php?IDOrdine=$IDOrdine");
         exit;
     }
     //associazioneCarrello["C.IDProdotto"]
