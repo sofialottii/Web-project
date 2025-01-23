@@ -1,7 +1,7 @@
 <!--immagina tutto nel main-->
 <img src="../utils/img/frutta.jpg" alt="background" />
 <form action="" method="POST">
-    <input type="submit" name="acquista" value="COMPRA ORA" />
+    <label for="acquista" hidden></label><input type="submit" name="acquista" id="acquista" value="COMPRA ORA" />
 </form>
 
 <article class="text-center">
@@ -39,6 +39,6 @@
     </article>
     <?php endforeach; ?>
     <form action="" method="POST" class="text-end">
-        <input type="submit" name="creaRecensione" value="Lascia una recensione" />
+        <label for="creaRecensione" hidden></label><input type="submit" name="creaRecensione" id="creaRecensione" value="Lascia una recensione" />
     </form>
 </article>

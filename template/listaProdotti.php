@@ -1,14 +1,14 @@
 <form action="#" method="GET">
-    <input type="search" name="CercaProdotto" placeholder="Cerca per nome..."/>
-    <input type="submit" value="Invia richiesta"/>
+    <label for="inviaRic" hidden></label><input type="submit" id="inviaRic" value="Invia richiesta"/>
+    <label for="cercaProd" hidden></label><input type="search" id="cercaProd" name="CercaProdotto" placeholder="Cerca per nome..."/>
 </form>
 <?php foreach($templateParams["prodotti"] as $prodotto): ?>
 <form action="prodotto.php" method="GET">
-    <input type="hidden" name="IDProdotto" value="<?php echo $prodotto['IDProdotto']; ?>" />
+    <label for="idProd" hidden></label><input type="hidden" id="idProd" name="IDProdotto" value="<?php echo $prodotto['IDProdotto']; ?>" />
     <article id="prodotto_<?php echo $prodotto['IDProdotto']; ?>" class="cliccabile">
         <header>
             <!--uso ajax per cambiare il cuore-->
-            <button id="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>">
+            <label for="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>" hidden></label><button id="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>">
                 <img src="<?php echo checkPreferito($prodotto["IDProdotto"]); ?>" alt="cuore-vuoto" />        
             </button>    
         </header>
@@ -57,7 +57,7 @@
 
 <!-- bottone carrello -->
 <form action="carrello.php" method="POST">
-    <button type="submit" value="Vai al carrello">
+    <label for="vaiCarrello" hidden></label><button type="submit" id="vaiCarrello" value="Vai al carrello">
         <img src="../utils/img/icons/carrello.png" alt="carrello" />
         <nav><?php echo count($templateParams["carrello"]); ?></nav>
     </button>

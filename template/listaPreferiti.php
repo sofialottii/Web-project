@@ -4,11 +4,11 @@
 
 <?php foreach($templateParams["prodotti"] as $prodotto): ?>
 <form action="prodotto.php" method="GET">
-    <input type="hidden" name="IDProdotto" value="<?php echo $prodotto['IDProdotto']; ?>" />
+    <label for="btn1" hidden></label><input type="hidden" id="btn1" name="IDProdotto" value="<?php echo $prodotto['IDProdotto']; ?>" />
     <article id="prodotto_<?php echo $prodotto['IDProdotto']; ?>" class="cliccabile">
         <header>
             <!--uso ajax per cambiare il cuore-->
-            <button id="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>">
+            <label for="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>" hidden></label><button id="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>">
                 <img src="<?php echo checkPreferito($prodotto["IDProdotto"]); ?>" alt="cuore-vuoto" />        
             </button>
         </header>

@@ -23,9 +23,9 @@
             </select>
         </li>
         <li>
-            <label for="ModificaCampi"></label><input type="submit" name="ModificaCampi" id="ModificaCampi" value="Salva Modifiche" />
+            <label for="ModificaCampi" hidden></label><input type="submit" name="ModificaCampi" id="ModificaCampi" value="Salva Modifiche" />
         </li>
-        <li><a href="profilo.php"><label for="indietro"></label><input type="button" id="indietro" value="Ho Cambiato idea" /></a> </li>
+        <li><a href="profilo.php"><label for="indietro" hidden></label><input type="button" id="indietro" value="Ho Cambiato idea" /></a> </li>
     </ul>
 </form>
 <img src="../utils/img/Grimilde-CestoMele.png" alt="Grimilde con un cesto di mele">

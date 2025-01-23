@@ -11,13 +11,13 @@
             <label for="password">Password</label><input type="password" id="password" name="password" />
         </li>
         <li>
-            <label><input type="submit" name="accedi" value="Accedi" /></label>
+            <label for="accedi" hidden></label><input type="submit" name="accedi" id="accedi" value="Accedi" />
         </li>
         <li>
-            <label><input type="submit" name="iscriviti" value="Iscriviti" /></label>
+            <label for="iscriviti" hidden></label><input type="submit" id="iscriviti" name="iscriviti" value="Iscriviti" />
         </li>
         <li>
-            <label><input type="submit" name="home" value="Continua senza accedere" /></label>
+            <label for="home" hidden></label><input type="submit" id="home" name="home" value="Continua senza accedere" /></label>
         </li>
     </ul>
 </form>

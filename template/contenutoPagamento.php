@@ -9,20 +9,17 @@
     <section>
     <form action="PagamentoEffettuato.php" method="POST">
         <ul>
-            <li><label>
+            <li>
                 <input type="radio" id="cartaSalvata" name="metodo_pagamento" value="carta_salvata" required />
-                Carta salvata
-            </label></li>
+                <label for="cartaSalvata">Carta salvata</label></li>
 
-            <li><label>
+            <li>
                 <input type="radio" id="nuovaCarta" name="metodo_pagamento" value="carta_credito" required />
-                Carta di credito
-            </label></li>
+                <label for="nuovaCarta">Carta di credito</label></li>
 
-            <li><label>
+            <li>
                 <input type="radio" name="metodo_pagamento" value="contanti" disabled required />
-                Contanti
-            </label></li>
+                <label for="metodo_pagamento">Contanti</label></li>
         </ul>
     </form>
 </section>
@@ -36,19 +33,19 @@
         <li><label for="scadenza">Scadenza </label><input type="month" id="scadenza" name="scadenza" required /></li>
         <li><label for="cvv">CVV </label><input type="text" id="nome" name="cvv" placeholder="XXX" minlength="3" maxlength="3" required /></li>
         <li><label for="memorizza"> Memorizzare carta</label><input type="checkbox" id="memorizza-carta" name="memorizza_carta" /></li>
-        <input type="submit" name="pagaConNuovaCarta" value="Paga Ora" />
+        <label for="pagaNuova" hidden></label><input type="submit" id="pagaNuova" name="pagaConNuovaCarta" value="Paga Ora" />
     </ul>
     </form>
 </section>
 
 <section id="sezione-carta-salvata" style="display: none;">
     <form action="" method="POST">
-        <label>Scegli la carta<br/>
-        <select name="cartaRegistrata">
+        <label for="cartaReg">Scegli la carta</label><br/>
+        <select id="cartaReg" name="cartaRegistrata">
             <?php foreach($templateParams["carteSalvate"] as $carta): ?>
                 <option value="<?php echo $carta["NumeroCarta"]; ?>"><?php echo $carta["NumeroCarta"]; ?></option>
             <?php endforeach; ?>
-        </select> </label>
+        </select>
 
     </form>
 </section>

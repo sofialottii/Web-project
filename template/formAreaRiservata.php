@@ -11,10 +11,10 @@
             <label for="password">Password</label><input type="password" id="password" name="password" />
         </li>
         <li>
-            <label><input type="submit" name="accedi" value="Accedi come admin" /></label>   
+            <label for="accedi" hidden></label><input type="submit" name="accedi" id="home" value="Accedi come admin" />
         </li>
         <li>
-            <label><input type="submit" name="home" value="Continua senza accedere" /></label>
+            <label for="home" hidden></label><input type="submit" name="home" id="home" value="Continua senza accedere" />
         </li>
     </ul>
 </form>

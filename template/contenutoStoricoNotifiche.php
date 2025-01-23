@@ -1,5 +1,5 @@
 <form action="" method="POST">
-    <input type="submit" name="cancellanotifiche" value="Elimina Tutte">
+    <label for="cancNot" hidden></label><input type="submit" id="cancNot" name="cancellanotifiche" value="Elimina Tutte">
 </form>
 <?php if(isset($templateParams["errore"])): ?>
     <p> <?php echo $templateParams["errore"];?></p>
@@ -17,8 +17,8 @@
             <?php echo $notifica["TestoNotifica"]; ?>
         </div>
         <form action="" method="POST">
-            <input type="hidden" name="IdNotifica" value ="<?php echo $notifica["IdNotifica"] ?>"/>
-            <input type="submit" name="rimuovi" value="Rimuovi"/>
+            <label for="idNot" hidden></label><input type="hidden" id="idNot" name="IdNotifica" value ="<?php echo $notifica["IdNotifica"] ?>"/>
+            <label for="rimuovi" hidden></label><input type="submit" id="rimuovi" name="rimuovi" value="Rimuovi"/>
         </form>
     <?php endforeach ?>   
 </section>

@@ -4,6 +4,7 @@ require_once("bootstrap.php");
 session_start();
 
 $templateParams["articolo"] = $dbh->getProdotto($_GET["IDProdotto"]);
+$templateParams["isUtenteAdmin"] = $dbh->isUtenteAdmin($_SESSION["E_mail"]);
 $templateParams["titolo"] = "Grimilde's - ".$templateParams["articolo"][0]["NomeProdotto"];
 $templateParams["nome"] = "contenutoProdotto.php";
 

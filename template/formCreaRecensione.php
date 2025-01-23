@@ -30,7 +30,7 @@
 
         </li>
         <li>
-            <input type="submit" name="creaRecensione" value="Pubblica" />
+            <label for="creaRecensione" hidden></label><input type="submit" id="creaRecensione" name="creaRecensione" value="Pubblica" />
         </li>
         <li>
             <a href="index.php">Indietro</a>
