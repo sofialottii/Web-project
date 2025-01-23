@@ -121,7 +121,7 @@ class DatabaseHelper{
 
     /* PRODOTTO */
     public function getProdotto($IDProdotto){
-        $stmt = $this->db->prepare("SELECT P.IDProdotto, NomeProdotto, DescrizioneProdotto, ImmagineProdotto, Peso, PrezzoProdotto 
+        $stmt = $this->db->prepare("SELECT P.IDProdotto, NomeProdotto, DescrizioneProdotto, ImmagineProdotto, Peso, PrezzoProdotto, QuantitaDisponibile, Visibile 
                                         FROM PRODOTTO P, TARIFFARIO T
                                         WHERE P.IDProdotto = T.IDProdotto
                                         AND P.IDProdotto = ?");
@@ -425,6 +425,41 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    /* QUERY ESCLUSIVE PER GLI ADMIN */
+
+    public function getQuantitaProdotto($IDProdotto) {
+        $stmt = $this->db->prepare("SELECT QuantitaDisponibile
+                                    FROM PRODOTTO
+                                    WHERE IDProdotto = ?");
+        $stmt->bind_param("i", $IDProdotto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
+    public function cambiaQuantitaProdotto($IDProdotto, $nuovaQuantita) {
+        $stmt = $this->db->prepare("UPDATE PRODOTTO
+                                    SET QuantitaDisponibile = ?
+                                    WHERE IDProdotto = ?");
+        $stmt->bind_param("ii", $nuovaQuantita, $IDProdotto);
+        $stmt->execute();
+    }
+
+    public function cambiaVisibilitaProdotto($IDProdotto, $visibilita) {
+        $stmt = $this->db->prepare("UPDATE PRODOTTO
+                                    SET Visibile = ?
+                                    WHERE IDProdotto = ?");
+        $stmt->bind_param("si", $visibilita, $IDProdotto);
+        $stmt->execute();
+    }
+
+    public function cambiaPrezzoProdotto($IDProdotto, $nuovoPrezzo) {
+        $stmt = $this->db->prepare("UPDATE TARIFFARIO
+                                    SET PrezzoProdotto = ?
+                                    WHERE IDProdotto = ?");
+        $stmt->bind_param("di", $nuovoPrezzo, $IDProdotto);
+        $stmt->execute();
     }
 }
 

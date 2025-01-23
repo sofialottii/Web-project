@@ -1,5 +1,5 @@
 <form action="#" method="GET">
-    <label for="inviaRic" hidden></label><input type="submit" id="inviaRic" value="Invia richiesta"/>
+    <label for="inviaRic" hidden></label><input type="submit" id="inviaRic" value="Cerca"/>
     <label for="cercaProd" hidden></label><input type="search" id="cercaProd" name="CercaProdotto" placeholder="Cerca per nome..."/>
 </form>
 <?php foreach($templateParams["prodotti"] as $prodotto): ?>
@@ -17,7 +17,7 @@
         </section>
         <footer>
             <p><?php echo $prodotto["NomeProdotto"]; ?></p>
-            <p><?php echo $prodotto["PrezzoProdotto"]; ?></p>
+            <p>Prezzo per 100 gr: €<?php echo $prodotto["PrezzoProdotto"]; ?>0</p>
         </footer>
     </article>
 </form>

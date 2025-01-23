@@ -1,6 +1,6 @@
 <section>
     <h2>TRACCIAMENTO ORDINE</h2>
-    <p>Numero ordine: <?php echo $templateParams["ordine"][0]["IDOrdine"] ?></p>
+    <p>Numero ordine: 00<?php echo $templateParams["ordine"][0]["IDOrdine"] ?></p>
     <ul>
         <li><label for="inPreparazione" hidden></label><input type="radio" id="inPreparazione" name="stato" value="inPreparazione" <?php if($templateParams["ordine"][0]["StatoSpedizione"] == "InPreparazione"):
         echo "checked"; endif; ?> disabled> In preparazione</li>

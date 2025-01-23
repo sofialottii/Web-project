@@ -17,7 +17,7 @@
         </section>
         <footer>
             <p><?php echo $prodotto["NomeProdotto"]; ?></p>
-            <p><?php echo $prodotto["PrezzoProdotto"]; ?></p>
+            <p>Prezzo per 100 gr: €<?php echo $prodotto["PrezzoProdotto"]; ?>0</p>
         </footer>
     </article>
 </form>

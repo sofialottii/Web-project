@@ -50,11 +50,6 @@
 
     </form>
 </section>
-    <!--<div>
-        </se/?php foreach($templateParams["profilo"] as $info):?>
-        <option value="<//?php echo $info["NumeroCarta"]; ?>"> </option>
-
-    </div>-->
 
     <section>
         <h2>Indirizzo di Spedizione</h2>

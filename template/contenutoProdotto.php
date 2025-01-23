@@ -13,8 +13,8 @@
             <li>
                 <p><?php echo $templateParams["articolo"][0]["NomeProdotto"]; ?></p>
             </li>
-            <li>
-                <p>€<?php echo $templateParams["articolo"][0]["PrezzoProdotto"]; ?></p>
+                <p id="prezzoTotale" data-prezzo-unitario="<?php echo $templateParams["articolo"][0]["PrezzoProdotto"]; ?>">
+                €<?php echo $templateParams["articolo"][0]["PrezzoProdotto"]; ?></p>
             </li>
             <li>
                 <p><?php echo $templateParams["articolo"][0]["DescrizioneProdotto"]; ?></p>
@@ -29,7 +29,11 @@
                 <p>Quantità:</p>
             </li>
             <li>
-                <label for="quantita" hidden></label><input type="number" name="quantita" id="quantita" min="1" max="10" value="1" />
+                <label for="quantita" hidden></label>
+                <input type="number" name="quantita" id="quantita" min="1" max="10" value="1" />
+            </li>
+            <li>
+                <a href="acquisto.php">Torna agli acquisti</a>
             </li>
             <li>
                 <label for="aggiungiCarrello" hidden></label><input type="submit" name="aggiungiCarrello" id="aggiungiCarrello" value="AGGIUNGI AL CARRELLO" />
@@ -42,19 +46,22 @@
         <form action="" method="POST">
             <ul>
                 <li>
-                    <p>Disponibilità prodotto:</p>
+                    <p>Disponibilità prodotto attuale: <?php echo $templateParams["articolo"][0]["QuantitaDisponibile"]; ?></p>
                 </li>
                 <li>
-                    <label for="quantitaRifornimento" hidden></label><input type="number" name="quantitaRifornimento" id="quantitaRifornimento" min="0" value="1" /> <!--in value metterò la quantità presa da databse -->
+                    <label for="quantitaRifornimento" hidden></label><input type="number" name="quantitaRifornimento" id="quantitaRifornimento" min="-<?php echo $templateParams["articolo"][0]["QuantitaDisponibile"]; ?>" value="1" />
                 </li>
                 <li>
-                    <label for="cambiaRifornimento" hidden></label><input type="submit" name="cambiaRifornimento" id="cambiaRifornimento" value="CAMBIA RIFORNIMENTO" />
+                    <label for="cambiaRifornimento" hidden></label><input type="submit" name="cambiaRifornimento" id="cambiaRifornimento" value="RIFORNISCI" />
                 </li>
                 <li>
-                    <label for="nuovoPrezzo">Nuovo prezzo:</label><input type="text" id="nuovoPrezzo" name="nuovoPrezzo" />
+                    <label for="nuovoPrezzo">Nuovo prezzo:</label><input type="number" id="nuovoPrezzo" name="nuovoPrezzo" min="0" step="0.01" placeholder="€<?php echo $templateParams["articolo"][0]["PrezzoProdotto"] ?>" />
                 </li>
                 <li>
                     <label for="cambiaPrezzo" hidden></label><input type="submit" id="cambiaPrezzo" name="cambiaPrezzo" value="CAMBIA PREZZO" />
+                </li>
+                <li>
+                    <label for="cambiaVisibilita" hidden></label><input type="submit" id="cambiaVisibilita" name="cambiaVisibilita" value="Rendi <?php if($templateParams["articolo"][0]["Visibile"] == 'Y'):?>invisibile<?php else:?>visibile<?php endif;?>" />
                 </li>
             </ul>
         </form>
@@ -84,4 +91,18 @@
             console.error("Errore:", error);
         });
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const quantitaInput = document.getElementById("quantita");
+    const prezzoTotale = document.getElementById("prezzoTotale");
+    const prezzoUnitario = parseFloat(prezzoTotale.dataset.prezzoUnitario);
+
+    // Aggiungi un listener per il cambiamento del valore della quantità
+    quantitaInput.addEventListener("input", function () {
+        const quantita = parseInt(this.value) || 1; // Prevenire valori non numerici
+        const nuovoPrezzo = (prezzoUnitario * quantita).toFixed(2);
+        prezzoTotale.textContent = `€${nuovoPrezzo}`;
+    });
+});
+
 </script>
