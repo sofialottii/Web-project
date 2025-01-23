@@ -30,7 +30,7 @@ if(isset($_POST["cancellanotifiche"])){
 
 if(isset($_POST["rimuovi"])){
     $dbh->rimuoviNotifica($_POST["IdNotifica"]);
-    header("location: storicoNotifiche.php");
+    header("location: #");
     exit;
 }
 

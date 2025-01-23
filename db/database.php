@@ -359,7 +359,7 @@ class DatabaseHelper{
         $stmt = $this->db->prepare("SELECT IdNotifica, TipoNotifica, TestoNotifica, DataNotifica
                                     FROM NOTIFICA
                                     WHERE E_mail=?
-                                    ORDER BY IdNotifica");
+                                    ORDER BY IdNotifica DESC");
         $stmt->bind_param("s",$utente);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -370,7 +370,7 @@ class DatabaseHelper{
         $stmt = $this->db->prepare("SELECT IdNotifica, TipoNotifica, TestoNotifica, DataNotifica
                                     FROM NOTIFICA
                                     WHERE NotificaAdmin='Y'
-                                    ORDER BY IdNotifica");
+                                    ORDER BY IdNotifica DESC");
         //$stmt->bind_param("s",'Y');
         $stmt->execute();
         $result = $stmt->get_result();
