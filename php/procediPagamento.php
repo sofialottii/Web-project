@@ -6,6 +6,20 @@ session_start();
 
 $templateParams["carrello"] = $dbh->getCarrello($_SESSION["E_mail"]);
 
+if(isset($_POST["pagaConVecchiaCarta"])){
+    /*salvo il mio ordine. Creo ogni associazione di "contiene". Svuoto il carrello dell'utente in sessione*/
+    $dataOggi = date('Y-m-d H:i:s');
+    $importoTotale = prezzoTotale($templateParams["carrello"]);
+    $IDOrdine = count($dbh->getNumeroOrdini($_SESSION["E_mail"])) + 1;
+    $dbh->creaOrdine($IDOrdine, $dataOggi, $importoTotale, NULL, $_SESSION["E_mail"], "InPreparazione");
+    foreach ($templateParams["carrello"] as $associazioneCarrello){
+        $dbh->creaAssociazioneContiene($IDOrdine, $dataOggi, intval($associazioneCarrello["IDProdotto"]), intval($associazioneCarrello["QuantitaInCarrello"]));
+    }
+    $dbh->svuotaCarrello($_SESSION["E_mail"]);
+    header ("location: pagamentoEffettuato.php?IDOrdine=$IDOrdine");
+    exit;
+}
+
 if(isset($_POST["pagaConNuovaCarta"])){
     $nomeIntestatarioCarta = $_POST["nome"];
     $cognomeIntestatarioCarta = $_POST["cognome"];

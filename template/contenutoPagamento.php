@@ -46,6 +46,7 @@
                 <option value="<?php echo $carta["NumeroCarta"]; ?>"><?php echo $carta["NumeroCarta"]; ?></option>
             <?php endforeach; ?>
         </select>
+        <label for="pagaVecchia" hidden></label><input type="submit" id="pagaVecchia" name="pagaConVecchiaCarta" value="Paga Ora" />
 
     </form>
 </section>
