@@ -443,10 +443,11 @@ class DatabaseHelper{
     /* ORDINI SINGOLI */
     public function getElementiOrdini($id){
         $utente = $_SESSION["E_mail"];
-        $stmt = $this->db->prepare("SELECT c.IDProdotto, p.NomeProdotto, c.QuantitaOrdinata, t.PrezzoProdotto, (c.QuantitaOrdinata * t.PrezzoProdotto) AS Subtotale
+        $stmt = $this->db->prepare("SELECT c.IDProdotto, p.NomeProdotto, c.QuantitaOrdinata, t.PrezzoProdotto, p.ImmagineProdotto,
+                                    (c.QuantitaOrdinata * t.PrezzoProdotto) AS Subtotale
                                     FROM contiene c JOIN  PRODOTTO p ON c.IDProdotto = p.IDProdotto JOIN TARIFFARIO t ON c.IDProdotto = t.IDProdotto
                                     WHERE c.IDOrdine = ? AND EXISTS ( SELECT 1 FROM ORDINE o WHERE o.IDOrdine = c.IDOrdine AND o.E_mail = ?)");
-        $stmt->bind_param("si",$utente,$id);
+        $stmt->bind_param("is",$id,$utente);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);

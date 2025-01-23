@@ -13,7 +13,7 @@
             </button>    
         </header>
         <section>
-            <img src="<?php echo $prodotto["ImmagineProdotto"]; ?>" alt="<?php echo $prodotto["NomeProdotto"]; ?>" />
+            <img src="<?php echo $prodotto["ImmagineProdotto"]; ?>.jpg" alt="<?php echo $prodotto["NomeProdotto"]; ?>" />
         </section>
         <footer>
             <p><?php echo $prodotto["NomeProdotto"]; ?></p>

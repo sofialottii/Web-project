@@ -54,7 +54,7 @@
     <section>
         <h2>Indirizzo di Spedizione</h2>
         Via dell'universit&agrave 30, Cesena
-        <img src="mappa.png" alt="mappa">
+        <img src="../utils/img/mappa.png" alt="mappa">
     </section>
 </section>
 
