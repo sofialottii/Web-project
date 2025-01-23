@@ -27,7 +27,7 @@ if(isUserLoggedIn()){
         foreach($lista_parametri as $parametro){
             if($parametro == "" ){
                 $error=true;
-                $templateParams["erroreDati"]="Inserire tutti i parametri!git p";
+                $templateParams["erroreDati"]="Inserire tutti i parametri!";
             }
         }
 

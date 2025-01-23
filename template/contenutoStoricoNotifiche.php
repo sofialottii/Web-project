@@ -17,9 +17,6 @@
                 <section>
                     <?php echo $notifica["DataNotifica"]; ?>
                 </section>
-                <footer>
-                    <?php echo $notifica["TestoNotifica"]; ?>
-                </footer>
             </article>
         </form>
         <form action="" method="POST">

@@ -393,6 +393,18 @@ class DatabaseHelper{
         $stmt->bind_param("s", $utente);
         $stmt->execute();
     }
+    public function getNotifica($id){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("SELECT IdNotifica, TipoNotifica, TestoNotifica, DataNotifica
+                                    FROM NOTIFICA
+                                    WHERE E_mail=?
+                                    AND IdNotifica=?
+                                    ORDER BY IdNotifica DESC");
+        $stmt->bind_param("si",$utente,$id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
     /* STORICO ORDINI */
     public function getOrdini(){

@@ -14,14 +14,10 @@
         possibile che sia cos&igrave veloce vi chiederete, la risposta &egrave semplicissima: abbiamo<strong> pi&ugrave di 100 fornitori</strong> 
         sparsi in tutto il paese, su cui effettuiamo un rigorosissimo controllo di qualit&agrave (per verificare che sia all'altezza degli 
         standard di Grimilde).<br>
-        Il nostro emporio vi permette di scegliere tra un'ampia gamma di frutta deliziosa e appena raccolta dal nostro fornitore pi&ugrave 
+        Il nostro emporio vi permette di scegliere tra un'ampia gamma di frutta deliziosa e <strong>appena raccolta</strong> dal nostro fornitore pi&ugrave 
         vicino a casa vostra, questo ci permette anche di andare a ridurre al minimo le emissioni e i danni all'ambiente!<br>
         Acquista sul nostro sitto per fare un ottima, gustosissima e super salutare merenda. <strong>Provate la  frutta di Grimilde per
         essere anche voi, i pi&ugrave belli del reame!</strong>
-        <!--L'emporio di Grimilde è un servizio di <strong>spesa online</strong> su cui puoi acquistare
-        prodotti sostenibili e di qualità e riceverli a casa in <strong>meno di 48h.</strong><br>
-        Portiamo sulla tua tavola solo prodotti autentici e genuini,
-        di cui sosteniamo e valorizziamo la tracciabilità-->
     </p>
 </article>
 
