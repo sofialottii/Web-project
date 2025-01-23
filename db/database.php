@@ -366,6 +366,17 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getNotificheAdmin(){
+        $stmt = $this->db->prepare("SELECT IdNotifica, TipoNotifica, TestoNotifica, DataNotifica
+                                    FROM NOTIFICA
+                                    WHERE NotificaAdmin='Y'
+                                    ORDER BY IdNotifica");
+        //$stmt->bind_param("s",'Y');
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function rimuoviNotifica($id){
         $utente = $_SESSION["E_mail"];
         $stmt = $this->db->prepare("DELETE FROM notifica

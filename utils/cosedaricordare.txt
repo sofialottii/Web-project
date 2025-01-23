@@ -21,9 +21,18 @@ PAGAMENTO_EFFETTUATO+
 STORICO_NOTIFICHE+
 STORICO_ORDINI +
 
-numerorece
+numerorece+
+
+se utente amministratore=y
+select .... notifiche.... where amministratore=y
 
 
+poi controllo notifiche specifiche (vedi frutta e carrello)
+
+testo home
+
+bottone accetta pagamento
+(sofi say: basta che gli metti un required nel tag html così non c'è bisogno di fare controlli a php, non puoi inviare fino a che non è spuntato)
 
 COSE DA AGGIUNGERE:
 -possibilità di recuperare la password se viene dimenticata

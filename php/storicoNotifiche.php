@@ -4,9 +4,14 @@ session_start();
 
 $templateParams["titolo"] = "Grimilde's - Notifiche"; //title
 $templateParams["nome"] = "contenutoStoricoNotifiche.php";
-
+$utente=$_SESSION["E_mail"];
 if(isUserLoggedIn()){
-$templateParams["notifiche"] = $dbh->getNotifiche();
+    if($dbh->isUtenteAdmin($_SESSION["E_mail"])){
+        $templateParams["notifiche"] = $dbh->getNotificheAdmin();
+    }
+    else{
+        $templateParams["notifiche"] = $dbh->getNotifiche();
+    }
 }
 else{
     header("location: login.php");
