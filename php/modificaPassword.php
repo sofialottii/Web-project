@@ -19,11 +19,11 @@ if(isset($_POST["aggiornaPassword"])){
 
     $login_result = $dbh->checkLogin($_SESSION["E_mail"], $vecchia_password);
     if(empty($login_result)){
-        $templateParams["errorelogin"] = "Errore! password Errata";
+        $templateParams["errorelogin"] = "Errore! Vecchia password Errata.";
     }
 
-    if(!checkPassword($nuova_password, $conferma_password)){
-        $templateParams["erroreRegister"] = "Le password non coincidono";
+    else if(!checkPassword($nuova_password, $conferma_password)){
+        $templateParams["errorelogin"] = "Le password non coincidono. Riprovare.";
     }
     else{
         $dbh->modificaPassword($nuova_password);

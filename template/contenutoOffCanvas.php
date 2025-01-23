@@ -22,7 +22,7 @@
                 <li><a href="fruttaPreferita.php">Frutta Preferita</a></li>
                 <li><a href="carrello.php">Carrello</a></li>
                 <li><a href="carrello.php">I miei ordini</a></li>
-                <li><a href="carrello.php">Notifiche</a></li>
+                <li><a href="storicoNotifiche.php">Notifiche</a></li>
             </ul>
         </section>
 
