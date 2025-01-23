@@ -33,8 +33,12 @@ if (isset($_GET['IDProdotto'])) {
     exit;
 }
 
+if ($dbh->isUtenteAdmin($_SESSION["E_mail"])){
+    $templateParams["prodotti"] = $dbh->getProdotti($cercaProdotto);
+} else {
+    $templateParams["prodotti"] = $dbh->getProdottiUtenti($cercaProdotto);
+}
 
-$templateParams["prodotti"] = $dbh->getProdotti($cercaProdotto);
 $templateParams["carrello"] = $dbh->getCarrello($_SESSION["E_mail"]);
 
 require("../template/base.php");

@@ -78,6 +78,19 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
+    } //questa query è per gli admin perché non controlla la Visibile = Y
+
+    public function getProdottiUtenti($cercaProdotto){
+        $cercaProdotto = "%".$cercaProdotto."%";
+        $stmt = $this->db->prepare("SELECT P.IDProdotto, NomeProdotto, ImmagineProdotto, Peso, PrezzoProdotto 
+                                    FROM PRODOTTO P, TARIFFARIO T
+                                    WHERE P.IDProdotto = T.IDProdotto
+                                    AND NomeProdotto LIKE ?
+                                    AND Visibile = 'Y'");
+        $stmt->bind_param("s", $cercaProdotto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     public function checkProdottoPreferito($IDprodotto){
