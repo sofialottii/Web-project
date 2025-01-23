@@ -21,3 +21,4 @@
         </li>
     </ul>
 </form>
+<img src="../utils/img/Grimilde-CestoMele.png" alt="Grimilde con un cesto di mele">
