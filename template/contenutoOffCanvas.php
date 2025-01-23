@@ -19,9 +19,14 @@
         <section>
             <ul>
                 <li><a href="profilo.php">Account</a></li>
+                <?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
                 <li><a href="fruttaPreferita.php">Frutta Preferita</a></li>
                 <li><a href="carrello.php">Carrello</a></li>
                 <li><a href="ordini.php">I miei ordini</a></li>
+                <?php else: ?>
+                <li><a href="acquisto.php">Gestisci Prodotti</a></li>
+                <li><a href="ordini.php">Visualizza ordini</a></li>
+                <?php endif; ?>
                 <li><a href="storicoNotifiche.php">Notifiche</a></li>
             </ul>
         </section>

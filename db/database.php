@@ -111,6 +111,7 @@ class DatabaseHelper{
                                         FROM PRODOTTO P, TARIFFARIO T, PREFERITO pref
                                         WHERE P.IDProdotto = T.IDProdotto
                                         AND P.IDProdotto = pref.IDProdotto
+                                        AND Visibile = 'Y'
                                         AND pref.E_mail = ?");
         $stmt->bind_param("s", $_SESSION["E_mail"]);
         $stmt->execute();
@@ -380,11 +381,13 @@ class DatabaseHelper{
     }
 
     public function getNotificheAdmin(){
-        $stmt = $this->db->prepare("SELECT IdNotifica, TipoNotifica, TestoNotifica, DataNotifica
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("SELECT IdNotifica, TipoNotifica, TestoNotifica, DataNotifica, StatoNotifica
                                     FROM NOTIFICA
                                     WHERE NotificaAdmin='Y'
+                                    AND E_mail = ?
                                     ORDER BY IdNotifica DESC");
-        //$stmt->bind_param("s",'Y');
+        $stmt->bind_param("s",$utente);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
