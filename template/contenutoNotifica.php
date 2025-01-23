@@ -14,7 +14,7 @@
         </li>
         <form action="" method="POST">
             <li>
-                <label for="idNot" hidden></label><input type="hidden" id="idNot" name="IdNotifica" value ="<?php echo $templateParams["notifica"][0]["IdNotifica"]g?>"/>
+                <label for="idNot" hidden></label><input type="hidden" id="idNot" name="IdNotifica" value ="<?php echo $templateParams["notifica"][0]["IdNotifica"]?>"/>
             </li>
             <li>
                 <label for="rimuovi" hidden></label><input type="submit" id="rimuovi" name="rimuovi" value="Rimuovi"/>

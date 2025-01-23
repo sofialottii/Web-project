@@ -356,7 +356,7 @@ class DatabaseHelper{
     /* STORICO NOTIFICHE */ 
     public function getNotifiche(){
         $utente = $_SESSION["E_mail"];
-        $stmt = $this->db->prepare("SELECT IdNotifica, TipoNotifica, TestoNotifica, DataNotifica
+        $stmt = $this->db->prepare("SELECT IdNotifica, TipoNotifica, TestoNotifica, DataNotifica, StatoNotifica
                                     FROM NOTIFICA
                                     WHERE E_mail=?
                                     ORDER BY IdNotifica DESC");
@@ -404,6 +404,15 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function cambiaStatoNotifica($id){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("UPDATE NOTIFICA
+                                    SET StatoNotifica='Letta'
+                                    WHERE E_mail=? AND IdNotifica=?");
+        $stmt->bind_param("si", $utente, $id);
+        $stmt->execute();
     }
 
     /* STORICO ORDINI */

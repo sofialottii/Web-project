@@ -15,7 +15,9 @@
                     <p><?php echo $notifica["TipoNotifica"]; ?> </p>
                 </header>
                 <section>
-                    <?php echo $notifica["DataNotifica"]; ?>
+                    <p><?php echo $notifica["DataNotifica"]; ?></p>
+                    <p>Stato notifica: <?php if($notifica["StatoNotifica"]=="daLeggere"): ?>da leggere.<?php else: ?>letta.<?php endif; ?></p>
+                    
                 </section>
             </article>
         </form>
