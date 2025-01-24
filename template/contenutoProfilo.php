@@ -18,12 +18,13 @@
     <?php endforeach?>
     </table>
     <!--<form action="" method="POST">-->
+        <div class="text-center">
         <ul>
             <li><a href="index.php">Torna alla home</a></li>
             <li><a href="modificaCampi.php">Modifica campi</a> </li>
             <li><a href="modificaPassword.php">Modifica password</a></li>
-            
         </ul>
+        </div>
     <!--</form>-->
 
     <img src="../utils/img/Grimilde-CestoMele.png" alt="" class="text-center">
