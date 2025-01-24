@@ -1,5 +1,5 @@
 <section>
-    <h2> PROFILO</h2>
+    <h2>PROFILO</h2>
     <table>
     <?php foreach($templateParams["profilo"] as $info):?>
         <tr>
@@ -26,5 +26,5 @@
         </ul>
     <!--</form>-->
 
-    <img src="../utils/img/Grimilde-CestoMele.png" alt="Grimilde con un cesto di mele">
+    <img src="../utils/img/Grimilde-CestoMele.png" alt="" class="text-center">
 </section>

@@ -12,12 +12,15 @@ h1, h2 {
     /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
 }
 
-h2 > span {
+h2 span {
     color: #cc0000;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
 }
 
 
-body > header > h1, article > h2 {
+body > header > h1, article > h2, section > h2 {
     color: rgb(194, 31, 31);
     text-align: center;
     font-weight: 600;
@@ -80,7 +83,7 @@ body > main form {
 }
 
 body > main form input[type="submit"] {
-    width: 40%;
+    width: 60%;
     text-align: center;
     text-decoration: none;
     padding: 5px 10px;
@@ -101,13 +104,17 @@ main > *:not(:first-child img) {
     margin: 20px 5% 0;
 }
 
+main:not(:has(> img:first-child)) {
+    padding-top: 20px;
+}
+
 
 /* ARTICOLI INDEX */
 
 body > main > article, body > main > section {
     border: 2px solid rgb(15, 13, 13);
     border-radius: 5px;
-    padding: 10px 5%;
+    padding: 20px 5%;
     background-color: white;
 }
 
@@ -242,13 +249,55 @@ header div form input[type="submit"]:active {
     transform: scale(0.95);
 }
 
+/*RECENSIONI*/
 
-.star {
+
+section > form > ul > li > div > label  {
     font-size: 2rem;
     color: gray;
     cursor: pointer;
     transition: color 0.3s;
 }
+
+ul > li {
+    display: grid;
+    padding: 10px 0;
+}
+
+/*ul > li:last-child {
+    display: block;
+}*/
+
+ul > li:last-child > input[type="submit"] {
+    width: 30%;
+}
+
+textarea {
+    height: 150px;
+}
+
+/* PROFILO */
+
+table {
+    width: 100%;
+}
+
+td {
+    height: 30px;
+    font-size: 18px;
+    padding: 15px 5% 0;
+    vertical-align: bottom;
+}
+
+main > section > img:last-child{
+    margin-bottom: -20px;
+}
+
+section > ul > li {
+    padding-bottom: 0;
+}
+
+
 
 
 @media screen and (min-width:768px) {
