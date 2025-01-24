@@ -6,7 +6,8 @@ $templateParams["titolo"] = "Grimilde's - Storico Oridini"; //title
 $templateParams["nome"] = "listaOrdini.php";
 
 if(isUserLoggedIn()){
-$templateParams["ordini"] = $dbh->getOrdini();
+    $templateParams["ordini"] = $dbh->isUtenteAdmin($_SESSION["E_mail"]) ?
+    $dbh->getOrdiniAdmin() : $dbh->getOrdini();
 }
 else{
     header("location: login.php");

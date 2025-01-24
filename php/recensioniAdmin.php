@@ -1,5 +1,6 @@
-<?php 
+<?php
 require_once("bootstrap.php");
+
 session_start();
 
 if(isUserLoggedIn()){
@@ -16,8 +17,16 @@ else{
 $templateParams["canvas"] = "contenutoOffCanvas.php";
 comandiCanvas();
 
-$templateParams["titolo"] = "Grimilde's -Profilo - Pagamento"; //title
-$templateParams["nome"] = "contenuoPagamentoEffettuato.php";
+$templateParams["titolo"] = "Grimilde's - Recensioni"; 
+$templateParams["nome"] = "listaRecensioni.php"; 
+$templateParams["recensioni"] = $dbh->getAllRecensioni(); 
+
+if(isset($_POST["rimuovi"])){
+    $dbh->rimuoviRecesione($_POST["mailRecensione"], $_POST["dataRecensione"]);
+    header("location: #");
+    exit;
+}
+
 
 require("../template/base.php");
 ?>

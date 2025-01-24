@@ -19,6 +19,7 @@
     </table>
     <form action="">
         <ul>
+            <li><a href="index.php">Torna alla home</a></li>
             <li><a href="modificaCampi.php"> <label for="modCampi" hidden></label><input type="button" id="modCampi" value="Modifica Campi" /></a> </li>
             <li><a href="modificaPassword.php"> <label for="modPass" hidden></label><input type="button" id="modPass" value="Modifica Password" /></a></li>
             <!--<li><a href="https://studenti.unibo.it/sol/studenti/nuoveRichieste.htm?execution=e2s1"> <input

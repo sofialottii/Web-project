@@ -66,4 +66,26 @@ function checkErroriCarta($datiVecchiaCarta, $numeroCarta, $cvc, $dataScadenza, 
     return $errore;
 }
 
+function comandiCanvas(){
+    if (isset($_POST["logout"])) {
+    logout();
+    header("location: index.php");
+    exit;
+}
+if (isset($_POST["login"])) {
+    header("location: login.php");
+    exit;
+}
+
+if (isset($_POST["registrati"])) {
+    header("location: register.php");
+    exit;
+}
+
+if (isset($_POST["loginAdmin"])) {
+    header("location: areaRiservata.php");
+    exit;
+}
+}
+
 ?>

@@ -2,9 +2,11 @@
 require_once("bootstrap.php");
 session_start();
 
+
 $templateParams["titolo"] = "Grimilde's - Notifiche"; //title
 $templateParams["nome"] = "contenutoStoricoNotifiche.php";
 $utente=$_SESSION["E_mail"];
+
 if(isUserLoggedIn()){
     if($dbh->isUtenteAdmin($_SESSION["E_mail"])){
         $templateParams["notifiche"] = $dbh->getNotificheAdmin();

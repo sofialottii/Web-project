@@ -29,6 +29,20 @@ class DatabaseHelper{
     return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getAllRecensioni() { //QUERY ADMIN
+    $stmt = $this->db->prepare("
+        SELECT r.NumeroStelle, r.DataRecensione, 
+            r.TestoRecensione, c.Nome, c.Cognome, c.E_mail
+        FROM recensione r
+        JOIN cliente c
+        ON r.E_mail = c.E_mail
+        ORDER BY r.DataRecensione DESC");
+
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     /* REGISTER */
     public function registrazione($nome, $cognome, $email, $password, $dataNascita, $sesso){
         $stmt = $this->db->prepare("INSERT INTO CLIENTE (Nome, Cognome, E_mail, Password, DataNascita, Sesso)
@@ -434,7 +448,7 @@ class DatabaseHelper{
     /* STORICO ORDINI */
     public function getOrdini(){
         $utente = $_SESSION["E_mail"];
-        $stmt = $this->db->prepare("SELECT IDOrdine, DataOra, ImportoTotale
+        $stmt = $this->db->prepare("SELECT E_mail, IDOrdine, DataOra, ImportoTotale
                                     FROM ORDINE
                                     WHERE E_mail=?");
         $stmt->bind_param("s", $utente);
@@ -444,13 +458,12 @@ class DatabaseHelper{
     }
 
     /* ORDINI SINGOLI */
-    public function getElementiOrdini($id){
-        $utente = $_SESSION["E_mail"];
+    public function getElementiOrdini($id, $mail){
         $stmt = $this->db->prepare("SELECT c.IDProdotto, p.NomeProdotto, c.QuantitaOrdinata, t.PrezzoProdotto, p.ImmagineProdotto,
                                     (c.QuantitaOrdinata * t.PrezzoProdotto) AS Subtotale
                                     FROM contiene c JOIN  PRODOTTO p ON c.IDProdotto = p.IDProdotto JOIN TARIFFARIO t ON c.IDProdotto = t.IDProdotto
                                     WHERE c.IDOrdine = ? AND EXISTS ( SELECT 1 FROM ORDINE o WHERE o.IDOrdine = c.IDOrdine AND o.E_mail = ?)");
-        $stmt->bind_param("is",$id,$utente);
+        $stmt->bind_param("is",$id,$mail);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
@@ -489,6 +502,23 @@ class DatabaseHelper{
                                     WHERE IDProdotto = ?");
         $stmt->bind_param("di", $nuovoPrezzo, $IDProdotto);
         $stmt->execute();
+    }
+
+    public function getOrdiniAdmin(){
+        $stmt = $this->db->prepare("SELECT E_mail, IDOrdine, DataOra, ImportoTotale
+                                    FROM ORDINE
+                                    ORDER BY E_mail, IDOrdine DESC");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function rimuoviRecesione($mail, $data){
+        $stmt = $this->db->prepare("DELETE FROM recensione
+                                    WHERE E_mail = ?
+                                    AND DataRecensione = ?");
+        $stmt->bind_param("ss", $mail, $data);
+        $stmt->execute();                           
     }
 }
 

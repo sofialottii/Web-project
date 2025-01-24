@@ -4,10 +4,19 @@ require_once("bootstrap.php");
 
 session_start();
 
-if(!isUserLoggedIn()){
+if(isUserLoggedIn()){
+    $templateParams["profilo"] = $dbh->getProfilo();
+    $utente = $dbh->getProfilo()[0]["Nome"]." ".$dbh->getProfilo()[0]["Cognome"];
+    $sessoUtente = $dbh->getProfilo()[0]["Sesso"];
+}
+else{
     header("location: login.php");
     exit;
 }
+
+/*canvas*/
+$templateParams["canvas"] = "contenutoOffCanvas.php";
+comandiCanvas();
 
 
 $templateParams["titolo"] = "Grimilde's - Carrello";
@@ -21,6 +30,9 @@ if(isset($_POST["svuotaCarrello"])){
 }
 
 if(isset($_POST["rimuovi"])){
+    $quantitaAttualeProdotto = $dbh->getQuantitaProdotto($_POST["IDProdotto"]);
+    $nuovaQuantita = $quantitaAttualeProdotto[0] + $templateParams["carrello"][0]["QuantitaInCarrello"];
+    $dbh->cambiaQuantitaProdotto($_POST["IDProdotto"], $nuovaQuantita);
     $dbh->rimuoviProdottoCarrello($_SESSION["E_mail"], $_POST["IDProdotto"]);
     header("location: carrello.php");
     exit;

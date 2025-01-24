@@ -14,25 +14,7 @@ if (isUserLoggedIn()) {
     $sessoUtente = "";
 }
 $templateParams["canvas"] = "contenutoOffCanvas.php";
-if (isset($_POST["logout"])) {
-    logout();
-    header("location: index.php");
-    exit;
-}
-if (isset($_POST["login"])) {
-    header("location: login.php");
-    exit;
-}
-
-if (isset($_POST["registrati"])) {
-    header("location: register.php");
-    exit;
-}
-
-if (isset($_POST["loginAdmin"])) {
-    header("location: areaRiservata.php");
-    exit;
-}
+comandiCanvas();
 
 
 
@@ -46,6 +28,10 @@ if (isset($_POST["creaRecensione"])) {
     exit;
 }
 
+if (isset($_POST["vediRecensioni"])) {
+    header("location: recensioniAdmin.php");
+    exit;
+} 
 
 
 
@@ -59,13 +45,5 @@ $templateParams["recensioni"] = $dbh->getRecensioni(); //query, va in db.php e i
 
 //ogni pagina ha come ultima riga
 require("../template/base.php");
-
-
-/**
- * qui non c'è mai il HTML, sta solo nel template
- * viene sempre preso il base, che contiene header e footer. 
- * 
- * ci spostiamo a base
- */
 
 ?>

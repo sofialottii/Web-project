@@ -2,7 +2,7 @@
 require_once("bootstrap.php");
 session_start();
 
-$templateParams["titolo"] = "Grimilde's - Profilo - Modifica Password"; //title
+$templateParams["titolo"] = "Grimilde's - Modifica Password"; //title
 $templateParams["nome"] = "contenutoCambiaPassword.php";
 
 if(isUserLoggedIn()){

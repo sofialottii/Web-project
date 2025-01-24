@@ -9,14 +9,15 @@
             Quantit&agrave ordinata: <?php echo $elemento["QuantitaOrdinata"];?>
         </li>
         <li>
-            Prezzo unitario: <?php echo $elemento["PrezzoProdotto"];?>
+            Prezzo unitario: €<?php echo $elemento["PrezzoProdotto"];?>
         </li>
         <li>
-            Prezzo totale: <?php echo $elemento["Subtotale"];?>
+            Prezzo totale: €<?php echo $elemento["Subtotale"];?>
         </li>
         <li>
         <img src="<?php echo $elemento["ImmagineProdotto"];?>.jpg" alt="<?php echo $elemento["NomeProdotto"];?>">
         </li>
     </ul>
     <?php endforeach;?>
+    <a href="ordini.php">Indietro</a>
 </section>

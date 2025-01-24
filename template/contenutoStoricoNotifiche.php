@@ -38,4 +38,5 @@
         </script>
 
     <?php endforeach ?>   
+    <a href="index.php">Torna alla home</a>
 </section>

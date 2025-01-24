@@ -6,12 +6,14 @@
 <form action="prodotto.php" method="GET">
     <label for="idProd" hidden></label><input type="hidden" id="idProd" name="IDProdotto" value="<?php echo $prodotto['IDProdotto']; ?>" />
     <article id="prodotto_<?php echo $prodotto['IDProdotto']; ?>" class="cliccabile">
+        <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
         <header>
             <!--uso ajax per cambiare il cuore-->
             <label for="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>" hidden></label><button id="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>">
                 <img src="<?php echo checkPreferito($prodotto["IDProdotto"]); ?>" alt="cuore-vuoto" />        
-            </button>    
-        </header>
+            </button>   
+        </header> 
+        <?php endif; ?> 
         <section>
             <img src="<?php echo $prodotto["ImmagineProdotto"]; ?>.jpg" alt="<?php echo $prodotto["NomeProdotto"]; ?>" />
         </section>
@@ -54,14 +56,16 @@
 </script>
 
 <?php endforeach; ?>
-
+<a href="index.php">Torna alla home</a>
 <!-- bottone carrello -->
+<?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
 <form action="carrello.php" method="POST">
     <label for="vaiCarrello" hidden></label><button type="submit" id="vaiCarrello" value="Vai al carrello">
         <img src="../utils/img/icons/carrello.png" alt="carrello" />
         <nav><?php echo count($templateParams["carrello"]); ?></nav>
     </button>
 </form>
+<?php endif; ?>
 
 
 

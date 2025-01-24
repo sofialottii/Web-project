@@ -6,17 +6,22 @@
     <?php foreach($templateParams["ordini"] as $ordin): ?>
     <form action="ordineSingolo.php" method="GET">
         <label for="IDOrdine" hidden></label><input type="hidden" id="IDOrdine" name="IdSingoloOrdine" value="<?php echo $ordin["IDOrdine"]; ?>" />
+        <label for="IDE_mail" hidden></label><input type="hidden" id="IDE_mail" name="mail" value="<?php echo $ordin["E_mail"]; ?>" />
         <article class="cliccabile">
             <header>
-                <p>ORDINE 00<?php echo $ordin["IDOrdine"];?></p>
+                <p>ORDINE 00<?php echo $ordin["IDOrdine"];?>
+                <?php if($dbh->isUtenteAdmin($_SESSION["E_mail"])): ?> - <?php echo $ordin["E_mail"]; ?> <?php endif;?>
+            </p>
             </header>
             <section>
                 <p>Data: <?php echo $ordin["DataOra"]; ?></p>
                 <p>Importo: <?php echo $ordin["ImportoTotale"]; ?></p>
             </section>
+            <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
             <footer>
                 <p><a href="tracciamentoOrdine.php?IDOrdine=<?php echo $ordin["IDOrdine"]; ?>">Traccia ordine</a></p>
             </footer>
+            <?php endif; ?>
         
         </article>
     </form>
@@ -32,5 +37,6 @@
 
         </script>
         
-    <?php endforeach ?>   
+    <?php endforeach ?>
+    <a href="index.php">Torna alla home</a>  
 </section>

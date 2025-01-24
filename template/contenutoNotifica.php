@@ -20,6 +20,9 @@
                 <label for="rimuovi" hidden></label><input type="submit" id="rimuovi" name="rimuovi" value="Rimuovi"/>
             </li>
         </form>
+        <li>
+            <a href="storicoNotifiche.php">Indietro</a>
+        </li>
 
     </ul>
 </section>

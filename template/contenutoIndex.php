@@ -1,7 +1,7 @@
 <!--immagina tutto nel main-->
 <img src="../utils/img/frutta.jpg" alt="background" />
 <form action="" method="POST">
-    <label for="acquista" hidden></label><input type="submit" name="acquista" id="acquista" value="COMPRA ORA" />
+    <label for="acquista" hidden></label><input type="submit" name="acquista" id="acquista" value="<?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>COMPRA ORA<?php else: ?>GESTISCI PRODOTTI<?php endif; ?>" />
 </form>
 
 <article class="text-center">
@@ -46,6 +46,10 @@
     </article>
     <?php endforeach; ?>
     <form action="" method="POST" class="text-end">
+        <?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
         <label for="creaRecensione" hidden></label><input type="submit" name="creaRecensione" id="creaRecensione" value="Lascia una recensione" />
+        <?php else: ?>
+        <label for="vediRecensioni" hidden></label><input type="submit" name="vediRecensioni" id="vediRecensioni" value="Vedi tutte le recensioni" />
+        <?php endif; ?>
     </form>
 </article>
