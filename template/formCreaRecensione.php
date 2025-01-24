@@ -5,7 +5,7 @@
     <?php endif; ?>
     <ul>
         <li>
-            <label for="testoRecensione">Testo recensione</label><textarea id="testoRecensione" name="testoRecensione"></textarea>
+            <label for="testoRecensione">Testo recensione</label><textarea id="testoRecensione" name="testoRecensione" autocomplete="off"></textarea>
         </li>
         <li>
             <label for="numeroStelle">Seleziona stelle:</label>

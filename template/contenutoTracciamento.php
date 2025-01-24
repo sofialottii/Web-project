@@ -9,7 +9,5 @@
         <li><label for="consegnato" hidden></label><input type="radio" id="consegnato" name="stato" value="consegnato" <?php if ($templateParams["ordine"][0]["StatoSpedizione"] == "Consegnato"):
         echo "checked"; endif; ?> disabled> Consegnato</li>
     </ul>
-    <form action="index.php" method="post">
-        <label for="ritorna" hidden></label><input type="submit" id="ritorna" value="Torna alla home">
-    </form>
+    <p><a href="index.php">Torna alla home</a></p>
 </section>

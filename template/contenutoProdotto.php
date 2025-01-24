@@ -1,6 +1,6 @@
 <article>
     <section>
-        <img src="<?php echo $templateParams["articolo"][0]["ImmagineProdotto"]; ?>" alt="<?php echo $templateParams["articolo"][0]["NomeProdotto"]; ?>" />
+        <img src="<?php echo $templateParams['articolo'][0]['ImmagineProdotto']; ?>" alt="<?php echo $templateParams['articolo'][0]['NomeProdotto']; ?>" />
     </section>
     <section>
         <ul>
@@ -8,7 +8,7 @@
             <li>
                 <label for="cambia_cuore<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>" hidden></label>
                 <button id="cambia_cuore_<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>">
-                    <img src="<?php echo checkPreferito($templateParams["articolo"][0]['IDProdotto']); ?>" alt="cuore-vuoto" />        
+                    <img src="<?php echo checkPreferito($templateParams['articolo'][0]['IDProdotto']); ?>" alt="cuore-vuoto" />        
                 </button>
             </li>
             <?php endif; ?>
