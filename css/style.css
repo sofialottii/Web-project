@@ -82,7 +82,7 @@ body > main form {
     text-align: center;
 }
 
-body > main form input[type="submit"] {
+body > main form input[type="submit"], body > main > section > ul > li > a {
     width: 60%;
     text-align: center;
     text-decoration: none;
@@ -93,6 +93,10 @@ body > main form input[type="submit"] {
     color: #f4f4f4;
     font-weight: 600;
     /*background-color: rgb(255, 141, 139);*/
+}
+
+body>main>section>ul>li>a:hover {
+        background-color: #750000;
 }
 
 img {
