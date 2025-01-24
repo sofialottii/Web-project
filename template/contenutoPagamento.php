@@ -7,7 +7,6 @@
 <section>
     <h2>Metodo di pagamento</h2>
     <section>
-    <form action="PagamentoEffettuato.php" method="POST">
         <ul>
             <li>
                 <input type="radio" id="cartaSalvata" name="metodo_pagamento" value="carta_salvata" required />
@@ -21,22 +20,24 @@
                 <input type="radio" name="metodo_pagamento" value="contanti" disabled required />
                 <label for="metodo_pagamento">Contanti</label></li>
         </ul>
-    </form>
+    
     </section>
 
-    <section id="sezione-pagamento" style="display: none;">
-        
-        <ul>
-            <li><label for="nome">Nome </label><input type="text" id="nome" name="nome" required /></li>
-            <li><label for="cognome">Cognome </label><input type="text" id="cognome" name="cognome" required /></li>
-            <li><label for="numeroCarta">Numero Carta </label><input type="text" id="numeroCarta" name="numeroCarta" minlength="16" maxlength="16" required /></li>
-            <li><label for="scadenza">Scadenza </label><input type="month" id="scadenza" name="scadenza" required /></li>
-            <li><label for="cvv">CVV </label><input type="text" id="nome" name="cvv" placeholder="XXX" minlength="3" maxlength="3" required /></li>
-            <li><label for="memorizza"> Memorizzare carta</label><input type="checkbox" id="memorizza-carta" name="memorizza_carta" /></li>
-            <label for="pagaNuova" hidden></label><input type="submit" id="pagaNuova" name="pagaConNuovaCarta" value="Paga Ora" />
-        </ul>
-        
-    </section>
+    
+        <section id="sezione-pagamento" style="display: none;">
+            <form action="" method="POST">
+            <ul>
+                <li><label for="nome">Nome </label><input type="text" id="nome" name="nome" required /></li>
+                <li><label for="cognome">Cognome </label><input type="text" id="cognome" name="cognome" required /></li>
+                <li><label for="numeroCarta">Numero Carta </label><input type="text" id="numeroCarta" name="numeroCarta" minlength="16" maxlength="16" required /></li>
+                <li><label for="scadenza">Scadenza </label><input type="month" id="scadenza" name="scadenza" required /></li>
+                <li><label for="cvv">CVV </label><input type="text" id="nome" name="cvv" placeholder="XXX" minlength="3" maxlength="3" required /></li>
+                <li><label for="memorizza"> Memorizzare carta</label><input type="checkbox" id="memorizza-carta" name="memorizza_carta" /></li>
+                <label for="pagaNuova" hidden></label><input type="submit" id="pagaNuova" name="pagaConNuovaCarta" value="Paga Ora" />
+            </ul>
+            </form>
+        </section>
+    
 
     <section id="sezione-carta-salvata" style="display: none;">
         <form action="" method="POST">

@@ -24,6 +24,7 @@
             <?php endif; ?>
         
         </article>
+        <label for="bottoneSubmit" hidden></label><input type="submit" id="bottoneSubmit" name="bt" value="bt" hidden />
     </form>
 
         <script>

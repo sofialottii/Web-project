@@ -20,6 +20,7 @@
                     
                 </section>
             </article>
+            <label for="bottoneSubmit" hidden></label><input type="submit" id="bottoneSubmit" name="bt" value="bt" hidden />
         </form>
         <form action="" method="POST">
             <label for="idNot" hidden></label><input type="hidden" id="idNot" name="IdNotifica" value ="<?php echo $notifica["IdNotifica"] ?>"/>

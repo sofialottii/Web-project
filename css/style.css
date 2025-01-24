@@ -12,6 +12,11 @@ h1, h2 {
     /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
 }
 
+h2 > span {
+    color: #cc0000;
+}
+
+
 body > header > h1, article > h2 {
     color: rgb(194, 31, 31);
     text-align: center;
@@ -61,15 +66,20 @@ body > main {
     padding-bottom: 20px;
 }
 
-form > input[type="submit"]:hover {
-
+form input[type="submit"]:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
 }
 
-body > main > form {
+form input[type="submit"]:active {
+    transform: scale(1.05);
+}
+
+body > main form {
     text-align: center;
 }
 
-body > main > form > input[type="submit"] {
+body > main form input[type="submit"] {
     width: 40%;
     text-align: center;
     text-decoration: none;
@@ -91,7 +101,7 @@ main > *:not(:first-child img) {
 
 /* ARTICOLI INDEX */
 
-body > main > article {
+body > main > article, body > main > section {
     border: 2px solid rgb(15, 13, 13);
     border-radius: 5px;
     padding: 10px 5%;

@@ -17,15 +17,14 @@
         </tr>
     <?php endforeach?>
     </table>
-    <form action="">
+    <!--<form action="" method="POST">-->
         <ul>
             <li><a href="index.php">Torna alla home</a></li>
-            <li><a href="modificaCampi.php"> <label for="modCampi" hidden></label><input type="button" id="modCampi" value="Modifica Campi" /></a> </li>
-            <li><a href="modificaPassword.php"> <label for="modPass" hidden></label><input type="button" id="modPass" value="Modifica Password" /></a></li>
-            <!--<li><a href="https://studenti.unibo.it/sol/studenti/nuoveRichieste.htm?execution=e2s1"> <input
-            type="button" value="Rinuncia Agli Studi" /></a> </li>-->
+            <li><a href="modificaCampi.php">Modifica campi</a> </li>
+            <li><a href="modificaPassword.php">Modifica password</a></li>
+            
         </ul>
-    </form>
+    <!--</form>-->
 
     <img src="../utils/img/Grimilde-CestoMele.png" alt="Grimilde con un cesto di mele">
 </section>

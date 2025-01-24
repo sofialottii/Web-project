@@ -1,5 +1,6 @@
+<section>
 <form action="#" method="POST">
-    <h2>ME LA LASCI UNA RECENSIONE?</h2>
+    <h2><span>ME LA</span> LASCI UNA RECENSIONE?</h2>
     <?php if(isset($templateParams["erroreRecensione"])): ?>
     <p><?php echo $templateParams["erroreRecensione"]; ?></p>
     <?php endif; ?>
@@ -37,4 +38,5 @@
         </li>
     </ul>
 </form>
+</section>
 
