@@ -10,18 +10,19 @@
         <header>
             <!--uso ajax per cambiare il cuore-->
             <label for="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>" hidden></label><button id="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>">
-                <img src="<?php echo checkPreferito($prodotto["IDProdotto"]); ?>" alt="cuore-vuoto" />        
+                <img src="<?php echo checkPreferito($prodotto['IDProdotto']);?>" alt="cuore-vuoto" />        
             </button>   
         </header> 
         <?php endif; ?> 
         <section>
-            <img src="<?php echo $prodotto["ImmagineProdotto"]; ?>.jpg" alt="<?php echo $prodotto["NomeProdotto"]; ?>" />
+            <img src="<?php echo $prodotto['ImmagineProdotto'];?>.jpg" alt="<?php echo $prodotto["NomeProdotto"]; ?>" />
         </section>
         <footer>
             <p><?php echo $prodotto["NomeProdotto"]; ?></p>
             <p>Prezzo per 100 gr: €<?php echo $prodotto["PrezzoProdotto"]; ?>0</p>
         </footer>
     </article>
+    <label for="bottoneSubmit" hidden></label><input type="submit" id="bottoneSubmit" name="bt" value="bt" hidden />
 </form>
 
 <script>

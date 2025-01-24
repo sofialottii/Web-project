@@ -3,6 +3,6 @@
     Grazie per il pagamento
     <ul>
     <li><a href="tracciamentoOrdine.php?IDOrdine=<?php echo $_GET["IDOrdine"]; ?>"><label for="tracciamentoPagEff" hidden></label><input type="submit" id="tracciamentoPagEff" value="Tracciamento Ordine" /></a></li>
-    <li><a href="index.php"><label for="homePagamentoEff" hidden></label><input type="submit" id="homePagamentoEff" value="Home" /></a> </li>
+    <li><a href="index.php">Torna alla home</a></li>
     </ul>
 </section>

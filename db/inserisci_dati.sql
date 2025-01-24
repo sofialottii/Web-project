@@ -1,28 +1,28 @@
-INSERT INTO prodotto (IDProdotto,NomeProdotto,ImmagineProdotto,DescrizioneProdotto) VALUES
-(001, 'Mela', '../utils/img/mela', 'Croccante e succosa, ricca di fibre e vitamine. Perfetta come snack sano o per torte. Per 100 g: 52 kcal.'),
-(002, 'Pera', '../utils/img/pera', 'Dolce e succosa, con polpa morbida e ricca di fibre. Perfetta come spuntino o nei dolci. Per 100 g: 35 kcal.'),
-(003, 'Banana', '../utils/img/banana', 'Morbida e nutriente, ricca di potassio ed energia. Ottima per spuntini o frullati. Per 100 g: 65 kcal.'),
-(004, 'Kiwi', '../utils/img/kiwi', 'Ricco di vitamina C e antiossidanti, con un gusto acidulo. Ideale per insalate o smoothie. Per 100 g: 44 kcal.'),
-(005, 'Ananas', '../utils/img/ananas', 'Esotico e succoso, dal sapore dolce e rinfrescante. Ottimo fresco o nei dessert. Per 100 g: 40 kcal.'),
-(006, 'Fragola', '../utils/img/fragola', 'Dolce e profumata, ricca di antiossidanti. Deliziosa in dessert o da sola. Per 100 g: 27 kcal.'),
-(007, 'Ciliegia', '../utils/img/ciliegia', 'Piccola e succosa, con un gusto dolce e irresistibile. Perfetta da sola o nelle crostate. Per 100 g: 63 kcal.'),
-(008, 'Uva', '../utils/img/uva', 'Dolci chicchi succosi, ricchi di vitamine e polifenoli. Perfetta per snack o marmellate. Per 100 g: 60 kcal.'),
-(009, 'Pesca', '../utils/img/pesca', 'Polpa morbida e profumata, ricca di vitamine. Deliziosa al naturale o in confetture. Per 100 g: 30 kcal.'),
-(010, 'Mango', '../utils/img/mango', 'Esotico e dolce, con polpa succosa e ricca di vitamina A. Ottimo nei frullati o al naturale. Per 100 g: 53 kcal.'),
-(011, 'Melone', '../utils/img/melone', "Fresco e dolce, ricco di acqua e minerali. Perfetto per l'estate o come antipasto. Per 100 g: 34 kcal."),
-(012, 'Anguria', '../utils/img/anguria', 'Succosa e rinfrescante, con polpa ricca di acqua. Ideale per le giornate calde. Per 100 g: 30 kcal.'),
-(013, 'Limone', '../utils/img/limone', 'Fresco e aspro, ricco di vitamina C. Perfetto per insaporire piatti e bevande. Per 100 g: 11 kcal.'),
-(014, 'Arancia', '../utils/img/arancia', 'Dolce e succosa, una fonte eccellente di vitamina C. Ideale per spremute fresche. Per 100 g: 34 kcal.'),
-(015, 'Pompelmo', '../utils/img/pompelmo', 'Gusto agrumato e leggermente amaro, ricco di vitamine. Ottimo a colazione. Per 100 g: 26 kcal.'),
-(016, 'Mandarino', '../utils/img/mandarino', 'Dolce e succoso. Ricco di vitamina C, perfetto per spuntini veloci. Per 100 g: 72 kcal.'),
-(017, 'Clementina', '../utils/img/clementina', 'Simile al mandarino, ma senza semi. Delicata e dolce. Per 100 g: 40 kcal.'),
-(018, 'Ribes', '../utils/img/ribes', 'Dal sapore dolce-acidulo, ricche di antiossidanti. Perfette per dessert e decorazioni. Per 100 g: 28 kcal.'),
-(019, 'Lampone', '../utils/img/lampone', 'Morbido e dolce, con un tocco acidulo. Ottimo per dolci e smoothie. Per 100 g: 34 kcal.'),
-(020, 'Mirtillo', '../utils/img/mirtillo', 'Piccolo e gustoso, ricco di antiossidanti. Perfetto nei dolci o come spuntino salutare. Per 100 g: 25 kcal.'),
-(021, 'Fico', '../utils/img/fico', 'Dolce e succoso, con polpa morbida e ricca di fibre. Ottimo fresco o nei dessert. Per 100 g: 47 kcal.'),
-(022, 'Caco', '../utils/img/caco', 'Morbido e dolcissimo, con polpa vellutata. Ricco di zuccheri naturali e vitamine. Per 100 g: 70 kcal.'),
-(023, 'Prugna', '../utils/img/prugna', 'Polpa succosa e saporita, con un gusto dolce e leggermente acidulo. Per 100 g: 42 kcal.'),
-(024, 'Susina', '../utils/img/susina', 'Variante della prugna, dal sapore dolce e delicato. Perfetta per snack e marmellate. Per 100 g: 35 kcal.');
+INSERT INTO prodotto (IDProdotto,NomeProdotto,ImmagineProdotto,DescrizioneProdotto, QuantitaDisponibile) VALUES
+(001, 'Mela', '../utils/img/mela.jpg', 'Croccante e succosa, ricca di fibre e vitamine. Perfetta come snack sano o per torte. Per 100 g: 52 kcal.', 10),
+(002, 'Pera', '../utils/img/pera.jpg', 'Dolce e succosa, con polpa morbida e ricca di fibre. Perfetta come spuntino o nei dolci. Per 100 g: 35 kcal.', 10),
+(003, 'Banana', '../utils/img/banana.jpg', 'Morbida e nutriente, ricca di potassio ed energia. Ottima per spuntini o frullati. Per 100 g: 65 kcal.', 10),
+(004, 'Kiwi', '../utils/img/kiwi.jpg', 'Ricco di vitamina C e antiossidanti, con un gusto acidulo. Ideale per insalate o smoothie. Per 100 g: 44 kcal.', 10),
+(005, 'Ananas', '../utils/img/ananas.jpg', 'Esotico e succoso, dal sapore dolce e rinfrescante. Ottimo fresco o nei dessert. Per 100 g: 40 kcal.', 10),
+(006, 'Fragola', '../utils/img/fragola.jpg', 'Dolce e profumata, ricca di antiossidanti. Deliziosa in dessert o da sola. Per 100 g: 27 kcal.', 10),
+(007, 'Ciliegia', '../utils/img/ciliegia.jpg', 'Piccola e succosa, con un gusto dolce e irresistibile. Perfetta da sola o nelle crostate. Per 100 g: 63 kcal.', 10),
+(008, 'Uva', '../utils/img/uva.jpg', 'Dolci chicchi succosi, ricchi di vitamine e polifenoli. Perfetta per snack o marmellate. Per 100 g: 60 kcal.', 10),
+(009, 'Pesca', '../utils/img/pesca.jpg', 'Polpa morbida e profumata, ricca di vitamine. Deliziosa al naturale o in confetture. Per 100 g: 30 kcal.', 10),
+(010, 'Mango', '../utils/img/mango.jpg', 'Esotico e dolce, con polpa succosa e ricca di vitamina A. Ottimo nei frullati o al naturale. Per 100 g: 53 kcal.', 10),
+(011, 'Melone', '../utils/img/melone.jpg', "Fresco e dolce, ricco di acqua e minerali. Perfetto per l'estate o come antipasto. Per 100 g: 34 kcal.", 10),
+(012, 'Anguria', '../utils/img/anguria.jpg', 'Succosa e rinfrescante, con polpa ricca di acqua. Ideale per le giornate calde. Per 100 g: 30 kcal.', 10),
+(013, 'Limone', '../utils/img/limone.jpg', 'Fresco e aspro, ricco di vitamina C. Perfetto per insaporire piatti e bevande. Per 100 g: 11 kcal.', 10),
+(014, 'Arancia', '../utils/img/arancia.jpg', 'Dolce e succosa, una fonte eccellente di vitamina C. Ideale per spremute fresche. Per 100 g: 34 kcal.', 10),
+(015, 'Pompelmo', '../utils/img/pompelmo.jpg', 'Gusto agrumato e leggermente amaro, ricco di vitamine. Ottimo a colazione. Per 100 g: 26 kcal.', 10),
+(016, 'Mandarino', '../utils/img/mandarino.jpg', 'Dolce e succoso. Ricco di vitamina C, perfetto per spuntini veloci. Per 100 g: 72 kcal.', 10),
+(017, 'Clementina', '../utils/img/clementina.jpg', 'Simile al mandarino, ma senza semi. Delicata e dolce. Per 100 g: 40 kcal.', 10),
+(018, 'Ribes', '../utils/img/ribes.jpg', 'Dal sapore dolce-acidulo, ricche di antiossidanti. Perfette per dessert e decorazioni. Per 100 g: 28 kcal.', 10),
+(019, 'Lampone', '../utils/img/lampone.jpg', 'Morbido e dolce, con un tocco acidulo. Ottimo per dolci e smoothie. Per 100 g: 34 kcal.', 10),
+(020, 'Mirtillo', '../utils/img/mirtillo.jpg', 'Piccolo e gustoso, ricco di antiossidanti. Perfetto nei dolci o come spuntino salutare. Per 100 g: 25 kcal.', 10),
+(021, 'Fico', '../utils/img/fico.jpg', 'Dolce e succoso, con polpa morbida e ricca di fibre. Ottimo fresco o nei dessert. Per 100 g: 47 kcal.', 10),
+(022, 'Caco', '../utils/img/caco.jpg', 'Morbido e dolcissimo, con polpa vellutata. Ricco di zuccheri naturali e vitamine. Per 100 g: 70 kcal.', 10),
+(023, 'Prugna', '../utils/img/prugna.jpg', 'Polpa succosa e saporita, con un gusto dolce e leggermente acidulo. Per 100 g: 42 kcal.', 10),
+(024, 'Susina', '../utils/img/susina.jpg', 'Variante della prugna, dal sapore dolce e delicato. Perfetta per snack e marmellate. Per 100 g: 35 kcal.', 10);
 
 INSERT INTO stagione (NomeStagione) VALUES
 ('Primavera'),
@@ -121,5 +121,6 @@ INSERT INTO cliente (E_mail, `Password`, Nome, Cognome, DataNascita, Sesso, Imma
 ('silviamirri@gmail.com','admin','Silvia','Mirri','2000-01-01','Donna', 'X','Y');
 
 INSERT INTO recensione (NumeroStelle, DataRecensione, TestoRecensione, E_mail) VALUES
-(5.0, '2021-05-18', 'Ottimo prodotto! Riacquisterò sicuramente, 5 stelle meritate.', 'sofialotti17@gmail.com');
-
+(3.0, '2023-07-21', 'Qualche miglioramnento necessario per quello che riguarda la qualità dei prodotti. Per il resto, ottimo sito.', 'sofialotti17@gmail.com')
+(5.0, '2021-05-18', 'Ottimo e-commerce! Riacquisterò sicuramente, 5 stelle meritate.', 'sofialotti17@gmail.com'),
+(5.0, '2024-01-01', 'Fantastico.', 'sebastiano.lucarelli@gmail.com');

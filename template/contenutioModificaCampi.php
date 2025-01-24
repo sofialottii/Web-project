@@ -6,16 +6,16 @@
     <h2>MODIFICA IL TUO PROFILO</h2>
     <ul>
         <li>
-            <label for="nome">Nome</label><input type="text" id="nome" name="nome" value="<?php echo $templateParams["profilo"][0]["Nome"] ?>" />
+            <label for="nome">Nome</label><input type="text" id="nome" name="nome" autocomplete="on" value="<?php echo $templateParams["profilo"][0]["Nome"] ?>" />
         </li>
         <li>
-            <label for="cognome">Cognome</label><input type="text" id="cognome" name="cognome" value="<?php echo $templateParams["profilo"][0]["Cognome"] ?>" />
+            <label for="cognome">Cognome</label><input type="text" id="cognome" name="cognome" autocomplete="on" value="<?php echo $templateParams["profilo"][0]["Cognome"] ?>" />
         </li>       
         <li>
-            <label for="dataNascita">Data di nascita</label><input type="date" id="dataNascita" name="dataNascita" value="<?php echo $templateParams["profilo"][0]["DataNascita"] ?>" />
+            <label for="dataNascita">Data di nascita</label><input type="date" id="dataNascita" name="dataNascita" autocomplete="off" value="<?php echo $templateParams["profilo"][0]["DataNascita"] ?>" />
         </li>
         <li>
-            <label for="sesso">Sesso</label><select name="sesso" id="sesso">
+            <label for="sesso">Sesso</label><select name="sesso" id="sesso" autocomplete="off">
                 <option value="Nessuno" selected="selected" hidden>Scegli sesso</option>
                 <option value="Uomo">Uomo</option>
                 <option value="Donna">Donna</option>
@@ -25,7 +25,7 @@
         <li>
             <label for="ModificaCampi" hidden></label><input type="submit" name="ModificaCampi" id="ModificaCampi" value="Salva Modifiche" />
         </li>
-        <li><a href="profilo.php"><label for="indietro" hidden></label><input type="button" id="indietro" value="Ho Cambiato idea" /></a> </li>
+        <li><a href="profilo.php">Ho Cambiato idea</a> </li>
     </ul>
 </form>
 <img src="../utils/img/Grimilde-CestoMele.png" alt="Grimilde con un cesto di mele">
