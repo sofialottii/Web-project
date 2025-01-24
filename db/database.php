@@ -507,7 +507,7 @@ class DatabaseHelper{
     }
 
     /* ORDINI SINGOLI */
-    public function getElementiOrdine($id, $mail){
+    /*public function getElementiOrdini($id, $mail){
         $stmt = $this->db->prepare("SELECT c.IDProdotto, p.NomeProdotto, c.QuantitaOrdinata, t.PrezzoProdotto, p.ImmagineProdotto, o.ImportoTotale
                                     FROM contiene c
                                     JOIN PRODOTTO p ON c.IDProdotto = p.IDProdotto 
@@ -518,13 +518,13 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
-    }
+    }*/
 
 
 
-    public function getElementiOrdini($id, $mail){
+    public function getElementiOrdine($id, $mail){
         $stmt = $this->db->prepare("SELECT c.IDProdotto, p.NomeProdotto, c.QuantitaOrdinata, t.PrezzoProdotto, p.ImmagineProdotto,
-                                    (c.QuantitaOrdinata * t.PrezzoProdotto) AS Subtotale
+                                    (c.QuantitaOrdinata * t.PrezzoProdotto) AS ImportoTotale
                                     FROM contiene c JOIN PRODOTTO p
                                     ON c.IDProdotto = p.IDProdotto JOIN TARIFFARIO t ON c.IDProdotto = t.IDProdotto
                                     WHERE c.IDOrdine = ? AND EXISTS ( SELECT 1 FROM ORDINE o WHERE o.IDOrdine = c.IDOrdine AND o.E_mail = ?)");

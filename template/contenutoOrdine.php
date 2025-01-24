@@ -12,7 +12,7 @@
             Prezzo unitario: €<?php echo $elemento["PrezzoProdotto"];?>
         </li>
         <li>
-            Prezzo totale: €<?php echo $elemento["Subtotale"];?>
+            Prezzo totale: €<?php echo $elemento["ImportoTotale"];?>
         </li>
         <li>
         <img src="<?php echo $elemento['ImmagineProdotto'];?>" alt="<?php echo $elemento['NomeProdotto'];?>">
