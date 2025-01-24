@@ -37,7 +37,7 @@ create table PRODOTTO (
      ImmagineProdotto varchar(200) not null,
      DescrizioneProdotto varchar(200) not null,
      QuantitaDisponibile numeric(4) not null DEFAULT 0,
-     Visibile CHAR(1) not null DEFAULT 'Y'
+     Visibile CHAR(1) not null DEFAULT 'Y',
      primary key (IDProdotto)) ENGINE = INNODB;
      
 create table carrello (
@@ -64,10 +64,11 @@ create table CARTA_REGISTRATA (
 
 create table contiene (
      IDOrdine numeric(5) not null,
+     E_mail varchar(50) not null,
      DataOra datetime not null,
      IDProdotto numeric(5) not null,
      QuantitaOrdinata numeric(3) not null,
-     primary key (IDOrdine, IDProdotto)) ENGINE = INNODB;
+     primary key (IDOrdine, E_mail, IDProdotto)) ENGINE = INNODB;
 
 create table NOTIFICA (
      E_mail varchar(50) not null,
@@ -139,9 +140,9 @@ alter table contiene add constraint FKcon_PRO
      foreign key (IDProdotto)
      references PRODOTTO(IDProdotto);
 
-alter table contiene add constraint FKcon_ORD_FK
-     foreign key (IDOrdine)
-     references ORDINE(IDOrdine);
+alter table contiene add constraint FKcon_ORD
+     foreign key (IDOrdine, E_mail)
+     references ORDINE(IDOrdine, E_mail);
 
 alter table NOTIFICA add constraint FKriceve
      foreign key (E_mail)

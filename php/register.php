@@ -23,13 +23,13 @@ if(isset($_POST["iscriviti"])){
     if (count($dbh->checkEmail($email)) > 0){
         $errore = true;
         $templateParams["erroreRegister"] = "Email esistente, effettua il login";
-    }
+    }/*
     foreach ($lista_parametri as $parametro){
         if($parametro == ""){
             $errore = true;
             $templateParams["erroreRegister"] = "Compilare tutti i campi";
         }
-    }
+    }*/
     if(!$errore){
         $dbh->registrazione($nome, $cognome, $email, $password, $dataNascita, $sesso);
         $dbh->creaNotifica($email, 1, "Benvenuto", "Grazie per la tua registrazione al sito www.EmporioDiGrimilde.com, $nome!💖 Speriamo

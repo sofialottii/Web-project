@@ -375,9 +375,10 @@ class DatabaseHelper{
     }
 
     public function creaAssociazioneContiene($IDOrdine, $dataOggi, $IDProdotto, $quantita) {
-        $stmt = $this->db->prepare("INSERT INTO CONTIENE (IDOrdine, DataOra, IDProdotto, QuantitaOrdinata)
-                                    VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("isii", $IDOrdine, $dataOggi, $IDProdotto, $quantita);
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("INSERT INTO CONTIENE (IDOrdine, E_mail, DataOra, IDProdotto, QuantitaOrdinata)
+                                    VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("issii", $IDOrdine, $utente, $dataOggi, $IDProdotto, $quantita);
         $stmt->execute();
     }
 
@@ -506,10 +507,26 @@ class DatabaseHelper{
     }
 
     /* ORDINI SINGOLI */
+    public function getElementiOrdine($id, $mail){
+        $stmt = $this->db->prepare("SELECT c.IDProdotto, p.NomeProdotto, c.QuantitaOrdinata, t.PrezzoProdotto, p.ImmagineProdotto, o.ImportoTotale
+                                    FROM contiene c
+                                    JOIN PRODOTTO p ON c.IDProdotto = p.IDProdotto 
+                                    JOIN TARIFFARIO t ON c.IDProdotto = t.IDProdotto
+                                    JOIN ORDINE o ON o.IDOrdine = c.IDOrdine AND E_mail = ?
+                                    WHERE c.IDOrdine = ?");
+        $stmt->bind_param("si", $mail, $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
+
     public function getElementiOrdini($id, $mail){
         $stmt = $this->db->prepare("SELECT c.IDProdotto, p.NomeProdotto, c.QuantitaOrdinata, t.PrezzoProdotto, p.ImmagineProdotto,
                                     (c.QuantitaOrdinata * t.PrezzoProdotto) AS Subtotale
-                                    FROM contiene c JOIN  PRODOTTO p ON c.IDProdotto = p.IDProdotto JOIN TARIFFARIO t ON c.IDProdotto = t.IDProdotto
+                                    FROM contiene c JOIN PRODOTTO p
+                                    ON c.IDProdotto = p.IDProdotto JOIN TARIFFARIO t ON c.IDProdotto = t.IDProdotto
                                     WHERE c.IDOrdine = ? AND EXISTS ( SELECT 1 FROM ORDINE o WHERE o.IDOrdine = c.IDOrdine AND o.E_mail = ?)");
         $stmt->bind_param("is",$id,$mail);
         $stmt->execute();
