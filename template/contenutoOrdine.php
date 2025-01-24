@@ -15,7 +15,7 @@
             Prezzo totale: €<?php echo $elemento["Subtotale"];?>
         </li>
         <li>
-        <img src="<?php echo $elemento["ImmagineProdotto"];?>.jpg" alt="<?php echo $elemento["NomeProdotto"];?>">
+        <img src="<?php echo $elemento['ImmagineProdotto'];?>.jpg" alt="<?php echo $elemento['NomeProdotto'];?>">
         </li>
     </ul>
     <?php endforeach;?>
