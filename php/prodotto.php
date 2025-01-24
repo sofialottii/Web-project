@@ -35,6 +35,16 @@ if (isset($_POST["aggiungiCarrello"])) {
             $dbh->cambiaQuantitaProdotto($idProdotto, $nuovaQuantita);
         }
     }
+    if($nuovaQuantita == 0){
+        $Persone = $dbh->getAllMails();
+        foreach($Persone as $Persona){
+            if ($Persona["Amministratore"] == 'Y'){
+                $num = $dbh->getIDNotificaPiuAlta($Persona["E_mail"]);
+                $dbh->creaNotifica($Persona["E_mail"], $num+1, "Prodotto esaurito", "Il prodotto 00$idProdotto
+                è appena stato esaurito. <a href='prodotto.php?IDProdotto=$idProdotto'>Riforniscilo subito.</a>", "Y");
+            }
+        }
+    }
     header("location: acquisto.php");
     exit;
 }
@@ -43,6 +53,11 @@ if(isset($_POST["cambiaRifornimento"])){
     $confermaAggiunta = $_POST["quantitaRifornimento"] == "" ? 0 : $_POST["quantitaRifornimento"];
     $nuovaQuantita = $templateParams["articolo"][0]["QuantitaDisponibile"] + ($confermaAggiunta);
     $dbh->cambiaQuantitaProdotto($idProdotto, $nuovaQuantita);
+    $utente = $dbh->getProfilo()[0]["Nome"]." ".$dbh->getProfilo()[0]["Cognome"];
+    $num = $dbh->getIDNotificaPiuAlta($_SESSION["E_mail"]);
+    $dbh->creaNotifica($_SESSION["E_mail"], $num+1, "Prodotto rifornito", "$utente, hai appena
+    aggiunto $confermaAggiunta Hg. del prodotto $idProdotto al magazzino.", "Y");
+        
     header ("location: prodotto.php?IDProdotto=$idProdotto");
     exit;
 } else if(isset($_POST["cambiaPrezzo"])){

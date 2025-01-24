@@ -27,6 +27,19 @@ if(isset($_POST["creaRecensione"])){
         $numeroStelle = $_POST["rating"] ?? 0;
         $dataOggi = date("Y-m-d");
         $dbh->creaRecensione($_SESSION["E_mail"], $numeroStelle, $dataOggi, $testoRecensione);
+        /*notifica: */
+        $utente = $dbh->getProfilo()[0]["Nome"]." ".$dbh->getProfilo()[0]["Cognome"];
+        $num = $dbh->getIDNotificaPiuAlta($_SESSION["E_mail"]);
+        $dbh->creaNotifica($_SESSION["E_mail"], $num+1, "Recensione Salvata", "$utente, grazie mille per aver
+        condiviso la tua esperienza! 💬 Il tuo feedback è prezioso per noi e per la nostra community. Torna domani per lasciare una nuova recensione.", "N");
+        $Persone = $dbh->getAllMails();
+        foreach($Persone as $Persona){
+            if ($Persona["Amministratore"] == 'Y'){
+                $num = $dbh->getIDNotificaPiuAlta($Persona["E_mail"]);
+                $dbh->creaNotifica($Persona["E_mail"], $num+1, "Nuova recensione", "$utente ha appena pubblicato una
+                recensione. Visualizza e gestisci lo storico delle recensioni <a href='recensioniAdmin.php'>a questo link.</a>", "Y");
+            }
+        }
         header("location: index.php");
         exit;
     }

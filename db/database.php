@@ -387,11 +387,26 @@ class DatabaseHelper{
         $stmt = $this->db->prepare("SELECT IdNotifica, TipoNotifica, TestoNotifica, DataNotifica, StatoNotifica
                                     FROM NOTIFICA
                                     WHERE E_mail=?
+                                    AND NotificaAdmin = 'N'
                                     ORDER BY IdNotifica DESC");
         $stmt->bind_param("s",$utente);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function countNotificheDaLeggere(){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("SELECT COUNT(*) as numNotifiche
+                                    FROM NOTIFICA
+                                    WHERE StatoNotifica = 'daLeggere'
+                                    AND NotificaAdmin = 'N'
+                                    AND E_mail = ?");
+        $stmt->bind_param("s", $utente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row['numNotifiche'];
     }
 
     public function getNotificheAdmin(){
@@ -405,6 +420,39 @@ class DatabaseHelper{
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function countNotificheAdminDaLeggere(){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("SELECT COUNT(*) as numNotifiche
+                                    FROM NOTIFICA
+                                    WHERE StatoNotifica = 'daLeggere'
+                                    AND NotificaAdmin = 'Y'
+                                    AND E_mail = ?");
+        $stmt->bind_param("s", $utente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row['numNotifiche'];
+    }
+
+    public function creaNotifica($email, $idNotifica, $tipoNotifica, $testoNotifica, $notificaAdmin){
+        $stmt = $this->db->prepare("INSERT INTO NOTIFICA (E_mail, IdNotifica, TipoNotifica, TestoNotifica, DataNotifica, NotificaAdmin)
+                        VALUES (?, ?, ?, ?, ?, ?)");
+        $dataNotifica = date("Y-m-d H:i:s");
+        $stmt->bind_param("sissss", $email, $idNotifica, $tipoNotifica, $testoNotifica, $dataNotifica, $notificaAdmin);
+        $stmt->execute();
+    }
+
+    public function getIDNotificaPiuAlta($email){
+        $stmt = $this->db->prepare("SELECT MAX(IdNotifica) as maxIdNotifica
+                                    FROM NOTIFICA
+                                    WHERE E_mail = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row['maxIdNotifica'];
     }
 
     public function rimuoviNotifica($id){
@@ -519,6 +567,14 @@ class DatabaseHelper{
                                     AND DataRecensione = ?");
         $stmt->bind_param("ss", $mail, $data);
         $stmt->execute();                           
+    }
+
+    public function getAllMails(){
+        $stmt = $this->db->prepare("SELECT E_mail, Amministratore
+                                        FROM CLIENTE");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 }
 

@@ -14,11 +14,17 @@ if(isUserLoggedIn()){
     else{
         $templateParams["notifiche"] = $dbh->getNotifiche();
     }
-}
-else{
+    $utente = $dbh->getProfilo()[0]["Nome"]." ".$dbh->getProfilo()[0]["Cognome"];
+    $sessoUtente = $dbh->getProfilo()[0]["Sesso"];
+
+} else{
     header("location: login.php");
     exit;
 }
+
+/*canvas*/
+$templateParams["canvas"] = "contenutoOffCanvas.php";
+comandiCanvas();
 
 if(empty($templateParams["notifiche"])){
     $templateParams["errore"] = "Non ci sono notifiche!";

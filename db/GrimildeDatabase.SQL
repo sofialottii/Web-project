@@ -35,7 +35,7 @@ create table PRODOTTO (
      IDProdotto numeric(5) not null,
      NomeProdotto varchar(20) not null,
      ImmagineProdotto varchar(200) not null,
-     DescrizioneProdotto varchar(150) not null,
+     DescrizioneProdotto varchar(200) not null,
      QuantitaDisponibile numeric(4) not null DEFAULT 0,
      Visibile CHAR(1) not null DEFAULT 'Y'
      primary key (IDProdotto)) ENGINE = INNODB;
@@ -72,8 +72,8 @@ create table contiene (
 create table NOTIFICA (
      E_mail varchar(50) not null,
      IdNotifica numeric(5) not null,
-     TipoNotifica varchar(20) not null,
-     TestoNotifica varchar(200) not null,
+     TipoNotifica varchar(25) not null,
+     TestoNotifica varchar(300) not null,
      DataNotifica date not null,
      NotificaAdmin char not null DEFAULT 'N',
      StatoNotifica VARCHAR(15) not null DEFAULT "daLeggere",

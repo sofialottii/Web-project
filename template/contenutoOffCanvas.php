@@ -16,7 +16,7 @@
       </header>    
       <hr class="offcanvas-header">
       <div class="offcanvas-body">
-        <section>
+        <nav>
             <ul>
                 <li><a href="profilo.php">Account</a></li>
                 <?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
@@ -27,9 +27,12 @@
                 <li><a href="acquisto.php">Gestisci Prodotti</a></li>
                 <li><a href="ordini.php">Visualizza ordini</a></li>
                 <?php endif; ?>
-                <li><a href="storicoNotifiche.php">Notifiche</a></li>
+                <li><a href="storicoNotifiche.php">Notifiche  <?php if(isset($_SESSION["E_mail"])): ?><span class="badge text-bg-secondary">
+                <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])) {echo $dbh->countNotificheDaLeggere();}
+                else{echo $dbh->countNotificheAdminDaLeggere();} ?></span><?php endif; ?>
+                </a></li>
             </ul>
-        </section>
+        </nav>
 
         <form action="" method="POST">
         <?php if(isset($_SESSION["E_mail"])): ?>

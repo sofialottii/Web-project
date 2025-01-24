@@ -11,7 +11,7 @@ if(isset($_POST["iscriviti"])){
     $conferma_password = $_POST["conferma_password"];
     $dataNascita = $_POST["dataNascita"];
     $sesso = $_POST["sesso"];
-    ; $errore = false;
+    $errore = false;
     if(!checkPassword($password, $conferma_password)){
         $errore = true;
         $templateParams["erroreRegister"] = "Le password non coincidono";
@@ -32,6 +32,17 @@ if(isset($_POST["iscriviti"])){
     }
     if(!$errore){
         $dbh->registrazione($nome, $cognome, $email, $password, $dataNascita, $sesso);
+        $dbh->creaNotifica($email, 1, "Benvenuto", "Grazie per la tua registrazione al sito www.EmporioDiGrimilde.com, $nome!💖 Speriamo
+        che i nostri servizi possano essere di tuo gradimento.", "N");
+        //notifiche per gli admin di iscrizione di nuova persona
+        $Persone = $dbh->getAllMails();
+        foreach($Persone as $Persona){
+            if ($Persona["Amministratore"] == 'Y'){
+               $num = $dbh->getIDNotificaPiuAlta($Persona["E_mail"]);
+               $dbh->creaNotifica($Persona["E_mail"], $num+1, "Nuovo utente", "$nome $cognome ($email) si è appena registrato
+               al sito. Con lui, gli utenti registrati salgono a ".count($Persone).".", "Y");
+            }
+        }
         registerLoggedUser($email);
         header("location: index.php");
         exit;
