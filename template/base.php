@@ -25,7 +25,7 @@
         <footer>
             <p>
                 EmporiodiGrimilde.com<br>
-                <a href="#">Contattaci</a><br>
+                Contact us: <a href="#">EmporiodiGrimilde@gmail.com</a> - 0547 837214<br>
                 Privacy Policy | Cookie Policy | Info Legali
             </p>
         </footer>
