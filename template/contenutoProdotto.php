@@ -14,7 +14,7 @@
         <ul>
             
                 <p id="prezzoTotale" data-prezzo-unitario="<?php echo $templateParams["articolo"][0]["PrezzoProdotto"]; ?>">
-                €<?php echo $templateParams["articolo"][0]["PrezzoProdotto"]; ?></p>
+                €<?php echo $templateParams["articolo"][0]["PrezzoProdotto"]; ?> ad Hg.</p>
             </li>
             <li>
                 <p><?php echo $templateParams["articolo"][0]["DescrizioneProdotto"]; ?></p>
@@ -26,25 +26,23 @@
         <form action="" method="POST">
         <ul>
             <li>
-                <p>Quantità:</p>
-            </li>
-            <li>
+                <p>Quantità in Hg:</p>
                 <label for="quantita" hidden></label>
                 <input type="number" name="quantita" id="quantita" min="0" max="<?php echo $templateParams["articolo"][0]["QuantitaDisponibile"]; ?>" value="0" autocomplete="" />
             </li>
             <?php if($templateParams["articolo"][0]["QuantitaDisponibile"] <= 5):?>
             <li>
-                <p><?php if($templateParams["articolo"][0]["QuantitaDisponibile"] == 0):?>Prodotto esaurito!
+                <p class="text-danger"><?php if($templateParams["articolo"][0]["QuantitaDisponibile"] == 0):?>Prodotto esaurito!
                 <?php else: ?>Solo <?php echo $templateParams["articolo"][0]["QuantitaDisponibile"]; ?> rimanenti nel nostro sito!
                 <?php endif; ?></p>
             </li>
             <?php endif; ?>
-            <li>
+            <li class="d-block">
                 <a href="acquisto.php">Torna agli acquisti</a>
+                <label for="aggiungiCarrello" hidden></label><input type="submit" name="aggiungiCarrello" id="aggiungiCarrello" value="AGGIUNGI" <?php if($templateParams["articolo"][0]["QuantitaDisponibile"] == 0):?>disabled class="btn btn-dark border border-black"<?php endif;?> />
             </li>
-            <li>
-                <label for="aggiungiCarrello" hidden></label><input type="submit" name="aggiungiCarrello" id="aggiungiCarrello" value="AGGIUNGI AL CARRELLO" <?php if($templateParams["articolo"][0]["QuantitaDisponibile"] == 0):?>disabled<?php endif;?> />
-            </li>
+            <a href="acquisto.php" hidden>Torna agli acquisti</a>
+                
         </ul>
         </form>
     </section>
@@ -58,16 +56,16 @@
                 <li>
                     <label for="quantitaRifornimento" hidden></label><input type="number" autocomplete="" name="quantitaRifornimento" id="quantitaRifornimento" min="-<?php echo $templateParams["articolo"][0]["QuantitaDisponibile"]; ?>" value="1" />
                 </li>
-                <li>
+                <li class="d-block">
                     <label for="cambiaRifornimento" hidden></label><input type="submit" name="cambiaRifornimento" id="cambiaRifornimento" value="RIFORNISCI" />
                 </li>
                 <li>
                     <label for="nuovoPrezzo">Nuovo prezzo:</label><input type="number" autocomplete="" id="nuovoPrezzo" name="nuovoPrezzo" min="0" step="0.01" placeholder="€<?php echo $templateParams["articolo"][0]["PrezzoProdotto"] ?>" />
                 </li>
-                <li>
+                <li class="d-block">
                     <label for="cambiaPrezzo" hidden></label><input type="submit" id="cambiaPrezzo" name="cambiaPrezzo" value="CAMBIA PREZZO" />
                 </li>
-                <li>
+                <li class="d-block">
                     <label for="cambiaVisibilita" hidden></label><input type="submit" id="cambiaVisibilita" name="cambiaVisibilita" value="Rendi <?php if($templateParams["articolo"][0]["Visibile"] == 'Y'):?>invisibile<?php else:?>visibile<?php endif;?>" />
                 </li>
                 <li>

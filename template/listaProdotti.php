@@ -1,6 +1,6 @@
-<form action="#" method="GET">
+<form action="#" method="GET" class="d-flex">
+    <label for="cercaProd" hidden></label><input type="search" id="cercaProd" name="CercaProdotto" class="col-10" placeholder="Cerca per nome..."/>
     <label for="inviaRic" hidden></label><input type="submit" id="inviaRic" value="Cerca"/>
-    <label for="cercaProd" hidden></label><input type="search" id="cercaProd" name="CercaProdotto" placeholder="Cerca per nome..."/>
 </form>
 <?php foreach($templateParams["prodotti"] as $prodotto): ?>
     <section class="section-example">
@@ -59,7 +59,8 @@
 
     </section>
 <?php endforeach; ?>
-<a href="index.php">Torna alla home</a>
+
+<p><a href="index.php">Torna alla home</a></p>
 <!-- bottone carrello -->
 <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
 <form action="carrello.php" method="POST">
