@@ -38,10 +38,12 @@
         <?php if(isset($_SESSION["E_mail"])): ?>
           <label for="logoutButton" hidden></label><input type="submit" id="logoutButton" name="logout" value="Logout" />
         <?php else: ?>
-          <label for="loginButton" hidden></label><input type="submit" id="loginButton" name="login" value="Accedi" />
-          <label for="regButton" hidden></label><input type="submit" id="regButton" name="registrati" value="Registrati" />
-          <label for="adminButton" hidden></label><input type="submit" id="adminButton" name="loginAdmin" value="Area Riservata" />
-        
+          <ul>
+            <li><label for="regButton" hidden></label><input type="submit" id="regButton" name="registrati" value="Registrati" /></li>
+            <li><label for="loginButton" hidden></label><input type="submit" id="loginButton" name="login" value="Accedi" /></li>
+            <li><label for="adminButton" hidden></label><input type="submit" id="adminButton" name="loginAdmin" value="Area Riservata"/></li>
+            <li><label for="homeButton" hidden></label><input type="submit" id="homeButton" name="notLogin" value="Home" hidden/></li>
+          </ul>
         <?php endif; ?>
         
         </form>
