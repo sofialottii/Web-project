@@ -62,12 +62,12 @@
 <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
 <form action="carrello.php" method="POST">
     <label for="vaiCarrello" hidden></label>
-    <div class="ratio ratio1x1">
+    
     <button type="submit" id="vaiCarrello" value="Vai al carrello">
         <img src="../utils/img/icons/carrello.png" alt="carrello" />
         <nav><?php echo count($templateParams["carrello"]); ?></nav>
     </button>
-    </div>
+    
 </form>
 <?php endif; ?>
 
