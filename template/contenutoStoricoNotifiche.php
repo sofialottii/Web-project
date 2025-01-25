@@ -12,13 +12,15 @@
             <label for="IDNotifica" hidden></label><input type="hidden" id="IDNotifica" name="IdNotifica" value="<?php echo $notifica["IdNotifica"]; ?>" />
             <article id="notifica_<?php echo $notifica["IdNotifica"]; ?>" class="cliccabile">
                 <header>
-                    <p><?php echo $notifica["IdNotifica"];?></p>
-                    <p><?php echo $notifica["TipoNotifica"]; ?> </p>
+                    <p>0<?php echo $notifica["IdNotifica"];?></p>
+                    <p><?php echo $notifica["DataNotifica"]; ?></p>
                 </header>
                 <section>
-                    <p><?php echo $notifica["DataNotifica"]; ?></p>
-                    <p>Stato notifica: <?php if($notifica["StatoNotifica"]=="daLeggere"): ?>da leggere.<?php else: ?>letta.<?php endif; ?></p>     
+                    <p><?php echo $notifica["TipoNotifica"]; ?> </p>
                 </section>
+                <footer>
+                    <p>Stato notifica: <?php if($notifica["StatoNotifica"]=="daLeggere"): ?>da leggere.<?php else: ?>letta.<?php endif; ?></p>     
+                </footer>
             </article>
             <label for="bottoneSubmit" hidden></label><input type="submit" id="bottoneSubmit" name="bt" value="bt" hidden />
         </form>

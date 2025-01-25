@@ -12,11 +12,12 @@
             <header>
                 <p>ORDINE 00<?php echo $ordin["IDOrdine"];?>
                 <?php if($dbh->isUtenteAdmin($_SESSION["E_mail"])): ?> - <?php echo $ordin["E_mail"]; ?> <?php endif;?>
-            </p>
+                </p>
+                <p><?php echo $ordin["DataOra"]; ?></p>
+                
             </header>
             <section>
-                <p>Data: <?php echo $ordin["DataOra"]; ?></p>
-                <p>Importo: <?php echo $ordin["ImportoTotale"]; ?></p>
+                <p>Importo: €<?php echo $ordin["ImportoTotale"]; ?></p>
             </section>
             <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
             <footer>
@@ -40,7 +41,7 @@
         </script>
     </section>        
     <?php endforeach ?>
-    <a href="index.php">Torna alla home</a>  
+    <p><a href="index.php">Torna alla home</a></p>
 
 <script src="../js/hoverSection.js">    
 </script>

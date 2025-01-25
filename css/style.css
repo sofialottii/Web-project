@@ -103,7 +103,7 @@ form input[type="submit"]:active, a:active {
     transform: scale(0.95);
 }
 
-li>a:hover {
+li>a:hover, footer > p > a:hover, main > p > a:hover {
     background-color: lightgray;
     transform: scale(1.05);
 }
@@ -311,8 +311,33 @@ section > ul > li {
     padding-bottom: 0;
 }
 
+/* STORICO NOTIFICHE, ORDINI, PRODOTTI */
 
+section > form > article > header p {
+    margin: 0;
+    width: 50%;
+}
 
+section > form > article > header {
+        display: inline-flex;
+}
+
+section > form > article > * {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+section>form>article> header > p:last-child{
+    text-align: end;
+    font-size: 14px;
+    color: grey;
+    
+}
+
+section>form>article>header>p:first-child{
+    text-align: start;
+    font-weight: 600;
+}
 
 @media screen and (min-width:768px) {
 
