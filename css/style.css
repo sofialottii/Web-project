@@ -53,16 +53,23 @@ body>header {
     background-color: #fff;
 }
 
+body {
+    background-color: var(--background);
+}
+
 body>footer {
     background-color: rgb(54, 54, 54);
     color: #fff;
     text-align: center;
     padding: 20px 0;
+    vertical-align: bottom;
+    
 }
 
 body>main {
     background-color: var(--background);
     padding-bottom: 20px;
+    padding-bottom: auto;
 }
 
 img {
@@ -211,7 +218,7 @@ body > header header div div {
 
 body > header div header h2 {
     color: black;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 600;
     text-align:left;
     align-items: center;
@@ -351,7 +358,30 @@ section>ul>li>input[type="radio"] {
     cursor: not-allowed;
 }
 
+/* LISTA PRODOTTI E PREFERITI */
 
+body > main article > header > button {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    /*justify-content: center;
+    position: relative;*/
+    border: none;
+    border-radius: 100%;
+    background-color: #f2f2f2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body main article>header>button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+    transition: all 0.3s;
+    
+
+}
 
 
 @media screen and (min-width:768px) {

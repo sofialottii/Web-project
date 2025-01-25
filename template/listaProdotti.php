@@ -3,7 +3,8 @@
     <label for="cercaProd" hidden></label><input type="search" id="cercaProd" name="CercaProdotto" placeholder="Cerca per nome..."/>
 </form>
 <?php foreach($templateParams["prodotti"] as $prodotto): ?>
-<form action="prodotto.php" method="GET">
+    <section class="section-example">
+    <form action="prodotto.php" method="GET">
     <label for="idProd" hidden></label><input type="hidden" id="idProd" name="IDProdotto" value="<?php echo $prodotto['IDProdotto']; ?>" />
     <article id="prodotto_<?php echo $prodotto['IDProdotto']; ?>" class="cliccabile">
         <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
@@ -18,8 +19,8 @@
             <img src="<?php echo $prodotto['ImmagineProdotto'];?>" alt="<?php echo $prodotto["NomeProdotto"]; ?>" />
         </section>
         <footer>
-            <p><?php echo $prodotto["NomeProdotto"]; ?></p>
-            <p>Prezzo per 100 gr: €<?php echo $prodotto["PrezzoProdotto"]; ?>0</p>
+            <p class="fs-3 fw-bold"><?php echo $prodotto["NomeProdotto"]; ?></p>
+            <p>Prezzo per 100 gr: €<?php echo $prodotto["PrezzoProdotto"]; ?></p>
         </footer>
     </article>
     <label for="bottoneSubmit" hidden></label><input type="submit" id="bottoneSubmit" name="bt" value="bt" hidden />
@@ -56,6 +57,7 @@
 
 </script>
 
+    </section>
 <?php endforeach; ?>
 <a href="index.php">Torna alla home</a>
 <!-- bottone carrello -->
@@ -70,6 +72,8 @@
     
 </form>
 <?php endif; ?>
+
+<script src="../js/hoverSection.js"></script>
 
 
 

@@ -1,20 +1,18 @@
 <article>
-    <section>
+    <header>
+        <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
+        <label for="cambia_cuore<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>" hidden></label>
+            <button id="cambia_cuore_<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>">
+                <img src="<?php echo checkPreferito($templateParams['articolo'][0]['IDProdotto']); ?>" alt="cuore-vuoto" />        
+            </button>
+        <?php endif; ?>
+    </header>
+        <section>
         <img src="<?php echo $templateParams['articolo'][0]['ImmagineProdotto']; ?>" alt="<?php echo $templateParams['articolo'][0]['NomeProdotto']; ?>" />
-    </section>
-    <section>
+        <p class="text-center fs-3 fw-bold"><?php echo $templateParams["articolo"][0]["NomeProdotto"]; ?></p>
+        </section>
         <ul>
-            <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
-            <li>
-                <label for="cambia_cuore<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>" hidden></label>
-                <button id="cambia_cuore_<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>">
-                    <img src="<?php echo checkPreferito($templateParams['articolo'][0]['IDProdotto']); ?>" alt="cuore-vuoto" />        
-                </button>
-            </li>
-            <?php endif; ?>
-            <li>
-                <p><?php echo $templateParams["articolo"][0]["NomeProdotto"]; ?></p>
-            </li>
+            
                 <p id="prezzoTotale" data-prezzo-unitario="<?php echo $templateParams["articolo"][0]["PrezzoProdotto"]; ?>">
                 €<?php echo $templateParams["articolo"][0]["PrezzoProdotto"]; ?></p>
             </li>

@@ -1,9 +1,11 @@
+
 <?php if (empty($templateParams["prodotti"])) : ?>
     <h2>La lista dei preferiti è vuota</h2>
 <?php endif; ?>
 
 <?php foreach($templateParams["prodotti"] as $prodotto): ?>
-<form action="prodotto.php" method="GET">
+    <section class="section-example">
+    <form action="prodotto.php" method="GET">
     <label for="btn1" hidden></label><input type="hidden" id="btn1" name="IDProdotto" value="<?php echo $prodotto['IDProdotto']; ?>" />
     <article id="prodotto_<?php echo $prodotto['IDProdotto']; ?>" class="cliccabile">
         <header>
@@ -16,7 +18,7 @@
             <img src="<?php echo $prodotto['ImmagineProdotto']; ?>" alt="<?php echo $prodotto["NomeProdotto"]; ?>" />
         </section>
         <footer>
-            <p><?php echo $prodotto["NomeProdotto"]; ?></p>
+            <p class="fs-3 fw-bold"><?php echo $prodotto["NomeProdotto"]; ?></p>
             <p>Prezzo per 100 gr: €<?php echo $prodotto["PrezzoProdotto"]; ?>0</p>
         </footer>
     </article>
@@ -52,6 +54,7 @@
     });
 </script>
 
+</section>
 <?php endforeach; ?>
 
 <!-- bottone carrello -->
@@ -60,3 +63,5 @@
         <img src="../utils/img/icons/carrello.png" alt="carrello" />
     </button>
 </form>
+
+<script src="../js/hoverSection.js"></script>
