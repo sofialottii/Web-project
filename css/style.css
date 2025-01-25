@@ -19,6 +19,7 @@ body, header, h1, h2, h5, ul{
 
 * {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
 }
 
 body > header > h1, article > h2, section > h2 {
@@ -27,6 +28,7 @@ body > header > h1, article > h2, section > h2 {
     text-align: center;
     font-weight: 600;
 }
+
 
 /* caratteristiche generali tag */
 
@@ -104,6 +106,10 @@ form input[type="submit"]:active, a:active {
 li>a:hover {
     background-color: lightgray;
     transform: scale(1.05);
+}
+
+ul>li:last-child>input[type="submit"] {
+    width: 30%;
 }
 
 /* ARTICOLI E SEZIONI MAIN */
@@ -278,10 +284,6 @@ section > form > ul > li > div > label  {
     color: gray;
     cursor: pointer;
     transition: color 0.4s;
-}
-
-ul > li:last-child > input[type="submit"] {
-    width: 30%;
 }
 
 textarea {

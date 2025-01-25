@@ -2,9 +2,10 @@
     <p> <?php echo $templateParams["errore"];?></p>
 <?php endif; ?>
   
-<section>
+
     <?php foreach($templateParams["ordini"] as $ordin): ?>
-    <form action="ordineSingolo.php" method="GET">
+    <section class="section-example">
+        <form action="ordineSingolo.php" method="GET">
         <label for="IDOrdine" hidden></label><input type="hidden" id="IDOrdine" name="IdSingoloOrdine" value="<?php echo $ordin["IDOrdine"]; ?>" />
         <label for="IDE_mail" hidden></label><input type="hidden" id="IDE_mail" name="mail" value="<?php echo $ordin["E_mail"]; ?>" />
         <article class="cliccabile">
@@ -37,7 +38,9 @@
             });
 
         </script>
-        
+    </section>        
     <?php endforeach ?>
     <a href="index.php">Torna alla home</a>  
-</section>
+
+<script src="../js/hoverSection.js">    
+</script>
