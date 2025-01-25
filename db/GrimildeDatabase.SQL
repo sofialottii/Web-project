@@ -74,7 +74,7 @@ create table NOTIFICA (
      E_mail varchar(50) not null,
      IdNotifica numeric(5) not null,
      TipoNotifica varchar(25) not null,
-     TestoNotifica varchar(300) not null,
+     TestoNotifica varchar(350) not null,
      DataNotifica date not null,
      NotificaAdmin char not null DEFAULT 'N',
      StatoNotifica VARCHAR(15) not null DEFAULT "daLeggere",
@@ -206,12 +206,6 @@ create index FKpossiede_IND
 
 create unique index ID_CLIENTE_IND
      on CLIENTE (E_mail);
-
-create unique index ID_contiene_IND
-     on contiene (IDProdotto, IDOrdine);
-
-create index FKcon_ORD_IND
-     on contiene (IDOrdine);
 
 create unique index ID_NOTIFICA_IND
      on NOTIFICA (E_mail, IdNotifica);

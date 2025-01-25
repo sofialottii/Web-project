@@ -499,7 +499,8 @@ class DatabaseHelper{
         $utente = $_SESSION["E_mail"];
         $stmt = $this->db->prepare("SELECT E_mail, IDOrdine, DataOra, ImportoTotale
                                     FROM ORDINE
-                                    WHERE E_mail=?");
+                                    WHERE E_mail=?
+                                    ORDER BY IDOrdine DESC");
         $stmt->bind_param("s", $utente);
         $stmt->execute();
         $result = $stmt->get_result();
