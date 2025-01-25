@@ -43,7 +43,7 @@
         </section>
 
     <?php endforeach ?>   
-    <a href="index.php">Torna alla home</a>
+    <p><a href="index.php">Torna alla home</a></p>
 
 
 <script src="../js/hoverSection.js">

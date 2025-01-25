@@ -69,7 +69,6 @@ body>footer {
 body>main {
     background-color: var(--background);
     padding-bottom: 20px;
-    padding-bottom: auto;
 }
 
 img {
@@ -110,7 +109,7 @@ form input[type="submit"]:active, a:active {
     transform: scale(0.95);
 }
 
-li>a:hover, footer > p > a:hover, main > p > a:hover, section > p > a:hover, body > main > article > a:last-child:hover {
+li>a:hover, footer > p > a:hover, main > p > a:hover, section > p > a:hover, body > main > article > a:last-child:hover, form > p > a:hover {
     background-color: lightgray;
     transform: scale(1.05);
 }
@@ -355,7 +354,6 @@ section>ul>li>input[type="radio"] {
     accent-color:var(--text);
     filter: invert(0.1);
     transform: scale(1.4);
-    cursor: not-allowed;
 }
 
 /* LISTA PRODOTTI E PREFERITI */
@@ -375,7 +373,26 @@ body > main article > header > button {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-body main article>header>button:hover {
+body>main>form[action="carrello.php"] {
+    position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 100;
+}
+
+body > main > form > button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #9d9b9b;
+}
+
+
+body main article>header>button:hover, form>button:hover {
     background-color: #e0e0e0;
     transform: scale(1.1);
     transition: all 0.3s;
