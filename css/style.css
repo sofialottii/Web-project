@@ -103,13 +103,21 @@ form input[type="submit"]:active, a:active {
     transform: scale(0.95);
 }
 
-li>a:hover, footer > p > a:hover, main > p > a:hover {
+li>a:hover, footer > p > a:hover, main > p > a:hover, section > p > a:hover {
     background-color: lightgray;
     transform: scale(1.05);
 }
 
 ul>li:last-child>input[type="submit"] {
     width: 30%;
+}
+
+input[type="radio"]{
+    color: black;
+}
+
+a {
+    text-decoration: none !important;
 }
 
 /* ARTICOLI E SEZIONI MAIN */
@@ -139,7 +147,6 @@ body > main form input[type="submit"], body > main > section > div > ul > li > a
     font-weight: 600;
     /*background-color: rgb(255, 141, 139);*/
 }
-
 
 body > main > section > div > ul > li {
     margin: 0 20%;
@@ -307,18 +314,14 @@ main > section > img:last-child{
     margin-bottom: -20px;
 }
 
-section > ul > li {
-    padding-bottom: 0;
-}
-
 /* STORICO NOTIFICHE, ORDINI, PRODOTTI */
 
-section > form > article > header p {
+section > form  header p {
     margin: 0;
     width: 50%;
 }
 
-section > form > article > header {
+section > form  header {
         display: inline-flex;
 }
 
@@ -327,17 +330,29 @@ section > form > article > * {
     width: 100%;
 }
 
-section>form>article> header > p:last-child{
+section>form  header > p:last-child{
     text-align: end;
     font-size: 14px;
     color: grey;
     
 }
 
-section>form>article>header>p:first-child{
+section>form  header>p:first-child{
     text-align: start;
     font-weight: 600;
 }
+
+/* CONTENUTO TRACCIAMENTO */
+
+section>ul>li>input[type="radio"] {
+    accent-color:var(--text);
+    filter: invert(0.1);
+    transform: scale(1.4);
+    cursor: not-allowed;
+}
+
+
+
 
 @media screen and (min-width:768px) {
 

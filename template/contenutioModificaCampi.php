@@ -1,9 +1,9 @@
 <section>
-<form action="#" method="POST">
-<?php if(isset($templateParams["erroreDati"])): ?>
-    <p><?php echo $templateParams["erroreDati"]; ?></p>
-    <?php endif; ?>
     <h2>MODIFICA IL TUO PROFILO</h2>
+    <?php if(isset($templateParams["erroreDati"])): ?>
+    <p class="text-danger"><?php echo $templateParams["erroreDati"]; ?></p>
+    <?php endif; ?>
+    <form action="#" method="POST">
     <ul>
         <li>
             <label for="nome">Nome</label><input type="text" id="nome" name="nome" autocomplete="on" value="<?php echo $templateParams["profilo"][0]["Nome"] ?>" />
@@ -22,10 +22,12 @@
                 <option value="Altro">Altro</option>
             </select>
         </li>
-        <li>
+        <li class="d-block">
+            <a href="profilo.php">Ho Cambiato idea</a>
             <label for="ModificaCampi" hidden></label><input type="submit" name="ModificaCampi" id="ModificaCampi" value="Salva Modifiche" />
         </li>
-        <li><a href="profilo.php">Ho Cambiato idea</a> </li>
+        <a href="profilo.php" hidden>Ho Cambiato idea</a>
+        
     </ul>
 </form>
 <img src="../utils/img/Grimilde-CestoMele.png" alt="Grimilde con un cesto di mele">

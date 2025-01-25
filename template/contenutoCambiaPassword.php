@@ -1,7 +1,7 @@
 <section>
     <h2>PROFILO</h2>
     <?php if(isset($templateParams["errorelogin"])): ?>
-    <p><?php echo $templateParams["errorelogin"]; ?></p>
+    <p class="text-danger"><?php echo $templateParams["errorelogin"]; ?></p>
     <?php endif; ?>
     <form action="" method="POST">
         <ul>
@@ -14,10 +14,14 @@
             <li><label for="conferma_password">Conferma Password</label>
                     <input type="password" id="conferma_password" name="conferma_password" autocomplete="off"/>
                 </li>
-            <li>
+            <li class="d-block">
+                
+                <a href="profilo.php">Ho cambiato idea</a>
                 </label><input type="submit" name="aggiornaPassword" id="aggiornaPassword" value="Salva Password" />
             </li>
-            <li><a href="profilo.php">Ho cambiato idea</a> </li>
+            <a href="profilo.php" hidden>Ho cambiato idea</a>
+                
+            
         </ul>
     </form>
     <img src="../utils/img/Grimilde-CestoMele.png" alt="Grimilde con un cesto di mele">
