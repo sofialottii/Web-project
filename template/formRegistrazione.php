@@ -1,8 +1,9 @@
+<section>
+<h2>ISCRIVITI</h2>
+<?php if(isset($templateParams["erroreRegister"])): ?>
+<p class="text-danger"><?php echo $templateParams["erroreRegister"]; ?></p>
+<?php endif; ?>
 <form action="#" method="POST">
-    <h2>ISCRIVITI</h2>
-    <?php if(isset($templateParams["erroreRegister"])): ?>
-    <p><?php echo $templateParams["erroreRegister"]; ?></p>
-    <?php endif; ?>
     <ul>
         <li>
             <label for="nome">Nome</label><input type="text" id="nome" name="nome" autocomplete="on" maxlength="20" required />
@@ -30,7 +31,7 @@
                 <option value="Altro">Altro</option>
             </select>
         </li>
-        <li>
+        <li class="d-block">
             <label for="iscriviti" hidden></label><input type="submit" name="iscriviti" id="iscriviti" value="Iscriviti" />
         </li>
         <li>
@@ -38,3 +39,4 @@
         </li>
     </ul>
 </form>
+</section>

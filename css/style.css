@@ -103,7 +103,7 @@ form input[type="submit"]:active, a:active {
     transform: scale(0.95);
 }
 
-li>a:hover, footer > p > a:hover, main > p > a:hover, section > p > a:hover {
+li>a:hover, footer > p > a:hover, main > p > a:hover, section > p > a:hover, body > main > article > a:last-child:hover {
     background-color: lightgray;
     transform: scale(1.05);
 }
