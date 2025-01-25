@@ -1,9 +1,10 @@
-<section>
+
 
     <?php foreach($templateParams["contenuto"] as $elemento):?>
-    <ul>
+    <section>
+        <ul>
         <li>
-            <?php echo $elemento["NomeProdotto"];?>
+            <p class="text-center fs-3 text-uppercase fw-bold"><?php echo $elemento["NomeProdotto"];?></p>
         </li>
         <li>
             Quantit&agrave ordinata: <?php echo $elemento["QuantitaOrdinata"];?>
@@ -18,6 +19,6 @@
         <img src="<?php echo $elemento['ImmagineProdotto'];?>" alt="<?php echo $elemento['NomeProdotto'];?>">
         </li>
     </ul>
+    </section>
     <?php endforeach;?>
     <a href="ordini.php">Indietro</a>
-</section>
