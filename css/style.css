@@ -10,7 +10,12 @@
 
 /* regole di reset */
 
-body, header, h1, h2, h5, ul{
+body,
+header,
+h1,
+h2,
+h5,
+ul {
     margin: 0;
     padding: 0;
 }
@@ -22,7 +27,9 @@ body, header, h1, h2, h5, ul{
     font-size: 18px;
 }
 
-body > header > h1, article > h2, section > h2 {
+body>header>h1,
+article>h2,
+section>h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--secondary);
     text-align: center;
@@ -41,7 +48,8 @@ h1>a {
     cursor: pointer;
 }
 
-h1>a:hover, body>main>section>div>ul>li>a:hover {
+h1>a:hover,
+body>main>section>div>ul>li>a:hover {
     color: var(--primary);
 }
 
@@ -63,7 +71,7 @@ body>footer {
     text-align: center;
     padding: 20px 0;
     vertical-align: bottom;
-    
+
 }
 
 body>main {
@@ -86,7 +94,7 @@ ul {
     padding-left: 0 !important;
 }
 
-li { 
+li {
     display: grid;
     padding: 10px 0;
 }
@@ -100,16 +108,23 @@ button {
     cursor: pointer;
 }
 
-form input[type="submit"]:hover, a:hover {
+form input[type="submit"]:hover,
+a:hover {
     transform: scale(1.05);
     transition: all 0.3s;
 }
 
-form input[type="submit"]:active, a:active {
+form input[type="submit"]:active,
+a:active {
     transform: scale(0.95);
 }
 
-li>a:hover, footer > p > a:hover, main > p > a:hover, section > p > a:hover, body > main > article > a:last-child:hover, form > p > a:hover {
+li>a:hover,
+footer>p>a:hover,
+main>p>a:hover,
+section>p>a:hover,
+body>main>article>a:last-child:hover,
+form>p>a:hover {
     background-color: lightgray;
     transform: scale(1.05);
 }
@@ -118,7 +133,7 @@ ul>li:last-child>input[type="submit"] {
     width: 30%;
 }
 
-input[type="radio"]{
+input[type="radio"] {
     color: black;
 }
 
@@ -129,7 +144,8 @@ a {
 /* ARTICOLI E SEZIONI MAIN */
 
 
-body>main>article, body>main>section {
+body>main>article,
+body>main>section {
     border: 2px solid rgb(15, 13, 13);
     border-radius: 5px;
     padding: 20px 5%;
@@ -137,11 +153,12 @@ body>main>article, body>main>section {
 }
 
 
-body > main form {
+body>main form {
     text-align: center;
 }
 
-body > main form input[type="submit"], body > main > section > div > ul > li > a {
+body>main form input[type="submit"],
+body>main>section>div>ul>li>a {
     width: 60%;
     text-align: center;
     text-decoration: none;
@@ -154,16 +171,16 @@ body > main form input[type="submit"], body > main > section > div > ul > li > a
     /*background-color: rgb(255, 141, 139);*/
 }
 
-body > main > section > div > ul > li {
+body>main>section>div>ul>li {
     margin: 0 20%;
 }
 
-body>main>section>div>ul>li>a{
+body>main>section>div>ul>li>a {
     width: 100%;
 }
 
 /*tutti tranne l'immagine della frutta in index*/
-main > *:not(:first-child img) {
+main>*:not(:first-child img) {
     margin: 20px 5% 0;
 }
 
@@ -174,27 +191,27 @@ main:not(:has(> img:first-child)) {
 
 /* RECENSIONI INDEX */
 
-body > main > article > article {
+body>main>article>article {
     border: 1px solid black;
     padding: 10px 5%;
     margin-bottom: 20px;
     background-color: rgb(255, 242, 242);
 }
 
-body > main > article > article p {
+body>main>article>article p {
     margin-bottom: 0;
 }
 
-body > main > article > article >  header > p > span {
+body>main>article>article>header>p>span {
     color: grey;
     font-size: 24px;
 }
 
-body > main > article > article > header > p > span[data-filled="true"] {
-    color : gold;
+body>main>article>article>header>p>span[data-filled="true"] {
+    color: gold;
 }
 
-body > main > article > article > footer p{
+body>main>article>article>footer p {
     text-align: end;
     color: grey;
     font-size: 12px;
@@ -206,25 +223,25 @@ body>main>article>article>footer form {
 
 
 /* OFFCANVAS */
-body > header header {
+body>header header {
     padding: 5% 5px;
 }
 
-body > header header div div {
+body>header header div div {
     align-items: center;
     padding: 0 !important;
 }
 
-body > header div header h2 {
+body>header div header h2 {
     color: black;
     font-size: 30px;
     font-weight: 600;
-    text-align:left;
+    text-align: left;
     align-items: center;
-    
+
 }
 
-body>header div header img{
+body>header div header img {
     width: 100%;
 }
 
@@ -233,7 +250,7 @@ body>header div header button {
     padding: 0;
 }
 
-body > header div header div div div:last-child{
+body>header div header div div div:last-child {
     margin-top: -30px;
     font-size: 150%;
 
@@ -258,7 +275,7 @@ div div ul>li>a {
 }
 
 /*logout offcanvas*/
-header div form{
+header div form {
     text-align: center;
 }
 
@@ -292,7 +309,7 @@ h2 span {
     line-height: inherit;
 }
 
-section > form > ul > li > div > label  {
+section>form>ul>li>div>label {
     font-size: 2rem;
     color: gray;
     cursor: pointer;
@@ -316,34 +333,34 @@ td {
     vertical-align: center;
 }
 
-main > section > img:last-child{
+main>section>img:last-child {
     margin-bottom: -20px;
 }
 
 /* STORICO NOTIFICHE, ORDINI, PRODOTTI */
 
-section > form  header p {
+section>form header p {
     margin: 0;
     width: 50%;
 }
 
-section > form  header {
-        display: inline-flex;
+section>form header {
+    display: inline-flex;
 }
 
-section > form > article > * {
+section>form>article>* {
     margin-bottom: 10px;
     width: 100%;
 }
 
-section>form  header > p:last-child{
+section>form header>p:last-child {
     text-align: end;
     font-size: 14px;
     color: grey;
-    
+
 }
 
-section>form  header>p:first-child{
+section>form header>p:first-child {
     text-align: start;
     font-weight: 600;
 }
@@ -351,14 +368,14 @@ section>form  header>p:first-child{
 /* CONTENUTO TRACCIAMENTO */
 
 section>ul>li>input[type="radio"] {
-    accent-color:var(--text);
+    accent-color: var(--text);
     filter: invert(0.1);
     transform: scale(1.4);
 }
 
 /* LISTA PRODOTTI E PREFERITI */
 
-body > main article > header > button {
+body>main article>header>button {
     cursor: pointer;
     width: 50px;
     height: 50px;
@@ -375,12 +392,12 @@ body > main article > header > button {
 
 body>main>form[action="carrello.php"] {
     position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 100;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
 }
 
-body > main > form > button {
+body>main>form>button {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -392,148 +409,41 @@ body > main > form > button {
 }
 
 
-body main article>header>button:hover, form>button:hover {
+body main article>header>button:hover,
+form>button:hover {
     background-color: #e0e0e0;
     transform: scale(1.1);
     transition: all 0.3s;
-    
+
 
 }
 
 
-/*@media screen and (min-width:768px) {
+@media screen and (min-width:768px) {
 
-    body > header {
+    body>header {
         display: inline-block;
         vertical-align: top;
         width: 100%;
-    } 
-    
-    body > header > div > div {
+    }
+
+    body>header>div>div {
         display: inline-flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    body > header > div > div > section{
+    body>header>div>div>section {
         width: 90%;
     }
-        body>header>div>div>form {
-            width: 10%;
-        }
 
-    body > header > div > div ul {
+    body>header>div>div>form {
+        width: 10%;
+    }
+
+    body>header>div>div ul {
         width: 100%;
         display: inline-flex;
     }
-}*/
 
-@media screen and (min-width: 768px) {
-    
-    body {
-        background-color: var(--background); /* Colore principale dello sfondo */
-        min-height: 100vh; /* Garantisce che lo sfondo copra tutta l'altezza */
-        margin: 0; /* Elimina i margini del body */
-        display: flex;
-        flex-direction: column;
-    }
-    
-    body > * {
-        flex: 1; /* Gli elementi figli riempiono lo spazio */
-    }
-    
-    /* Header */
-    body > header {
-        display: grid;
-        grid-template-columns: auto auto;
-        align-items: center;
-        padding: 20px 10%;
-        background-color: #fff;
-    }
-
-    body > header h1 {
-        font-size: 2.5rem; /* Logo più grande */
-        text-align: left;
-    }
-
-    body > header ul {
-        display: flex;
-        gap: 20px;
-        justify-content: flex-end;
-    }
-
-    body > header ul > li > a {
-        font-size: 1.2rem;
-        padding: 10px 15px;
-    }
-
-    /* Main Content */
-    body > main {
-        max-width: 1200px; /* Centralizziamo il contenuto */
-        margin: 0 auto;
-        padding: 40px 10%;
-    }
-
-    body > main > article,
-    body > main > section {
-        margin-bottom: 40px;
-        padding: 30px;
-        border: 2px solid rgb(15, 13, 13);
-        border-radius: 8px;
-        background-color: white;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    body > main > article h2,
-    body > main > section h2 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    /* Images */
-    img {
-        max-width: 100%; /* Le immagini restano responsive */
-        margin: 20px auto;
-        display: block;
-    }
-
-    /* Footer */
-    body > footer {
-        padding: 30px 10%;
-        font-size: 1.2rem;
-        color: #fff;
-        background-color: rgb(54, 54, 54);
-    }
-
-    /* Form e Bottoni */
-    body > main form input[type="submit"] {
-        font-size: 1.2rem;
-        padding: 10px 20px;
-        width: auto; /* Bottoni non troppo grandi */
-    }
-
-    button {
-        font-size: 1rem;
-        padding: 10px 15px;
-    }
-
-    /* Liste e Links */
-    ul {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        justify-content: center;
-    }
-
-    ul > li {
-        margin: 0;
-    }
-
-    ul > li > a {
-        font-size: 1rem;
-        font-weight: bold;
-        padding: 10px;
-        color: var(--primary);
-    }
 }
