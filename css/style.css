@@ -384,7 +384,7 @@ body main article>header>button:hover {
 }
 
 
-@media screen and (min-width:768px) {
+/*@media screen and (min-width:768px) {
 
     body > header {
         display: inline-block;
@@ -409,5 +409,114 @@ body main article>header>button:hover {
         width: 100%;
         display: inline-flex;
     }
+}*/
+
+@media screen and (min-width: 768px) {
     
+    body {
+        background-color: var(--background); /* Colore principale dello sfondo */
+        min-height: 100vh; /* Garantisce che lo sfondo copra tutta l'altezza */
+        margin: 0; /* Elimina i margini del body */
+        display: flex;
+        flex-direction: column;
+    }
+    
+    body > * {
+        flex: 1; /* Gli elementi figli riempiono lo spazio */
+    }
+    
+    /* Header */
+    body > header {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        padding: 20px 10%;
+        background-color: #fff;
+    }
+
+    body > header h1 {
+        font-size: 2.5rem; /* Logo più grande */
+        text-align: left;
+    }
+
+    body > header ul {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+    }
+
+    body > header ul > li > a {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+    }
+
+    /* Main Content */
+    body > main {
+        max-width: 1200px; /* Centralizziamo il contenuto */
+        margin: 0 auto;
+        padding: 40px 10%;
+    }
+
+    body > main > article,
+    body > main > section {
+        margin-bottom: 40px;
+        padding: 30px;
+        border: 2px solid rgb(15, 13, 13);
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    body > main > article h2,
+    body > main > section h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    /* Images */
+    img {
+        max-width: 100%; /* Le immagini restano responsive */
+        margin: 20px auto;
+        display: block;
+    }
+
+    /* Footer */
+    body > footer {
+        padding: 30px 10%;
+        font-size: 1.2rem;
+        color: #fff;
+        background-color: rgb(54, 54, 54);
+    }
+
+    /* Form e Bottoni */
+    body > main form input[type="submit"] {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        width: auto; /* Bottoni non troppo grandi */
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    /* Liste e Links */
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    ul > li {
+        margin: 0;
+    }
+
+    ul > li > a {
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 10px;
+        color: var(--primary);
+    }
 }
