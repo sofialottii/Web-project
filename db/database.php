@@ -499,7 +499,8 @@ class DatabaseHelper{
         $utente = $_SESSION["E_mail"];
         $stmt = $this->db->prepare("SELECT E_mail, IDOrdine, DataOra, ImportoTotale
                                     FROM ORDINE
-                                    WHERE E_mail=?");
+                                    WHERE E_mail=?
+                                    ORDER BY IDOrdine DESC");
         $stmt->bind_param("s", $utente);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -527,8 +528,10 @@ class DatabaseHelper{
                                     (c.QuantitaOrdinata * t.PrezzoProdotto) AS ImportoTotale
                                     FROM contiene c JOIN PRODOTTO p
                                     ON c.IDProdotto = p.IDProdotto JOIN TARIFFARIO t ON c.IDProdotto = t.IDProdotto
-                                    WHERE c.IDOrdine = ? AND EXISTS ( SELECT 1 FROM ORDINE o WHERE o.IDOrdine = c.IDOrdine AND o.E_mail = ?)");
-        $stmt->bind_param("is",$id,$mail);
+                                    WHERE c.IDOrdine = ?
+                                    AND C.E_mail = ?
+                                    AND EXISTS ( SELECT 1 FROM ORDINE o WHERE o.IDOrdine = c.IDOrdine AND o.E_mail = ?)");
+        $stmt->bind_param("iss",$id, $mail, $mail);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);

@@ -16,7 +16,7 @@
                     <p><?php echo $notifica["DataNotifica"]; ?></p>
                 </header>
                 <section>
-                    <p><?php echo $notifica["TipoNotifica"]; ?> </p>
+                    <p class="fs-4"><?php echo $notifica["TipoNotifica"]; ?> </p>
                 </section>
                 <footer>
                     <p>Stato notifica: <?php if($notifica["StatoNotifica"]=="daLeggere"): ?>da leggere.<?php else: ?>letta.<?php endif; ?></p>     

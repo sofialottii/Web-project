@@ -66,6 +66,23 @@ function checkErroriCarta($datiVecchiaCarta, $numeroCarta, $cvc, $dataScadenza, 
     return $errore;
 }
 
+function doNotificaPagamento($utente, $idOrdine){
+    global $dbh;
+    $m = $_SESSION["E_mail"];
+    $num = $dbh->getIDNotificaPiuAlta($m);
+    $dbh->creaNotifica($_SESSION["E_mail"], $num+1, "Conferma Ordine", "$utente, grazie per il tuo ordine!🎉
+    Stiamo preparando tutto per te. Il tuo ordine verrà consegnato in 48h. <a href='tracciamentoOrdine.php?IDOrdine=$idOrdine'>Segui il tracciamento</a>
+    oppure <a href='ordineSingolo.php?IdSingoloOrdine=$idOrdine&mail=$m'>guarda il riepilogo</a>.", "N");
+    $Persone = $dbh->getAllMails();
+    foreach($Persone as $Persona){
+        if ($Persona["Amministratore"] == 'Y'){
+            $num = $dbh->getIDNotificaPiuAlta($Persona["E_mail"]);
+            $dbh->creaNotifica($Persona["E_mail"], $num+1, "Nuovo Ordine", "$utente ha appena effettuato il suo
+            ordine n° $idOrdine. Sbrigati a rifornire i prodotti.", "Y");
+        }
+    }
+}
+
 function comandiCanvas(){
     if (isset($_POST["logout"])) {
     logout();

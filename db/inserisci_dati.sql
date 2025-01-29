@@ -118,8 +118,8 @@ INSERT INTO spedizione (StatoSpedizione) VALUES
 INSERT INTO cliente (E_mail, `Password`, Nome, Cognome, DataNascita, Sesso, ImmagineProfilo, Amministratore) VALUES
 ('sofialotti17@gmail.com','ciao1234','Sofia','Lotti','2003-10-10','Donna', 'X', 'N'),
 ('sebastiano.lucarelli@gmail.com','ciao5678','Sebastiano','Lucarelli','2003-05-23','Uomo', 'Y', 'N'),
-('silviamirri@gmail.com','admin','Silvia','Mirri','2000-01-01','Donna', 'X','Y'),
-('silviamirri2@gmail.com','admin2','Silvia2','Mirri2','2000-01-01','Donna', 'X','Y');
+('paolorossi@gmail.com','admin','Paolo','Rossi','2000-01-01','Uomo', 'X','Y');
+
 
 INSERT INTO recensione (NumeroStelle, DataRecensione, TestoRecensione, E_mail) VALUES
 (3.0, '2023-07-21', 'Qualche miglioramnento necessario per quello che riguarda la qualità dei prodotti. Per il resto, ottimo sito.', 'sofialotti17@gmail.com'),

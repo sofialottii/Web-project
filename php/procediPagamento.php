@@ -19,6 +19,7 @@ comandiCanvas();
 
 $templateParams["carrello"] = $dbh->getCarrello($_SESSION["E_mail"]);
 
+
 if(isset($_POST["pagaConVecchiaCarta"])){
     /*salvo il mio ordine. Creo ogni associazione di "contiene". Svuoto il carrello dell'utente in sessione*/
     $dataOggi = date('Y-m-d H:i:s');
@@ -29,6 +30,7 @@ if(isset($_POST["pagaConVecchiaCarta"])){
         $dbh->creaAssociazioneContiene($IDOrdine, $dataOggi, intval($associazioneCarrello["IDProdotto"]), intval($associazioneCarrello["QuantitaInCarrello"]));
     }
     $dbh->svuotaCarrello($_SESSION["E_mail"]);
+    doNotificaPagamento($utente, $IDOrdine);
     header ("location: pagamentoEffettuato.php?IDOrdine=$IDOrdine");
     exit;
 }
@@ -61,11 +63,11 @@ if(isset($_POST["pagaConNuovaCarta"])){
         foreach ($templateParams["carrello"] as $associazioneCarrello){
             $dbh->creaAssociazioneContiene($IDOrdine, $dataOggi, intval($associazioneCarrello["IDProdotto"]), intval($associazioneCarrello["QuantitaInCarrello"]));
         }
+        doNotificaPagamento($utente, $IDOrdine);
         $dbh->svuotaCarrello($_SESSION["E_mail"]);
         header ("location: pagamentoEffettuato.php?IDOrdine=$IDOrdine");
         exit;
     }
-    //associazioneCarrello["C.IDProdotto"]
 
 }
 
@@ -73,6 +75,8 @@ $templateParams["carteSalvate"] = $dbh->getDati();
 $totale = prezzoTotale($templateParams["carrello"]);
 $templateParams["titolo"] = "Grimilde's - Pagamento"; //title
 $templateParams["nome"] = "contenutoPagamento.php";
+
+
 
 require("../template/base.php");
 ?>

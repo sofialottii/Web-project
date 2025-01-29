@@ -41,18 +41,24 @@
 
     <section id="sezione-carta-salvata" style="display: none;">
         <form action="" method="POST">
-            <label for="cartaReg">Scegli la carta</label><br/>
-            <select id="cartaReg" name="cartaRegistrata">
+            <ul class="d-flex flex-column gap-3">
+                <li class="d-block">
+            <label for="cartaReg" class="g-6" >Scegli la carta</label><br/>
+            <select id="cartaReg" name="cartaRegistrata" class="g-6" required>
                 <?php foreach($templateParams["carteSalvate"] as $carta): ?>
                     <option value="<?php echo $carta["NumeroCarta"]; ?>"><?php echo $carta["NumeroCarta"]; ?></option>
                 <?php endforeach; ?>
             </select>
-            <label for="pagaVecchia" hidden></label><input type="submit" id="pagaVecchia" name="pagaConVecchiaCarta" value="Paga Ora" />
-
+                </li>
+                <li class="d-block">
+            <label for="pagaVecchia" hidden></label>
+            <input class="g-4" type="submit" id="pagaVecchia" name="pagaConVecchiaCarta" value="Paga Ora" />
+                </li>
+            </ul>
         </form>
     </section>
 </section>
-<section>
+<section class="text-center">
     <h2>Indirizzo di Spedizione</h2>
     Via dell'universit&agrave 30, Cesena
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.2933295880252!2d12.232745665196836!3d44.147594977165184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132ca4dc5ea625b1%3A0xfcb0cabca301284d!2sVia%20dell&#39;%20Universit%C3%A0%2C%2030%2C%2047522%20Cesena%20FC!5e0!3m2!1sit!2sit!4v1737821529806!5m2!1sit!2sit" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
