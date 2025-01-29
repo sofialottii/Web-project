@@ -8,6 +8,10 @@
 -- * Schema: fruttivendolilun/SQL2 
 -- ********************************************* 
 
+-- ELIMINA DATABASE
+
+DROP DATABASE GrimildeDatabase;
+
 -- CREA IL DATABASE
 
 create database GrimildeDatabase;
