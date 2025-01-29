@@ -1,0 +1,144 @@
+<!--immagina tutto nel main-->
+<div class="container-fluid">
+<img src="../utils/img/frutta.jpg" alt="background" />
+<form action="" method="POST">
+    <label for="acquista" hidden></label><input type="submit" name="acquista" id="acquista" value="<?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>COMPRA ORA<?php else: ?>GESTISCI PRODOTTI<?php endif; ?>" />
+</form>
+<div class="row my-5 justify-content-center text-center">
+    <div class="col-4">
+      <article class="text-center">
+        <h2>CHI SIAMO?</h2>
+        <p>
+            Benvenuti all'Emporio di Grimilde, il miglior servizio che vi permette di gustare dell'ottima frutta ricevendola
+            direttamente a casa vostra! Il nostro emporio è unico sulla scena degli E-Commerce e rappresenta un <strong>marchio di qualit&agrave 
+            certificata</strong> grazie ai nostri prodotti biologici e coltivati in modo 100% naturale. <br>
+            <!--L'Emporio di Grimilde vi permette di gustare frutta sempre fresca grazie al suo servizio di consegna di meno di 24 ore. Com'&egrave
+            possibile che sia cos&igrave veloce vi chiederete, la risposta &egrave semplicissima: abbiamo<strong> pi&ugrave di 100 fornitori</strong> 
+            sparsi in tutto il paese, su cui effettuiamo un rigorosissimo controllo di qualit&agrave (per verificare che sia all'altezza degli 
+            standard di Grimilde).<br>-->
+            Il nostro emporio vi permette di scegliere tra un'ampia gamma di frutta deliziosa e <strong>appena raccolta</strong> dal nostro fornitore pi&ugrave 
+            vicino a casa vostra, questo ci permette anche di andare a ridurre al minimo le emissioni e i danni all'ambiente!<br>
+            Acquista sul nostro sitto per fare un ottima, gustosissima e super salutare merenda. <strong>Provate la  frutta di Grimilde per
+            essere anche voi, i pi&ugrave belli del reame!</strong>
+        </p>
+    </article>
+
+    </div>
+    <div class="col-4">
+      <article>
+        <h2>DICONO DI NOI</h2>
+        <?php foreach($templateParams["recensioni"] as $recensione): ?>
+        <article>
+            <header>    <!-- questo per i contenuti delle liste da db: il foreach è per iterare la lista. templateParams contiene il risultato delle
+                query. quindi per ogni recensione (che è il nome della tabella, quindi per ogni riga della tabella) prende nome, numerostelle...gitgoit -->
+                <p><?php echo $recensione["Nome"]; ?> <?php echo $recensione["Cognome"]; ?></p>
+                <p><?php for ($i = 1; $i <= 5; $i++) {
+                    if ($i <= $recensione["NumeroStelle"]) {
+                        echo '<span data-filled="true">★</span>';
+                    } else {
+                        echo '<span data-filled="false">★</span>';
+                    }
+                } ?>
+                </p>
+            </header>
+            <section>
+                <p><?php echo $recensione["TestoRecensione"]; ?></p>
+            </section>
+            <footer>
+                <p><?php echo $recensione["DataRecensione"]; ?></p>
+            </footer>
+        </article>
+        <?php endforeach; ?>
+        <form action="" method="POST" class="text-end">
+            <?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
+            <label for="creaRecensione" hidden></label><input type="submit" name="creaRecensione" id="creaRecensione" value="Lascia una recensione" />
+            <?php else: ?>
+            <label for="vediRecensioni" hidden></label><input type="submit" name="vediRecensioni" id="vediRecensioni" value="Vedi tutte le recensioni" />
+            <?php endif; ?>
+        </form>
+    </article>
+
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="container py-4">
+    <!-- Riga per l'immagine e il bottone -->
+    <div class="row justify-content-center">
+        <!-- Immagine -->
+        <div class="col-12 col-sm-6 col-md-4 mb-4 justify-content-center">
+            <img src="../utils/img/frutta.jpg" alt="background" class="img-fluid rounded justify-content-center">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <!-- Bottone -->
+        <div class="col-6 col-md-4 align-items-center justify-content-center">
+            <form action="" method="POST" class="justify-content-center">
+                <input type="submit" name="acquista" id="acquista" 
+                    value="<?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>COMPRA ORA<?php else: ?>GESTISCI PRODOTTI<?php endif; ?>" 
+                    class="btn-lg justify-content-center">
+            </form>
+        </div>
+    </div>
+
+    <!-- Articolo CHI SIAMO -->
+    <article class="row mb-4">
+        <div class="col-12">
+            <h2 class="text-center">CHI SIAMO?</h2>
+            <p class="text-justify">
+                Benvenuti all'Emporio di Grimilde, il miglior servizio che vi permette di gustare dell'ottima frutta
+                ricevendola direttamente a casa vostra! Il nostro emporio è unico sulla scena degli E-Commerce...
+            </p>
+        </div>
+    </article>
+
+    <!-- Sezione DICONO DI NOI -->
+    <section class="row">
+        <div class="col-12">
+            <h2>DICONO DI NOI</h2>
+        </div>
+
+        <?php foreach($templateParams["recensioni"] as $recensione): ?>
+        <article class="col-12 col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <header class="mb-3">
+                        <p class="mb-1"><strong><?php echo $recensione["Nome"]; ?> <?php echo $recensione["Cognome"]; ?></strong></p>
+                        <p>
+                            <?php for ($i = 1; $i <= 5; $i++): ?>
+                                <span class="<?php echo $i <= $recensione["NumeroStelle"] ? 'text-warning' : 'text-muted'; ?>">★</span>
+                            <?php endfor; ?>
+                        </p>
+                    </header>
+                    <section>
+                        <p><?php echo $recensione["TestoRecensione"]; ?></p>
+                    </section>
+                    <footer>
+                        <small class="text-muted"><?php echo $recensione["DataRecensione"]; ?></small>
+                    </footer>
+                </div>
+            </div>
+        </article>
+        <?php endforeach; ?>
+
+        <!-- Bottone recensioni -->
+        <div class="col-12 text-end">
+            <form action="" method="POST">
+                <?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
+                <input type="submit" name="creaRecensione" id="creaRecensione" value="Lascia una recensione" class="btn btn-primary">
+                <?php else: ?>
+                <input type="submit" name="vediRecensioni" id="vediRecensioni" value="Vedi tutte le recensioni" class="btn btn-secondary">
+                <?php endif; ?>
+            </form>
+        </div>
+    </section>
+</div>
+
