@@ -593,6 +593,17 @@ class DatabaseHelper{
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+/*ELIMINA */
+    public function emily(){
+        $utente = $_SESSION["E_mail"];
+        $stmt = $this->db->prepare("SELECT Nome
+                                    FROM CLIENTE
+                                    WHERE E_mail = ?");
+        $stmt->bind_param("s", $utente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 
 ?>

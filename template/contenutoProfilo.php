@@ -27,5 +27,9 @@
         </div>
     <!--</form>-->
 
+    <?php if (isset($templateParams["emily"])): ?>
+    <img src="../utils/img/emily.jpg" alt="Foto di Emily" class="text-center">
+<?php endif; ?>
+
     <img src="../utils/img/Grimilde-CestoMele.png" alt="" class="text-center">
 </section>
