@@ -1,7 +1,16 @@
 <!--immagina tutto nel main-->
-<div class="container col-md-3">
-<img src="../utils/img/frutta.jpg" class="offset-md-12" alt="background" />
-</div>
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+      <!-- Prima immagine -->
+      <div class="col-md-5 text-center">
+        <img src="../utils/img/fruttaa.jpg" class="img-fluid rounded" alt="Frutta" style="max-height: 200px;" />
+      </div>
+      <!-- Seconda immagine -->
+      <div class="col-md-5 text-center">
+        <img src="../utils/img/melo.jpg" class="img-fluid rounded" alt="Melo" style="max-height: 200px;" />
+      </div>
+    </div>
+  </div>
 <form action="" method="POST">
     <label for="acquista" hidden></label><input type="submit" name="acquista" id="acquista" value="<?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>COMPRA ORA<?php else: ?>GESTISCI PRODOTTI<?php endif; ?>" />
 </form>
