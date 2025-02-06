@@ -1,14 +1,14 @@
 
 
     <!-- immagine -->
-    <div class="row justify-content-center mt-md-4 mt-lg-5">
+    <div class="row justify-content-center mt-md-4 mt-lg-5 m-0">
         <div class="col-md-6 col-lg-7 text-center p-0">
             <img src="../utils/img/fruttaa.jpg" class="img-fluid rounded shadow" alt="Frutta" />
         </div>
     </div>
 
     <!-- bottone -->
-    <div class="row justify-content-center mt-3">
+    <div class="row justify-content-center mt-3 m-0">
         <div class="col-auto">
             <form action="" method="POST">
                 <input type="submit" class="px-4" name="acquista" id="acquista"
@@ -17,8 +17,8 @@
         </div>
     </div>
 
-    
-    <div class="row justify-content-evenly mt-5">
+
+    <div class="row justify-content-evenly mt-5 m-0">
         <article class="col-10 col-md-5 text-center temporaneo">
             <h2 class="fw-bold mt-2 mb-3">CHI SIAMO?</h2>
             <p>

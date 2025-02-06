@@ -20,6 +20,14 @@ body {
     padding: 0 !important;
 }
 
+/*html, body {
+    overflow-x: hidden;
+}*/
+
+/*div {
+    max-width: 100%;
+}*/
+
 /* font */
 
 * {
