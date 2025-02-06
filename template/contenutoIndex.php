@@ -1,71 +1,65 @@
-<!--immagina tutto nel main-->
-<div class="container">
-    <div class="row justify-content-center align-items-center">
-      <!-- Prima immagine -->
-      <div class="col-md-5 text-center">
-        <img src="../utils/img/fruttaa.jpg" class="img-fluid rounded" alt="Frutta" style="max-height: 200px;" />
-      </div>
-      <!-- Seconda immagine -->
-      <div class="col-md-5 text-center">
-        <img src="../utils/img/melo.jpg" class="img-fluid rounded" alt="Melo" style="max-height: 200px;" />
-      </div>
+
+
+    <!-- immagine -->
+    <div class="row justify-content-center mt-md-4 mt-lg-5">
+        <div class="col-md-6 col-lg-7 text-center p-0">
+            <img src="../utils/img/fruttaa.jpg" class="img-fluid rounded shadow" alt="Frutta" />
+        </div>
     </div>
-  </div>
-<form action="" method="POST">
-    <label for="acquista" hidden></label><input type="submit" name="acquista" id="acquista" value="<?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>COMPRA ORA<?php else: ?>GESTISCI PRODOTTI<?php endif; ?>" />
-</form>
 
+    <!-- bottone -->
+    <div class="row justify-content-center mt-3">
+        <div class="col-auto">
+            <form action="" method="POST">
+                <input type="submit" class="px-4" name="acquista" id="acquista"
+                    value="<?php echo (!isset($_SESSION['E_mail']) || !$dbh->isUtenteAdmin($_SESSION['E_mail'])) ? 'COMPRA ORA' : 'GESTISCI PRODOTTI'; ?>" />
+            </form>
+        </div>
+    </div>
 
-<div class="container">
-    <div class="row justify-content-around">
-    <article class="text-center temporaneo col-10 col-md-5 mb-5">
-        <h2>CHI SIAMO?</h2>
-        <p>
-            Benvenuti all'Emporio di Grimilde, il miglior servizio che vi permette di gustare dell'ottima frutta ricevendola
-            direttamente a casa vostra! Il nostro emporio è unico sulla scena degli E-Commerce e rappresenta un <strong>marchio di qualit&agrave 
-            certificata</strong> grazie ai nostri prodotti biologici e coltivati in modo 100% naturale. <br>
-            L'Emporio di Grimilde vi permette di gustare frutta sempre fresca grazie al suo servizio di consegna di meno di 24 ore. Com'&egrave
-            possibile che sia cos&igrave veloce vi chiederete, la risposta &egrave semplicissima: abbiamo<strong> pi&ugrave di 100 fornitori</strong> 
-            sparsi in tutto il paese, su cui effettuiamo un rigorosissimo controllo di qualit&agrave (per verificare che sia all'altezza degli 
-            standard di Grimilde).<br>
-            Il nostro emporio vi permette di scegliere tra un'ampia gamma di frutta deliziosa e <strong>appena raccolta</strong> dal nostro fornitore pi&ugrave 
-            vicino a casa vostra, questo ci permette anche di andare a ridurre al minimo le emissioni e i danni all'ambiente!<br>
-            Acquista sul nostro sitto per fare un ottima, gustosissima e super salutare merenda. <strong>Provate la  frutta di Grimilde per
-            essere anche voi, i pi&ugrave belli del reame!</strong>
-        </p>
-    </article>
-
-    <article class="temporaneo col-10 col-md-5 mb-5">
-        <h2>DICONO DI NOI</h2>
-        <?php foreach($templateParams["recensioni"] as $recensione): ?>
-        <article>
-            <header>    <!-- questo per i contenuti delle liste da db: il foreach è per iterare la lista. templateParams contiene il risultato delle
-                query. quindi per ogni recensione (che è il nome della tabella, quindi per ogni riga della tabella) prende nome, numerostelle...gitgoit -->
-                <p><?php echo $recensione["Nome"]; ?> <?php echo $recensione["Cognome"]; ?></p>
-                <p><?php for ($i = 1; $i <= 5; $i++) {
-                    if ($i <= $recensione["NumeroStelle"]) {
-                        echo '<span data-filled="true">★</span>';
-                    } else {
-                        echo '<span data-filled="false">★</span>';
-                    }
-                } ?>
-                </p>
-            </header>
-            <section>
-                <p><?php echo $recensione["TestoRecensione"]; ?></p>
-            </section>
-            <footer>
-                <p><?php echo $recensione["DataRecensione"]; ?></p>
-            </footer>
+    
+    <div class="row justify-content-evenly mt-5">
+        <article class="col-10 col-md-5 text-center temporaneo">
+            <h2 class="fw-bold mt-2 mb-3">CHI SIAMO?</h2>
+            <p>
+                Benvenuti all'Emporio di Grimilde, il miglior servizio che vi permette di gustare dell'ottima frutta ricevendola
+                direttamente a casa vostra! Il nostro emporio è unico sulla scena degli e-commerce e rappresenta un 
+                <strong>marchio di qualità certificata</strong> grazie ai nostri prodotti biologici e coltivati in modo 100% naturale.
+                <br><br>
+                Con più di 100 fornitori sparsi nel paese, garantiamo una consegna rapidissima in meno di 24 ore, riducendo al minimo 
+                le emissioni e i danni all'ambiente. Scegli la frutta di Grimilde per una merenda sana e gustosa!  
+                <strong>Provate la nostra frutta per essere anche voi, i più belli del reame!</strong>
+            </p>
         </article>
-        <?php endforeach; ?>
-        <form action="" method="POST" class="text-end">
-            <?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
-            <label for="creaRecensione" hidden></label><input type="submit" name="creaRecensione" id="creaRecensione" value="Lascia una recensione" />
-            <?php else: ?>
-            <label for="vediRecensioni" hidden></label><input type="submit" name="vediRecensioni" id="vediRecensioni" value="Vedi tutte le recensioni" />
-            <?php endif; ?>
-        </form>
-    </article>
+
+        <article class="col-10 col-md-5 mt-3 mt-md-0 temporaneo">
+            <h2 class="text-center mt-2 mb-3 fw-bold">DICONO DI NOI</h2>
+            <?php foreach($templateParams["recensioni"] as $recensione): ?>
+            <div class="border rounded p-3 mb-3 shadow-sm bg-light">
+                <header class="d-flex justify-content-between">
+                    <p class="fw-bold"><?php echo $recensione["Nome"] . " " . $recensione["Cognome"]; ?></p>
+                    <p>
+                        <?php for ($i = 1; $i <= 5; $i++) {
+                            echo ($i <= $recensione["NumeroStelle"]) ? '<span class="text-warning">★</span>' : '<span class="text-secondary">★</span>';
+                        } ?>
+                    </p>
+                </header>
+                <section>
+                    <p><?php echo $recensione["TestoRecensione"]; ?></p>
+                </section>
+                <footer class="text-end text-muted">
+                    <small><?php echo $recensione["DataRecensione"]; ?></small>
+                </footer>
+            </div>
+            <?php endforeach; ?>
+
+            <!-- Pulsante Recensioni -->
+            <form action="" method="POST" class="text-center mt-3">
+                <input type="submit" class="btn btn-primary" name="<?php echo (!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])) ? 'creaRecensione' : 'vediRecensioni'; ?>"
+                    id="<?php echo (!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])) ? 'creaRecensione' : 'vediRecensioni'; ?>"
+                    value="<?php echo (!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])) ? 'Lascia una recensione' : 'Vedi tutte le recensioni'; ?>" />
+            </form>
+        </article>
     </div>
-</div>
+
+
