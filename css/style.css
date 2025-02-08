@@ -148,28 +148,33 @@ body>main>article,
 body>main>section, .temporaneo {
     border: 2px solid rgb(15, 13, 13);
     border-radius: 5px;
-    padding: 20px 3% !important;
+    padding: 20px 5% !important;
     
     background-color: white;
+}
+
+@media (min-width: 768px) {
+    .temporaneo {
+        padding: 20px 3% !important;
+    }
 }
 
 
 
 
 
-
-/*temporaneobody>main form input[type="submit"],
+form input[type="submit"],
 body>main>section>div>ul>li>a {
     width: 60%;
     text-align: center;
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 5px 10%;
     font-size: 16px;
     border-radius: 5px;
     background-color: #750000;
     color: #f4f4f4;
     font-weight: 600;
-}*/
+}
 
 
 
