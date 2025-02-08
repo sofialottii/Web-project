@@ -33,7 +33,7 @@
             </select>
         </li>
         <li class="text-center">
-            <label for="iscriviti" class="form-label" hidden></label><input type="submit" name="iscriviti" id="iscriviti" value="Iscriviti" />
+            <label for="iscriviti" class="form-label" hidden></label><input type="submit" name="iscriviti" id="iscriviti" value="Iscriviti" class="w-50" />
         </li>
         <li class="text-center">
             <a href="login.php">Hai già un account? Accedi</a>

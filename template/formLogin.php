@@ -13,10 +13,10 @@
             <label for="password" class="form-label">Password</label><input type="password" id="password" name="password" class="form-control" autocomplete="off" />
         </li>
         <li class="text-center mb-3">
-            <label for="accedi" class="form-label" hidden></label><input type="submit" name="accedi" id="accedi" value="Accedi" />
+            <label for="accedi" class="form-label" hidden></label><input type="submit" name="accedi" id="accedi" value="Accedi" class="w-75" />
         </li>
         <li class="text-center">
-            <label for="iscriviti" class="form-label" hidden></label><input type="submit" id="iscriviti" name="iscriviti" value="Iscriviti" />
+            <label for="iscriviti" class="form-label" hidden></label><input type="submit" id="iscriviti" name="iscriviti" value="Iscriviti" class="w-75" />
         </li>
         <li class="text-center">
             <a href="index.php">Continua senza accedere</a>

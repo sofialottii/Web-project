@@ -23,17 +23,29 @@
         <?php endif; ?>
     </a>
 
-    <form action="" method="POST" class="d-flex">
+    <form action="" method="POST">
         <?php if(isset($_SESSION["E_mail"])): ?>
             <label for="logoutButton" hidden></label>
-            <input type="submit" id="logoutButton" name="logout" value="Logout" class="btn btn-outline-danger" />
+            <input type="submit" id="logoutButton" name="logout" value="Logout" />
         <?php else: ?>
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../utils/img/icons/imgAccesso.png" alt="icona accesso" />
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="register.php">Registrati</a></li>
+                    <li><a class="dropdown-item" href="login.php">Accedi</a></li>
+                    <li><a class="dropdown-item" href="areaRiservata.php">Area Riservata</a></li>
+                </ul>
+            </div>
+            <!--
             <label for="regButton" hidden></label>
             <input type="submit" id="regButton" name="registrati" value="Registrati" class="btn btn-outline-primary me-2" />
             <label for="loginButton" hidden></label>
             <input type="submit" id="loginButton" name="login" value="Accedi" class="btn btn-outline-success me-2" />
             <label for="adminButton" hidden></label>
             <input type="submit" id="adminButton" name="loginAdmin" value="Area Riservata" class="btn btn-outline-warning" />
+            -->
         <?php endif; ?>
     </form>
 </nav>

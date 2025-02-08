@@ -165,7 +165,7 @@ body>main>section, .temporaneo {
 
 form input[type="submit"],
 body>main>section>div>ul>li>a {
-    width: 60%;
+    /*width: 60%;*/
     text-align: center;
     text-decoration: none;
     padding: 5px 10%;
@@ -176,6 +176,14 @@ body>main>section>div>ul>li>a {
     font-weight: 600;
 }
 
+/* RECENSIONI */
+
+h2 span {
+    color: var(--secondary);
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
 
 
 
