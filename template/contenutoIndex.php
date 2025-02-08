@@ -22,13 +22,17 @@
         <article class="col-10 col-md-5 text-center temporaneo">
             <h2 class="fw-bold mt-2 mb-3">CHI SIAMO?</h2>
             <p>
-                Benvenuti all'Emporio di Grimilde, il miglior servizio che vi permette di gustare dell'ottima frutta ricevendola
-                direttamente a casa vostra! Il nostro emporio è unico sulla scena degli e-commerce e rappresenta un 
-                <strong>marchio di qualità certificata</strong> grazie ai nostri prodotti biologici e coltivati in modo 100% naturale.
-                <br><br>
-                Con più di 100 fornitori sparsi nel paese, garantiamo una consegna rapidissima in meno di 24 ore, riducendo al minimo 
-                le emissioni e i danni all'ambiente. Scegli la frutta di Grimilde per una merenda sana e gustosa!  
-                <strong>Provate la nostra frutta per essere anche voi, i più belli del reame!</strong>
+            Benvenuti all'Emporio di Grimilde, il miglior servizio che vi permette di gustare dell'ottima frutta ricevendola
+            direttamente a casa vostra! Il nostro emporio è unico sulla scena degli E-Commerce e rappresenta un <strong>marchio di qualit&agrave 
+            certificata</strong> grazie ai nostri prodotti biologici e coltivati in modo 100% naturale. <br>
+            L'Emporio di Grimilde vi permette di gustare frutta sempre fresca grazie al suo servizio di consegna di meno di 24 ore. Com'&egrave
+            possibile che sia cos&igrave veloce vi chiederete, la risposta &egrave semplicissima: abbiamo<strong> pi&ugrave di 100 fornitori</strong> 
+            sparsi in tutto il paese, su cui effettuiamo un rigorosissimo controllo di qualit&agrave (per verificare che sia all'altezza degli 
+            standard di Grimilde).<br>
+            Il nostro emporio vi permette di scegliere tra un'ampia gamma di frutta deliziosa e <strong>appena raccolta</strong> dal nostro fornitore pi&ugrave 
+            vicino a casa vostra, questo ci permette anche di andare a ridurre al minimo le emissioni e i danni all'ambiente!<br>
+            Acquista sul nostro sitto per fare un ottima, gustosissima e super salutare merenda. <strong>Provate la  frutta di Grimilde per
+            essere anche voi, i pi&ugrave belli del reame!</strong>
             </p>
         </article>
 
