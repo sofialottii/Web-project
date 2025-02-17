@@ -21,6 +21,7 @@ $templateParams["titolo"] = "Grimilde's - Preferiti";
 $templateParams["nome"] = "listaPreferiti.php";
 
 $templateParams["prodotti"] = $dbh->getProdottiPreferiti();
+$templateParams["carrello"] = $dbh->getCarrello($_SESSION["E_mail"]);
 
 require("../template/base.php");
 

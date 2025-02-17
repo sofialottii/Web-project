@@ -1,6 +1,6 @@
 <!-- Form di ricerca -->
-<form action="#" method="GET" class="d-flex mb-4">
-    <label for="cercaProd" hidden></label><input type="search" id="cercaProd" name="CercaProdotto" class="form-control me-2" placeholder="Cerca per nome..."/>
+<form action="#" method="GET" class="d-flex my-4 mx-5">
+    <label for="cercaProd" hidden></label><input type="search" id="cercaProd" name="CercaProdotto" class="form-control me-3" placeholder="Cerca per nome..."/>
     <label for="inviaRic" hidden></label><input type="submit" id="inviaRic" value="Cerca"/>
 </form>
 
@@ -72,7 +72,7 @@
 
 
 
-<p><a href="index.php">Torna alla home</a></p>
+<p class="mt-4 mb-0 text-center"><a href="index.php">Torna alla home</a></p>
 <!-- bottone carrello -->
 <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
 <form action="carrello.php" method="POST">

@@ -1,8 +1,11 @@
-<form action="" method="POST">
-    <label for="cancNot" hidden></label><input type="submit" id="cancNot" name="cancellanotifiche" value="Elimina Tutte">
-</form>
 <?php if(isset($templateParams["errore"])): ?>
-    <p><?php echo $templateParams["errore"];?></p>
+    <div class="alert alert-primary text-center align-items-center mx-5 mt-3" role="alert">
+        <h2><?php echo $templateParams["errore"]; ?></h2>
+    </div>
+<?php else: ?>
+    <form action="" method="POST">
+        <label for="cancNot" hidden></label><input type="submit" id="cancNot" name="cancellanotifiche" value="Elimina Tutte">
+    </form>
 <?php endif; ?>
 
 

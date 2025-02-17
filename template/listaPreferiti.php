@@ -1,8 +1,10 @@
 
 <?php if (empty($templateParams["prodotti"])) : ?>
-    <h2>La lista dei preferiti è vuota</h2>
+    <div class="alert alert-primary text-center align-items-center mx-5 mt-3" role="alert">
+        <h2>La lista dei preferiti è vuota</h2>
+    </div>
 <?php else : ?>
-    <h2>Lista dei preferiti</h2>
+    <h2 class="text-center mt-3 mb-4">Lista dei preferiti</h2>
 <?php endif; ?>
 
 <div class="container">
@@ -63,10 +65,22 @@
     </div>
 </div>
 <!-- bottone carrello -->
+
+
+
+<p class="mt-4 mb-0 text-center"><a href="index.php">Torna alla home</a></p>
+<!-- bottone carrello -->
+<?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
 <form action="carrello.php" method="POST">
-    <button type="submit" value="Vai al carrello">
+    <label for="vaiCarrello" hidden></label>
+    
+    <button type="submit" id="vaiCarrello" value="Vai al carrello">
         <img src="../utils/img/icons/carrello.png" alt="carrello" />
+        <nav><?php echo count($templateParams["carrello"]); ?></nav>
     </button>
+    
 </form>
+<?php endif; ?>
+
 
 <script src="../js/hoverSection.js"></script>
