@@ -39,7 +39,8 @@
             <?php endif; ?>
             <li class="d-block">
                 <a href="acquisto.php">Torna agli acquisti</a>
-                <label for="aggiungiCarrello" hidden></label><input type="submit" name="aggiungiCarrello" id="aggiungiCarrello" value="AGGIUNGI" <?php if($templateParams["articolo"][0]["QuantitaDisponibile"] == 0):?>disabled class="btn btn-dark border border-black"<?php endif;?> />
+                <label for="aggiungiCarrello" hidden></label><input type="submit" name="aggiungiCarrello" id="aggiungiCarrello" value="AGGIUNGI" 
+                <?php if($templateParams["articolo"][0]["QuantitaDisponibile"] == 0):?>disabled class="btn btn-dark border border-black"<?php endif;?> />
             </li>
             <a href="acquisto.php" hidden>Torna agli acquisti</a>
                 

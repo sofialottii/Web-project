@@ -358,3 +358,15 @@ form>button:hover {
     transform: scale(1.1);
     transition: all 0.3s;
 }
+
+/* img carrello */
+
+tr > td img {
+    padding: .25rem;
+    background-color: var(--bs-body-bg);
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
