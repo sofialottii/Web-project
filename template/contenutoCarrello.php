@@ -3,7 +3,9 @@
         <label for="svuotaCarrello" hidden></label><input type="submit" name="svuotaCarrello" id="svuotaCarrello" value="Svuota carrello" />
     </form>
     <?php if(isset($templateParams["errore"])): ?>
-        <p class="text-danger"><?php echo $templateParams["errore"]; ?></p>
+        <div class="alert alert-danger text-center align-items-center mx-5 mt-3" role="alert">
+            <p class="h4"><?php echo $templateParams["errore"]; ?></p>
+        </div>
     <?php endif; ?>
 
     <div class="card">
