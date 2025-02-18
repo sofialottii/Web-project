@@ -1,6 +1,6 @@
 <article>
     <header>
-        <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
+        <?php if(isUserLoggedIn() && !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
         <label for="cambia_cuore<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>" hidden></label>
             <button id="cambia_cuore_<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>">
                 <img src="<?php echo checkPreferito($templateParams['articolo'][0]['IDProdotto']); ?>" alt="cuore-vuoto" />        
@@ -39,8 +39,9 @@
             <?php endif; ?>
             <li class="d-block">
                 <a href="acquisto.php">Torna agli acquisti</a>
-                <label for="aggiungiCarrello" hidden></label><input type="submit" name="aggiungiCarrello" id="aggiungiCarrello" value="AGGIUNGI" 
-                <?php if($templateParams["articolo"][0]["QuantitaDisponibile"] == 0):?>disabled class="btn btn-dark border border-black"<?php endif;?> />
+                <label for="aggiungiCarrello" hidden></label><input type="submit" name="aggiungiCarrello" id="aggiungiCarrello"
+                <?php if($templateParams["articolo"][0]["QuantitaDisponibile"] == 0):?>disabled class="btn btn-dark border border-black"<?php endif;?>
+                <?php if(isUserLoggedIn()): ?> value="Aggiungi" <?php else: ?> disabled value="fai il login" class="btn btn-dark border border-black"<?php endif; ?> />
             </li>
             <a href="acquisto.php" hidden>Torna agli acquisti</a>
                 

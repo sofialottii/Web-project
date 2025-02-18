@@ -9,8 +9,10 @@ if(isUserLoggedIn()){
     $sessoUtente = $dbh->getProfilo()[0]["Sesso"];
 }
 else{
-    header("location: login.php");
-    exit;
+    $utente = "Accedi";
+    $sessoUtente = "";
+    //header("location: login.php");
+    //exit;
 }
 
 /*canvas*/
@@ -19,7 +21,7 @@ comandiCanvas();
 
 $idProdotto = $_GET["IDProdotto"];
 $templateParams["articolo"] = $dbh->getProdotto($idProdotto);
-$templateParams["isUtenteAdmin"] = $dbh->isUtenteAdmin($_SESSION["E_mail"]);
+$templateParams["isUtenteAdmin"] = isUserLoggedIn() ? $dbh->isUtenteAdmin($_SESSION["E_mail"]) : false;
 $templateParams["titolo"] = "Grimilde's - ".$templateParams["articolo"][0]["NomeProdotto"];
 $templateParams["nome"] = "contenutoProdotto.php";
 

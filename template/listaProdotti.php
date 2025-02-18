@@ -14,7 +14,7 @@
                         <label for="idProd" hidden></label><input type="hidden" name="IDProdotto" value="<?php echo $prodotto['IDProdotto']; ?>" />
                         
                         <article id="prodotto_<?php echo $prodotto['IDProdotto']; ?>" class="cliccabile click temporaneo">
-                            <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
+                            <?php if(isUserLoggedIn() && !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
                             <header>
                                 <!--uso ajax per cambiare il cuore-->
                                 <label for="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>" hidden></label><button id="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>">
@@ -74,7 +74,7 @@
 
 <p class="mt-4 mb-0 text-center"><a href="index.php">Torna alla home</a></p>
 <!-- bottone carrello -->
-<?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
+<?php if(isUserLoggedIn() && !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
 <form action="carrello.php" method="POST">
     <label for="vaiCarrello" hidden></label>
     

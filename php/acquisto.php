@@ -9,8 +9,10 @@ if(isUserLoggedIn()){
     $sessoUtente = $dbh->getProfilo()[0]["Sesso"];
 }
 else{
-    header("location: login.php");
-    exit;
+    $utente = "Accedi";
+    $sessoUtente = "";
+    //header("location: login.php");
+    //exit;
 }
 
 /*canvas*/
@@ -41,7 +43,7 @@ if (isset($_GET['IDProdotto'])) {
     exit;
 }
 
-if ($dbh->isUtenteAdmin($_SESSION["E_mail"])){
+if (isUserLoggedIn() && $dbh->isUtenteAdmin($_SESSION["E_mail"])){
     $templateParams["prodotti"] = $dbh->getProdotti($cercaProdotto);
 } else {
     $templateParams["prodotti"] = $dbh->getProdottiUtenti($cercaProdotto);
