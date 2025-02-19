@@ -66,6 +66,21 @@
 
             </script>
         <?php endforeach; ?>
+        <?php if(isUserLoggedIn() && $dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
+            <div class="col-12 col-md-6 col-lg-3">
+                <a href="aggiungiProdotto.php">
+                    <article class="click temporaneo border border-0">
+                        <section class="text-center my-4">
+                            <img src="../utils/img/icons/aggiungi.png" alt="aggiungi" />
+                        </section>
+                        <footer>
+                            <p class="fs-3 fw-bold text-center text-dark">Aggiungi prodotto</p>
+                        </footer>
+                    </article>
+                </a>
+            </div>
+        <?php endif; ?>
+
     </div>
 </div>
     
