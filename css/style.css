@@ -95,19 +95,18 @@ img {
     max-width: 100%;
 }
 
-/*stile che avevo creato per i bottoni link, ma che alla fine non usato perchè ho richiamato la class*/
+/*stile per i bottoni link, copiato quello dei bottoni sotto */
 ul li a {
-    border: 2px solid rgb(15, 13, 13); 
-    display: inline-block;
+    
     text-align: center;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 5px 10%;
     font-size: 16px;
     border-radius: 5px;
-    background-color: var(--primary);
-    color: #fff;
+    background-color: #750000;
+    color: #f4f4f4;
     font-weight: 600;
-    transition: all 0.3s ease-in-out;
+    border:2px solid rgb(15, 13, 13); /*l'ho aggiunto perchè non lo prendeva*/
 }
 ul li a:hover {
     background-color: var(--primary);
