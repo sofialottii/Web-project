@@ -19,7 +19,9 @@
             <label for="iscriviti" class="form-label" hidden></label> <input type="submit" id="iscriviti" name="iscriviti" value="Iscriviti" class="w-75" />
         </li>
         <li class="text-center mb-3">
-            <a href="index.php"  class="w-75">Continua senza accedere</a>
+            <label for="cont" class="form-label" hidden></label> 
+            <a href="index.php" class="none"><input type="submit" id="cont" name="cont" value="Continua senza accedere" class="w-75" /></a>
+            <!--<a href="index.php" class="bottone" >Continua senza accedere</a>-->
         </li>
     </ul>
 </form>

@@ -539,6 +539,28 @@ class DatabaseHelper{
 
     /* QUERY ESCLUSIVE PER GLI ADMIN */
 
+    public function aggiungiProdotto($IDProdotto, $NomeProdotto, $ImmagineProdotto, $DescrizioneProdotto, $QuantitaDisponibile, $Visibile){
+        $stmt = $this->db->prepare("INSERT INTO PRODOTTO (IDProdotto, NomeProdotto, ImmagineProdotto, DescrizioneProdotto, QuantitaDisponibile, Visibile)
+                                    VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("isssis", $IDProdotto, $NomeProdotto, $ImmagineProdotto, $DescrizioneProdotto, $QuantitaDisponibile, $Visibile);
+        $stmt->execute();
+    }
+
+    public function aggiungiProdAlTariffario($IDProdotto, $Peso, $PrezzoProdotto){
+        $stmt = $this->db->prepare("INSERT INTO TARIFFARIO (IDProdotto, Peso, PrezzoProdotto)
+                                    VALUES (?, ?, ?)");
+        $stmt->bind_param("idd", $IDProdotto, $Peso, $PrezzoProdotto);
+        $stmt->execute();
+    }
+
+    public function getMaxIdProdotto(){
+        $stmt = $this->db->prepare("SELECT MAX(IDProdotto) as maxID
+                                    FROM PRODOTTO");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
+
     public function getQuantitaProdotto($IDProdotto) {
         $stmt = $this->db->prepare("SELECT QuantitaDisponibile
                                     FROM PRODOTTO

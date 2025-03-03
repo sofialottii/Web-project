@@ -7,6 +7,7 @@ if(isUserLoggedIn()){
     $templateParams["profilo"] = $dbh->getProfilo();
     $utente = $dbh->getProfilo()[0]["Nome"]." ".$dbh->getProfilo()[0]["Cognome"];
     $sessoUtente = $dbh->getProfilo()[0]["Sesso"];
+    $templateParams["carrello"] = $dbh->getCarrello($_SESSION["E_mail"]);
 }
 else{
     $utente = "Accedi";
@@ -49,7 +50,6 @@ if (isUserLoggedIn() && $dbh->isUtenteAdmin($_SESSION["E_mail"])){
     $templateParams["prodotti"] = $dbh->getProdottiUtenti($cercaProdotto);
 }
 
-$templateParams["carrello"] = $dbh->getCarrello($_SESSION["E_mail"]);
 
 require("../template/base.php");
 
