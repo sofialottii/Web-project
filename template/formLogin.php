@@ -1,5 +1,5 @@
 <div class="row justify-content-center m-0">
-<section class="temporaneo mt-5 col-10 col-md-8 col-lg-5 pb-0">
+<section class="temporaneo mt-5 col-10 col-md-8 col-lg-4 pb-0">
     <h2>ACCESSO</h2>
     <?php if(isset($templateParams["errorelogin"])): ?>
     <p class="text-danger"><?php echo $templateParams["errorelogin"]; ?></p>
@@ -15,12 +15,11 @@
         <li class="text-center mb-3">
             <label for="accedi" class="form-label" hidden></label><input type="submit" name="accedi" id="accedi" value="Accedi" class="w-75" />
         </li>
-        <li class="text-center">
-            <label for="iscriviti" class="form-label" hidden></label><input type="submit" id="iscriviti" name="iscriviti" value="Iscriviti" class="w-75" />
+        <li class="text-center mb-3">
+            <label for="iscriviti" class="form-label" hidden></label> <input type="submit" id="iscriviti" name="iscriviti" value="Iscriviti" class="w-75" />
         </li>
-        <li class="text-center">
-            <a href="index.php">Continua senza accedere</a>
-            
+        <li class="text-center mb-3">
+            <a href="index.php"  class="w-75">Continua senza accedere</a>
         </li>
     </ul>
 </form>

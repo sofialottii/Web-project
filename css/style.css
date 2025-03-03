@@ -95,8 +95,22 @@ img {
     max-width: 100%;
 }
 
+/*stile per i bottoni link, copiato quello dei bottoni sotto */
 ul li a {
+    
+    text-align: center;
     text-decoration: none;
+    padding: 5px 10%;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #750000;
+    color: #f4f4f4;
+    font-weight: 600;
+    border:2px solid rgb(15, 13, 13); /*l'ho aggiunto perchè non lo prendeva*/
+}
+ul li a:hover {
+    background-color: var(--primary);
+    transform: scale(1.05);
 }
 
 ul {
