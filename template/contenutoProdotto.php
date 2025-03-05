@@ -77,8 +77,7 @@
         </form>
     </section>
     <?php endif; ?>
-
-
+    
 </article>
 
 
