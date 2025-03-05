@@ -49,49 +49,6 @@
     </div>
 </nav>
 
-<!-- NAVIGATION PER SCHERMI GRANDI -->
-<!--<nav class="d-none d-lg-flex justify-content-between align-items-center bg-white shadow-sm px-4 py-3 border rounded col-12">
-    <div class="nav-links d-flex gap-3">
-        <a href="profilo.php" class="btn btn-outline-primary">Account</a>
-        <?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
-            <a href="fruttaPreferita.php" class="btn btn-outline-success">Frutta Preferita</a>
-            <a href="carrello.php" class="btn btn-outline-warning">Carrello</a>
-            <a href="ordini.php" class="btn btn-outline-info">I miei ordini</a>
-        <?php else: ?>
-            <a href="acquisto.php" class="btn btn-outline-danger">Gestisci Prodotti</a>
-            <a href="ordini.php" class="btn btn-outline-dark">Visualizza ordini</a>
-        <?php endif; ?>
-    </div>
-
-    <div class="d-flex align-items-center gap-3">
-        <a href="storicoNotifiche.php" class="btn btn-light position-relative">
-            Notifiche
-            <?php if(isset($_SESSION["E_mail"])): ?>
-                <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">
-                    <?php echo !$dbh->isUtenteAdmin($_SESSION["E_mail"]) ? $dbh->countNotificheDaLeggere() : $dbh->countNotificheAdminDaLeggere(); ?>
-                </span>
-            <?php endif; ?>
-        </a>
-
-        <form action="" method="POST" class="m-0">
-            <?php if(isset($_SESSION["E_mail"])): ?>
-                <button type="submit" name="logout" class="btn btn-danger">Logout</button>
-            <?php else: ?>
-                <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../utils/img/icons/imgAccesso.png" alt="icona accesso" width="24" height="24">
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="register.php">Registrati</a></li>
-                        <li><a class="dropdown-item" href="login.php">Accedi</a></li>
-                        <li><a class="dropdown-item" href="areaRiservata.php">Area Riservata</a></li>
-                    </ul>
-                </div>
-            <?php endif; ?>
-        </form>
-    </div>
-</nav>-->
-
 
 <!-- Offcanvas per schermi piccoli -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
