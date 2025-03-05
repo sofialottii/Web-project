@@ -95,24 +95,6 @@ img {
     max-width: 100%;
 }
 
-/*stile per i bottoni link, copiato quello dei bottoni sotto */
-/*ul li a, .bottone {
-    
-    text-align: center;
-    text-decoration: none;
-    padding: 5px 10%;
-    font-size: 16px;
-    border-radius: 5px;
-    background-color: #750000;
-    color: #f4f4f4;
-    font-weight: 600;
-    border:2px solid rgb(15, 13, 13); /*l'ho aggiunto perchè non lo prendeva*
-}
-ul li a:hover {
-    background-color: var(--primary);
-    transform: scale(1.05);
-}*/
-
 ul {
     list-style: none;
 /*    padding-left: 0 !important;*/
@@ -123,11 +105,14 @@ ul {
 /* BOTTONI, INPUT E A GENERALI */
 
 
-
 form input[type="submit"]:hover,
-a:hover {
+a:hover:not(.noscale) {
     transform: scale(1.05);
     transition: all 0.3s;
+}
+
+a:hover:not(h1>a) {
+    background-color: lightgray;
 }
 
 form input[type="submit"]:active,
@@ -135,7 +120,7 @@ a:active {
     transform: scale(0.95);
 }
 
-li>a:hover,
+/*li>a:hover,
 footer>p>a:hover,
 main>p>a:hover,
 section>p>a:hover,
@@ -143,7 +128,7 @@ body>main>article>a:last-child:hover,
 form>p>a:hover {
     background-color: lightgray;
     transform: scale(1.05);
-}
+}*/
 
 
 
@@ -221,10 +206,10 @@ body>main>section, .temporaneo {
     border-radius: 5px;
 }
 
-/*
+
 .none {
     all: unset;
-}*/
+}
 
 .bottone {
     width: 60% !important;

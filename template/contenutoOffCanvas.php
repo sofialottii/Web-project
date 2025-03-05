@@ -5,50 +5,93 @@
 </button>
 
 <!-- NAVIGATION PER SCHERMI GRANDI -->
-<nav class="d-none d-lg-flex justify-content-around align-items-center bg-light p-3 col-12">
-    <a href="profilo.php">Account</a>
-    <?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
-        <a href="fruttaPreferita.php">Frutta Preferita</a>
-        <a href="carrello.php">Carrello</a>
-        <a href="ordini.php">I miei ordini</a>
-    <?php else: ?>
-        <a href="acquisto.php">Gestisci Prodotti</a>
-        <a href="ordini.php">Visualizza ordini</a>
-    <?php endif; ?>
-    <a href="storicoNotifiche.php">Notifiche 
-        <?php if(isset($_SESSION["E_mail"])): ?>
-            <span class="badge text-bg-secondary">
-                <?php echo !$dbh->isUtenteAdmin($_SESSION["E_mail"]) ? $dbh->countNotificheDaLeggere() : $dbh->countNotificheAdminDaLeggere(); ?>
-            </span>
-        <?php endif; ?>
-    </a>
-
-    <form action="" method="POST">
-        <?php if(isset($_SESSION["E_mail"])): ?>
-            <label for="logoutButton" hidden></label>
-            <input type="submit" id="logoutButton" name="logout" value="Logout" />
+<nav class="d-none d-lg-flex justify-content-between align-items-center shadow-sm px-4 bg-light border-top border-bottom col-12">
+    <div class="nav-links d-flex gap-3">
+        <a href="profilo.php" class="text-dark btn btn-light">Account</a>
+        <?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
+            <a href="fruttaPreferita.php" class="text-dark btn btn-light">Frutta Preferita</a>
+            <a href="carrello.php" class="text-dark btn btn-light">Carrello</a>
+            <a href="ordini.php" class="text-dark btn btn-light">I miei ordini</a>
         <?php else: ?>
-            <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="../utils/img/icons/imgAccesso.png" alt="icona accesso" />
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="register.php">Registrati</a></li>
-                    <li><a class="dropdown-item" href="login.php">Accedi</a></li>
-                    <li><a class="dropdown-item" href="areaRiservata.php">Area Riservata</a></li>
-                </ul>
-            </div>
-            <!--
-            <label for="regButton" hidden></label>
-            <input type="submit" id="regButton" name="registrati" value="Registrati" class="btn btn-outline-primary me-2" />
-            <label for="loginButton" hidden></label>
-            <input type="submit" id="loginButton" name="login" value="Accedi" class="btn btn-outline-success me-2" />
-            <label for="adminButton" hidden></label>
-            <input type="submit" id="adminButton" name="loginAdmin" value="Area Riservata" class="btn btn-outline-warning" />
-            -->
+            <a href="acquisto.php" class="text-dark btn btn-light">Gestisci Prodotti</a>
+            <a href="ordini.php" class="text-dark btn btn-light">Visualizza ordini</a>
         <?php endif; ?>
-    </form>
+    </div>
+
+    <div class="d-flex align-items-center gap-3">
+        <a href="storicoNotifiche.php" class="text-dark btn btn-light position-relative">Notifiche 
+            <?php if(isset($_SESSION["E_mail"])): ?>
+                <!--class="badge bg-danger position-absolute top-0 start-100 translate-middle"-->
+                <span class="badge text-bg-secondary">
+                    <?php echo !$dbh->isUtenteAdmin($_SESSION["E_mail"]) ? $dbh->countNotificheDaLeggere() : $dbh->countNotificheAdminDaLeggere(); ?>
+                </span>
+            <?php endif; ?>
+        </a>
+
+        <form action="" method="POST" class="m-0 p-0">
+            <?php if(isset($_SESSION["E_mail"])): ?>
+                <label for="logoutButton" hidden></label>
+                <button type="submit" id="logoutButton" name="logout" class="btn btn-danger">Logout</button>
+                
+            <?php else: ?>
+                <div class="dropdown">
+                    <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" width="16px" height="16px" aria-expanded="false">
+                        <img src="../utils/img/icons/imgAccesso.png" alt="icona accesso" />
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item noscale" href="register.php">Registrati</a></li>
+                        <li><a class="dropdown-item noscale" href="login.php">Accedi</a></li>
+                        <li><a class="dropdown-item noscale" href="areaRiservata.php">Area Riservata</a></li>
+                    </ul>
+                </div>
+            <?php endif; ?>
+        </form>
+    </div>
 </nav>
+
+<!-- NAVIGATION PER SCHERMI GRANDI -->
+<!--<nav class="d-none d-lg-flex justify-content-between align-items-center bg-white shadow-sm px-4 py-3 border rounded col-12">
+    <div class="nav-links d-flex gap-3">
+        <a href="profilo.php" class="btn btn-outline-primary">Account</a>
+        <?php if(!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
+            <a href="fruttaPreferita.php" class="btn btn-outline-success">Frutta Preferita</a>
+            <a href="carrello.php" class="btn btn-outline-warning">Carrello</a>
+            <a href="ordini.php" class="btn btn-outline-info">I miei ordini</a>
+        <?php else: ?>
+            <a href="acquisto.php" class="btn btn-outline-danger">Gestisci Prodotti</a>
+            <a href="ordini.php" class="btn btn-outline-dark">Visualizza ordini</a>
+        <?php endif; ?>
+    </div>
+
+    <div class="d-flex align-items-center gap-3">
+        <a href="storicoNotifiche.php" class="btn btn-light position-relative">
+            Notifiche
+            <?php if(isset($_SESSION["E_mail"])): ?>
+                <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">
+                    <?php echo !$dbh->isUtenteAdmin($_SESSION["E_mail"]) ? $dbh->countNotificheDaLeggere() : $dbh->countNotificheAdminDaLeggere(); ?>
+                </span>
+            <?php endif; ?>
+        </a>
+
+        <form action="" method="POST" class="m-0">
+            <?php if(isset($_SESSION["E_mail"])): ?>
+                <button type="submit" name="logout" class="btn btn-danger">Logout</button>
+            <?php else: ?>
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../utils/img/icons/imgAccesso.png" alt="icona accesso" width="24" height="24">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="register.php">Registrati</a></li>
+                        <li><a class="dropdown-item" href="login.php">Accedi</a></li>
+                        <li><a class="dropdown-item" href="areaRiservata.php">Area Riservata</a></li>
+                    </ul>
+                </div>
+            <?php endif; ?>
+        </form>
+    </div>
+</nav>-->
+
 
 <!-- Offcanvas per schermi piccoli -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
