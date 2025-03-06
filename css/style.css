@@ -313,61 +313,6 @@ h2 span {
         }
 }
 
-/*body>header header {
-    padding: 5% 5px;
-}
-
-body>header header div div {
-    align-items: center;
-    padding: 0 !important;
-}
-
-body>header div header h2 {
-    color: black;
-    font-size: 30px;
-    font-weight: 600;
-    text-align: left;
-    align-items: center;
-
-}
-
-body>header div header img {
-    width: 100%;
-}
-
-
-body>header div header button:hover {
-    color: red !important;
-}*/
-
-
-
-/*logout offcanvas*/
-/*header div form {
-    text-align: center;
-}
-
-header div form input[type="submit"]{
-    border-color: #ff4d4d;
-    color: rgb(0, 0, 0);
-    border-radius: 5px;
-    padding: 10px 30%;
-    font-size: 100%;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-header div form input[type="submit"]:hover {
-    background-color: #e60000;
-    transform: scale(1.05);
-}
-
-header div form input[type="submit"]:active {
-    background-color: #cc0000;
-    transform: scale(0.95);
-}*/
-
 /*RECENSIONI*/
 
 h2 span {
@@ -395,7 +340,7 @@ section>ul>li>input[type="radio"] {
 
 /* bottone preferiti */
 
-header>button { /*dovrebbe essere solo per il bottone preferiti */
+header>button, article>div>button, .btn-pagProdotto { /*dovrebbe essere solo per il bottone preferiti */
     cursor: pointer;
     width: 50px;
     height: 50px;
@@ -406,6 +351,10 @@ header>button { /*dovrebbe essere solo per il bottone preferiti */
     background-color: #f2f2f2;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/*.btn-pagProdotto {
+    border-radius: 100%;
+}*/
 
 /*bottone carrello */
 
