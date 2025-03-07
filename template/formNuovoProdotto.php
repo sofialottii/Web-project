@@ -14,7 +14,7 @@
                     <label for="descrizione" class="form-label">Descrizione</label><textarea id="descrizione" name="descrizione" class="form-control" autocomplete required></textarea>
                 </li>
                 <li class="mb-3">
-                    <label for="prezzo" class="form-label">Prezzo</label><input type="number" id="prezzo" name="prezzo" class="form-control" autocomplete required />
+                    <label for="prezzo" class="form-label">Prezzo</label><input type="number" id="prezzo" name="prezzo" class="form-control" step="0.01" autocomplete required />
                 </li>
                 <li class="mb-3">
                     <label for="quantita" class="form-label">Quantità</label><input type="number" id="quantita" name="quantita" class="form-control" autocomplete required />
