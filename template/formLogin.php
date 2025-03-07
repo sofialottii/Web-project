@@ -20,7 +20,6 @@
         </li>
         <li class="text-center mb-3">
             <label for="cont" class="form-label" hidden></label> 
-            <!--<a href="index.php" class="none"><input type="submit" id="cont" name="cont" value="Continua senza accedere" class="w-75" /></a>-->
             <a href="index.php" class="bottone" >Continua senza accedere</a>
         </li>
     </ul>

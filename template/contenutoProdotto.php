@@ -11,7 +11,7 @@
             <!--bottone preferiti-->
             <?php if(isUserLoggedIn() && !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
                 <label for="cambia_cuore<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>" hidden></label>
-                <button id="cambia_cuore_<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>" class="btn-pagProdotto" type="button">
+                <button id="cambia_cuore_<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>" class="btn-pagProdotto d-block m-2 m-md-0" type="button">
                     <img src="<?php echo checkPreferito($templateParams['articolo'][0]['IDProdotto']); ?>" alt="cuore-vuoto" />        
                 </button>
             <?php endif; ?>

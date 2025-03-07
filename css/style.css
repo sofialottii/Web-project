@@ -10,8 +10,7 @@
 
 /* regole di reset */
 
-body,header,h1,
-h2,h5,ul, main {
+body,header,h1, h2,h5,ul, main {
     margin: 0;
     padding: 0;
 }
@@ -27,14 +26,6 @@ body {
     padding: 0 !important;
 }
 
-/*html, body {
-    overflow-x: hidden;
-}*/
-
-/*div {
-    max-width: 100%;
-}*/
-
 /* font */
 
 * {
@@ -42,15 +33,12 @@ body {
     font-size: 18px;
 }
 
-body>header>h1,
-article>h2,
-section>h2 {
+body>header>h1, article>h2, section>h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--secondary);
     text-align: center;
     font-weight: 600;
 }
-
 
 /* caratteristiche generali tag */
 
@@ -63,8 +51,7 @@ h1>a {
     cursor: pointer;
 }
 
-h1>a:hover,
-body>main>section>div>ul>li>a:hover {
+h1>a:hover {
     color: var(--primary);
 }
 
@@ -76,26 +63,16 @@ body>header {
     background-color: #fff;
 }
 
-body {
-    background-color: var(--background) !important;
-    
-}
-
 body>footer {
     background-color: rgb(54, 54, 54);
     color: #fff;
     text-align: center;
     padding: 20px 0;
     margin-top: auto;
-    vertical-align: bottom;
-
 }
 
-body>main {
-    background-color: var(--background);
-    width: 100%;
-    /*padding: 0 5% 20px 5%;*/
-    
+body>main, body {
+    background-color: var(--background) !important;
 }
 
 img {
@@ -104,13 +81,9 @@ img {
 
 ul {
     list-style: none;
-/*    padding-left: 0 !important;*/
 }
 
-
-
 /* BOTTONI, INPUT E A GENERALI */
-
 
 form input[type="submit"]:hover,
 a:hover:not(.noscale) {
@@ -118,26 +91,10 @@ a:hover:not(.noscale) {
     transition: all 0.3s;
 }
 
-a:hover:not(h1>a) {
-    background-color: lightgray;
-}
-
 form input[type="submit"]:active,
 a:active {
     transform: scale(0.95);
 }
-
-/*li>a:hover,
-footer>p>a:hover,
-main>p>a:hover,
-section>p>a:hover,
-body>main>article>a:last-child:hover,
-form>p>a:hover {
-    background-color: lightgray;
-    transform: scale(1.05);
-}*/
-
-
 
 input[type="radio"] {
     color: black;
@@ -149,13 +106,11 @@ a {
 
 /* ARTICOLI E SEZIONI MAIN */
 
-
 body>main>article,
 body>main>section, .temporaneo {
     border: 2px solid rgb(15, 13, 13);
     border-radius: 5px;
     padding: 20px 5% !important;
-    
     background-color: white;
 }
 
@@ -179,48 +134,24 @@ body>main>section, .temporaneo {
 
 .click {
     transition: transform 0.4s ease-in-out;
-}
-
-.cliccabile {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* Distribuisce gli elementi */
-    height: 100%;
-    /* Le card avranno sempre la stessa altezza */
-    padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
-    transition: transform 0.4s ease-in-out;
+    padding: 1rem;
 }
-
 
 .cliccabile section {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 200px;
-    /* Imposta un'altezza fissa per la sezione immagine */
-    overflow: hidden;
-    /* Evita problemi con immagini più grandi */
+    height: 200px; /* Imposta un'altezza fissa per la sezione immagine */
+    overflow: hidden; /* Evita problemi con immagini più grandi */
 }
 
 .cliccabile img {
-    max-width: 100%;
     height: 100%;
-    object-fit: cover;
-    /* Ritaglia l'immagine per riempire la sezione */
+    object-fit: cover; /* Ritaglia l'immagine per riempire la sezione */
     border-radius: 5px;
 }
 
-
-.none {
-    all: unset;
-}
-
-.bottone {
-    width: 60% !important;
-}
 
 form input[type="submit"],
 body>main>section>div>ul>li>a, .bottone {
@@ -240,12 +171,7 @@ body>main>section>div>ul>li>a, .bottone {
 h2 span {
     color: var(--secondary);
     font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
 }
-
-
-
 
 /* OFFCANVAS */
 
@@ -261,31 +187,24 @@ h2 span {
             font-weight: 600;
             text-align: left;
             align-items: center;
-    
         }
     
         body>header div header img {
             width: 100%;
         }
     
-        body>header div header button {
-            width: 100% !important;
-            padding: 0;
-        }
-    
-        body>header div header div div div:last-child {
-            margin-top: -30px;
-            font-size: 150%;
-    
-        }
-    
         /*elenco offcanvas*/
     
-        div div ul>li {
+        div div nav>ul>li {
             margin: 10px 5%;
+            
+        }
+
+        div div nav>ul>li>a:hover {
+            background-color: lightgray;
         }
     
-        div div ul>li>a {
+        div div nav>ul>li>a {
             display: block;
             color: black;
             font-size: 1.5em;
@@ -294,18 +213,10 @@ h2 span {
         }
     
         /*logout offcanvas*/
-        header div form {
-            text-align: center;
-        }
     
         header div form input[type="submit"] {
-            border-color: #ff4d4d;
-            color: rgb(0, 0, 0);
-            border-radius: 5px;
             padding: 10px 30%;
-            font-size: 100%;
             font-weight: bold;
-            cursor: pointer;
             transition: all 0.3s ease;
         }
     
@@ -322,11 +233,7 @@ h2 span {
 
 /*RECENSIONI*/
 
-h2 span {
-    color: var(--secondary);
-}
-
-section>form>ul>li>div>label {
+section>form>ul>li>div>label { /*stelle*/
     font-size: 2rem;
     color: gray;
     cursor: pointer;
@@ -351,17 +258,11 @@ header>button, article>div>button, .btn-pagProdotto { /*dovrebbe essere solo per
     cursor: pointer;
     width: 50px;
     height: 50px;
-    display: inline-flex;
-    align-items: center;
     border: none;
     border-radius: 100%;
     background-color: #f2f2f2;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-/*.btn-pagProdotto {
-    border-radius: 100%;
-}*/
 
 /*bottone carrello */
 
@@ -400,3 +301,29 @@ tr > td img {
     object-fit: cover;
     border-radius: 5px;
 }
+
+
+
+
+/*li>a:hover,
+footer>p>a:hover,
+main>p>a:hover,
+section>p>a:hover,
+body>main>article>a:last-child:hover,
+form>p>a:hover {
+    background-color: lightgray;
+    transform: scale(1.05);
+}
+    
+
+a:hover:not(h1>a) {
+    background-color: lightgray;
+}
+    
+.cliccabile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+}*/
