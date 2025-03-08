@@ -5,12 +5,17 @@ Questo progetto è un e-commerce di frutta realizzato con un'architettura lato u
 
 # 🛠️ Tecnologie Utilizzate
 Backend: PHP
+
 Frontend: HTML, CSS, JavaScript, Bootstrap
+
 Database: MySQL
 
 # 🚀 Come Avviare il Progetto
 -Clonare il repository
+
 -Avviare un server locale (XAMPP, WAMP, ecc.)
+
 -Importare il database in MySQL e popolarlo (file presenti nel repository)
+
 -Accedere tramite browser all'URL del progetto
 
