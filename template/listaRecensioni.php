@@ -1,5 +1,11 @@
 <div class="container mt-5">
-    <h2 class="text-center mb-4">RECENSIONI</h2>
+    <?php if(isset($templateParams["errore"])): ?>
+        <div class="alert alert-primary text-center mx-5" role="alert">
+            <h2><?php echo $templateParams["errore"]; ?></h2>
+        </div>
+        <?php else : ?>
+            <h2 class="text-center mb-4">RECENSIONI</h2>
+        <?php endif; ?>
     <div class="row">
     <?php foreach($templateParams["recensioni"] as $recensione): ?>
     <div class="col-lg-6 col-md-12 mb-4">

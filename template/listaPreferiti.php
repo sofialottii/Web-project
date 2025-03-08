@@ -4,7 +4,7 @@
         <h2>La lista dei preferiti è vuota</h2>
     </div>
 <?php else : ?>
-    <h2 class="text-center mt-3 mb-4">Lista dei preferiti</h2>
+    <h2 class="text-center mt-3 mb-4">LISTA DEI PREFERITI</h2>
 <?php endif; ?>
 
 <div class="container">

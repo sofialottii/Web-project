@@ -21,6 +21,10 @@ $templateParams["titolo"] = "Grimilde's - Recensioni";
 $templateParams["nome"] = "listaRecensioni.php"; 
 $templateParams["recensioni"] = $dbh->getAllRecensioni(); 
 
+if(empty($templateParams["recensioni"])){
+    $templateParams["errore"] = "Non sono presenti recensioni!";
+}
+
 if(isset($_POST["rimuovi"])){
     $dbh->rimuoviRecesione($_POST["mailRecensione"], $_POST["dataRecensione"]);
     header("location: #");

@@ -4,10 +4,9 @@
             <h2><?php echo $templateParams["errore"]; ?></h2>
         </div>
         <?php else : ?>
-            <h2 class="text-center mt-3 mb-4">Storico Ordini</h2>
-    <?php endif; ?>
+            <h2 class="text-center mt-3 mb-4">STORICO ORDINI</h2>
   
-    <div class="card">
+    <div class="card shadow-sm">
         <div class="card-body">
             <?php foreach($templateParams["ordini"] as $ordin): ?>
                 <section class="p-3 border rounded shadow-sm mb-3 bg-light">
@@ -72,7 +71,8 @@
             <?php endforeach ?>
         </div>
     </div>
-    <p><a href="index.php">Torna alla home</a></p>
+    <?php endif; ?>
+    <p class="mt-3"><a href="index.php">Torna alla home</a></p>
 
 <script src="../js/hoverSection.js">    
 </script>

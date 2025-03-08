@@ -8,7 +8,7 @@
             <label for="cancNot" hidden></label><input type="submit" id="cancNot" name="cancellanotifiche" value="Elimina Tutte">
         </form>
 
-    <div class="card">
+    <div class="card shadow-sm">
         <div class="card-body">
             <?php foreach($templateParams["notifiche"] as $notifica): ?>
                 <section class="p-3 border rounded shadow-sm mb-3 bg-light">

@@ -85,8 +85,7 @@ ul {
 
 /* BOTTONI, INPUT E A GENERALI */
 
-form input[type="submit"]:hover,
-a:hover:not(.noscale) {
+form input[type="submit"]:hover {
     transform: scale(1.05);
     transition: all 0.3s;
 }
@@ -108,7 +107,7 @@ a {
 
 body>main>article,
 body>main>section, .temporaneo {
-    border: 2px solid rgb(15, 13, 13);
+    border: 2px solid rgba(0, 0, 0, 0.625);
     border-radius: 5px;
     padding: 20px 5% !important;
     background-color: white;

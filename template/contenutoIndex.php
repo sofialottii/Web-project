@@ -36,7 +36,67 @@
             </p>
         </article>
 
-        <article class="col-10 col-md-5 mt-3 mt-md-0 temporaneo">
+        <article class="col-10 col-md-5 mt-3 mt-md-0 temporaneo d-flex flex-column">
+            <h2 class="text-center mt-2 mb-3 fw-bold">DICONO DI NOI</h2>
+            <div id="carouselExample" class="carousel slide">
+                <?php if(isset($templateParams["errore"])): ?>
+
+                        <h3 class="text-center my-5 mx-4"><?php echo $templateParams["errore"]; ?></h3>
+                    
+                <?php else : ?>
+
+                    <button class="position-absolute top-50 start-0 btn translate-middle carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <img src="../utils/img/icons/freccia-sinistra.png" alt="Freccia sinistra" />
+                    </button>
+                    <div class="carousel-inner px-4">
+                        <?php $recensioniPerPagina = 3;
+                            $totalRecensioni = count($templateParams["recensioni"]);
+                            $chunks = array_chunk($templateParams["recensioni"], $recensioniPerPagina);
+
+                        foreach($chunks as $index => $chunk): ?>
+                            <div class="carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>" data-index="<?php echo $index; ?>">
+                                <?php foreach($chunk as $recensione): ?>
+                                    <div class="border rounded p-3 mb-3 shadow-sm bg-light">
+                                        <header class="d-flex justify-content-between">
+                                            <p class="fw-bold"><?php echo $recensione["Nome"] . " " . $recensione["Cognome"]; ?></p>
+                                            <p>
+                                                <?php for ($i = 1; $i <= 5; $i++) {
+                                                    echo ($i <= $recensione["NumeroStelle"]) ? '<span class="text-warning">★</span>' : '<span class="text-secondary">★</span>';
+                                                } ?>
+                                            </p>
+                                        </header>
+                                        <section>
+                                            <p><?php echo $recensione["TestoRecensione"]; ?></p>
+                                        </section>
+                                        <footer class="text-end text-muted">
+                                            <small><?php echo $recensione["DataRecensione"]; ?></small>
+                                        </footer>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <button class="position-absolute top-50 start-100 btn translate-middle carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <img src="../utils/img/icons/freccia-destra.png" alt="Freccia destra" />
+                    </button>
+                <?php endif; ?>
+            </div>
+
+            <!-- Pulsante Recensioni -->
+            <form action="" method="POST" class="text-center mt-3 mt-auto">
+                <input type="submit" name="<?php echo (!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])) ? 'creaRecensione' : 'vediRecensioni'; ?>"
+                    id="<?php echo (!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])) ? 'creaRecensione' : 'vediRecensioni'; ?>"
+                    value="<?php echo (!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])) ? 'Lascia una recensione' : 'Vedi tutte le recensioni'; ?>" />
+            </form>
+        </article>
+    </div>
+
+
+
+
+    
+            <!--
             <h2 class="text-center mt-2 mb-3 fw-bold">DICONO DI NOI</h2>
             <?php foreach($templateParams["recensioni"] as $recensione): ?>
             <div class="border rounded p-3 mb-3 shadow-sm bg-light">
@@ -56,14 +116,4 @@
                 </footer>
             </div>
             <?php endforeach; ?>
-
-            <!-- Pulsante Recensioni -->
-            <form action="" method="POST" class="text-center mt-3">
-                <input type="submit" class="btn btn-primary" name="<?php echo (!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])) ? 'creaRecensione' : 'vediRecensioni'; ?>"
-                    id="<?php echo (!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])) ? 'creaRecensione' : 'vediRecensioni'; ?>"
-                    value="<?php echo (!isset($_SESSION["E_mail"]) || !$dbh->isUtenteAdmin($_SESSION["E_mail"])) ? 'Lascia una recensione' : 'Vedi tutte le recensioni'; ?>" />
-            </form>
-        </article>
-    </div>
-
-
+            -->

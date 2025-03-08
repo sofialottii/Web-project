@@ -1,6 +1,5 @@
 <article class="container mt-4">
     <div class="row align-items-center">
-        <!--bottone preferiti-->
 
         <!-- Immagine prodotto -->
         <div class="col-md-5 text-center">

@@ -1,5 +1,5 @@
 <div class="row justify-content-center m-0">
-<section class="temporaneo mt-5 col-10 col-md-8 col-lg-4 pb-0">
+<section class="temporaneo mt-5 col-10 col-md-8 col-lg-4 pb-0 shadow-sm">
     <h2>PROFILO</h2>
     <table>
     <?php foreach($templateParams["profilo"] as $info):?>

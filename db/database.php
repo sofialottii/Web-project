@@ -12,16 +12,17 @@ class DatabaseHelper{
 
     /* INDEX */
     public function getRecensioni() {
-    $n=3;
+    //$n=3;
     $stmt = $this->db->prepare("
         SELECT r.NumeroStelle, r.DataRecensione, 
             r.TestoRecensione, c.Nome, c.Cognome
         FROM recensione r
         JOIN cliente c
         ON r.E_mail = c.E_mail
-        ORDER BY RAND()
-        LIMIT ?");
-    $stmt->bind_param("i",$n);
+        ORDER BY r.DataRecensione DESC
+        ");
+    //LIMIT ?
+    //$stmt->bind_param("i",$n);
 
     $stmt->execute();
     $result = $stmt->get_result();
