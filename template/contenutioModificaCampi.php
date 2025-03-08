@@ -5,7 +5,7 @@
     <p class="text-danger"><?php echo $templateParams["erroreDati"]; ?></p>
     <?php endif; ?>
     <form action="#" method="POST">
-    <ul>
+    <ul class="form p-0">
         <li class="mb-3">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" id="nome" name="nome" autocomplete="on" value="<?php echo $templateParams["profilo"][0]["Nome"] ?> " class="form-control" />

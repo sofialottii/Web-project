@@ -25,9 +25,6 @@ if(isset($_POST["aggiungi"])){
     $img = "../utils/img/".$_FILES["immagine"]["name"];
     $dbh->aggiungiProdotto($NuovoId, $_POST["nome"], $img, $_POST["descrizione"], $_POST["quantita"], $_POST["visibilita"]);
     $dbh->aggiungiProdAlTariffario($NuovoId, 100, intval($_POST["prezzo"]));
-    //faccio il log di $_files["IMMAGINE"]
-    //$log = "aggiungiProdotto.php - ".$_FILES["immagine"]["name"]." - ".$_FILES["immagine"]["type"]." - ".$_FILES["immagine"]["size"]." - ".$_FILES["immagine"]["tmp_name"];
-    //error_log($log);
     header("location: acquisto.php");
     exit;
 }

@@ -11,8 +11,6 @@ if(isUserLoggedIn()){
 else{
     $utente = "Accedi";
     $sessoUtente = "";
-    //header("location: login.php");
-    //exit;
 }
 
 /*canvas*/

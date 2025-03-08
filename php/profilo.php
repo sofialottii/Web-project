@@ -23,7 +23,7 @@ $nomeUtente = $dbh->emily();
 
     
 
-$templateParams["titolo"] = "Grimilde's - Profilo"; //title
+$templateParams["titolo"] = "Grimilde's - Profilo";
 $templateParams["nome"] = "contenutoProfilo.php";
 
 

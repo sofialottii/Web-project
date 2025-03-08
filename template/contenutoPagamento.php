@@ -45,18 +45,18 @@
     <!--nel caso in cui venga premuto il secondo bottone-->
     <section id="sezione-carta-salvata" style="display: none;" class="text-center">
         <form action="" method="POST">
-            <ul class="d-flex flex-column gap-3">
+            <ul class="d-flex flex-column gap-3 p-0">
                 <li class="d-block">
-            <label for="cartaReg" class="g-6" >Scegli la carta</label><br/>
-            <select id="cartaReg" name="cartaRegistrata" class="g-6" class="form-select" required>
-                <?php foreach($templateParams["carteSalvate"] as $carta): ?>
-                    <option value="<?php echo $carta["NumeroCarta"]; ?>"><?php echo $carta["NumeroCarta"]; ?></option>
-                <?php endforeach; ?>
-            </select>
+                    <label for="cartaReg" class="g-6" >Scegli la carta</label><br/>
+                    <select id="cartaReg" name="cartaRegistrata" class="g-6" class="form-select" required>
+                        <?php foreach($templateParams["carteSalvate"] as $carta): ?>
+                            <option value="<?php echo $carta["NumeroCarta"]; ?>"><?php echo $carta["NumeroCarta"]; ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </li>
                 <li class="d-block">
-            <label for="pagaVecchia" hidden></label>
-            <input class="g-4" type="submit" id="pagaVecchia" name="pagaConVecchiaCarta" value="Paga Ora" />
+                    <label for="pagaVecchia" hidden></label>
+                    <input class="g-4" type="submit" id="pagaVecchia" name="pagaConVecchiaCarta" value="Paga Ora" />
                 </li>
             </ul>
         </form>

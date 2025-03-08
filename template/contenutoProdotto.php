@@ -1,4 +1,4 @@
-<article class="container mt-4">
+<article class="container mt-4 col-10">
     <div class="row align-items-center">
 
         <!-- Immagine prodotto -->
@@ -106,9 +106,9 @@
         })
         .then(response => response.text())
         .then(data => {
-            // Cambia l'immagine con quella ricevuta dalla funzione PHP
+            // cambiamo l'immagine con quella ricevuta dalla funzione PHP
             const img = document.querySelector("#cambia_cuore_<?php echo $templateParams["articolo"][0]['IDProdotto']; ?> img");
-            img.src = data.trim(); // Assicurati che il dato ricevuto sia il percorso dell'immagine
+            img.src = data.trim(); // controlliamo che il dato ricevuto sia il percorso dell'immagine
             console.log(data.trim());
         })
         .catch(error => {
@@ -121,7 +121,7 @@
     const prezzoTotale = document.getElementById("prezzoTotale");
     const prezzoUnitario = parseFloat(prezzoTotale.dataset.prezzoUnitario);
 
-    // Aggiungi un listener per il cambiamento del valore della quantità
+    // aggiungiamo un listener per il cambiamento del valore della quantità
     quantitaInput.addEventListener("input", function () {
         const quantita = parseInt(this.value) || 1; // Prevenire valori non numerici
         const nuovoPrezzo = (prezzoUnitario * quantita).toFixed(2);

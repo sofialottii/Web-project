@@ -3,7 +3,7 @@ require_once("bootstrap.php");
 session_start();
 
 
-$templateParams["titolo"] = "Grimilde's - Notifiche"; //title
+$templateParams["titolo"] = "Grimilde's - Notifiche";
 $templateParams["nome"] = "contenutoStoricoNotifiche.php";
 $utente=$_SESSION["E_mail"];
 

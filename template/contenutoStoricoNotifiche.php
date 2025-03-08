@@ -28,7 +28,7 @@
                             <small class="text-muted">Data: <?php echo $notifica["DataNotifica"]; ?></small>
                         </div>
 
-                        <p class="mt-2 fw-bold h5"><?php echo $notifica["TipoNotifica"]; ?></p>
+                        <p class="mt-2 fw-bold h5 text-center text-md-start"><?php echo $notifica["TipoNotifica"]; ?></p>
 
                         <div class="d-flex justify-content-between align-items-center mt-2">
                             <p class="mb-0">

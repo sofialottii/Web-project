@@ -12,8 +12,6 @@ if(isUserLoggedIn()){
 else{
     $utente = "Accedi";
     $sessoUtente = "";
-    //header("location: login.php");
-    //exit;
 }
 
 /*canvas*/
@@ -49,7 +47,6 @@ if (isUserLoggedIn() && $dbh->isUtenteAdmin($_SESSION["E_mail"])){
 } else {
     $templateParams["prodotti"] = $dbh->getProdottiUtenti($cercaProdotto);
 }
-
 
 require("../template/base.php");
 

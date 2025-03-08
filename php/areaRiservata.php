@@ -5,8 +5,6 @@ require_once("bootstrap.php");
 session_start();
 
 if(isset($_POST["accedi"])){
-    /*$email = $_POST["E_mail"];
-    $password = $_POST["password"];*/
     $errore = false;
     $login_result = $dbh->checkLogin($_POST["E_mail"], $_POST["password"]);
     //login fallito:

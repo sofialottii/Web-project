@@ -16,7 +16,7 @@ else{
 $templateParams["canvas"] = "contenutoOffCanvas.php";
 comandiCanvas();
 
-$templateParams["titolo"] = "Grimilde's - Conferma Pagamento"; //title
+$templateParams["titolo"] = "Grimilde's - Conferma Pagamento";
 $templateParams["nome"] = "contenuoPagamentoEffettuato.php";
 
 require("../template/base.php");

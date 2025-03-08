@@ -73,7 +73,7 @@ if(isset($_POST["pagaConNuovaCarta"])){
 
 $templateParams["carteSalvate"] = $dbh->getDati();
 $totale = prezzoTotale($templateParams["carrello"]);
-$templateParams["titolo"] = "Grimilde's - Pagamento"; //title
+$templateParams["titolo"] = "Grimilde's - Pagamento";
 $templateParams["nome"] = "contenutoPagamento.php";
 
 
