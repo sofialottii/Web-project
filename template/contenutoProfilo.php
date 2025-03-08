@@ -1,26 +1,25 @@
 <div class="row justify-content-center m-0">
 <section class="temporaneo mt-5 col-10 col-md-8 col-lg-4 pb-0 shadow-sm">
     <h2>PROFILO</h2>
-    <table>
+    <table class="table table-borderless text-justify-center">
     <?php foreach($templateParams["profilo"] as $info):?>
         <tr>
-            <td>Nome</td>
+            <th scope="row">Nome</th>
             <td><?php echo $info["Nome"];?></td>
         </tr><tr>
-            <td>Cognome </td>
+            <th scope="row">Cognome </th>
             <td><?php echo $info["Cognome"];?></td>
         </tr><tr>
-            <td>E-Mail </td>
+            <th scope="row">E-Mail </th>
             <td><?php echo $info["E_mail"];?></td>
         </tr><tr>
-            <td>Data di Nascita </td>
+            <th scope="row">Data di Nascita </th>
             <td><?php echo $info["DataNascita"];?></td>
         </tr>
     <?php endforeach?>
     </table>
-    <!--<form action="" method="POST">-->
-        <div class="text-center">
-        <ul>
+    <div class="text-center">
+        <ul class="p-0">
             <li class="text-center mb-3">
                 <a href="index.php" >Torna alla home</a>
             </li>
@@ -31,12 +30,8 @@
                 <a href="modificaPassword.php" >Modifica password</a>
             </li>
         </ul>
-        </div>
-    <!--</form>-->
+    </div>
 
-    <?php if (isset($templateParams["emily"])): ?>
-    <img src="../utils/img/emily.jpg" alt="Foto di Emily" class="text-center">
-<?php endif; ?>
 
     <img src="../utils/img/Grimilde-CestoMele.png" alt="" class="mx-auto rounded d-block img-fluid ">
 </section>
