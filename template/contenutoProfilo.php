@@ -1,17 +1,17 @@
 <div class="row justify-content-center m-0">
-<section class="temporaneo mt-5 col-10 col-md-8 col-lg-4 pb-0 shadow-sm">
+<section class="temporaneo mt-5 col-10 col-md-8 col-lg-4 pb-0">
     <h2>PROFILO</h2>
     <table class="table table-borderless text-justify-center">
     <?php foreach($templateParams["profilo"] as $info):?>
         <tr>
             <th scope="row">Nome</th>
-            <td><?php echo $info["Nome"];?></td>
+            <td class="text-break"><?php echo $info["Nome"];?></td>
         </tr><tr>
             <th scope="row">Cognome </th>
-            <td><?php echo $info["Cognome"];?></td>
+            <td class="text-break"><?php echo $info["Cognome"];?></td>
         </tr><tr>
             <th scope="row">E-Mail </th>
-            <td><?php echo $info["E_mail"];?></td>
+            <td class="text-break"><?php echo $info["E_mail"];?></td>
         </tr><tr>
             <th scope="row">Data di Nascita </th>
             <td><?php echo $info["DataNascita"];?></td>

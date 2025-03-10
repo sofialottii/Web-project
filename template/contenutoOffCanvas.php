@@ -12,6 +12,7 @@
             <a href="fruttaPreferita.php" class="text-dark btn btn-light">Frutta Preferita</a>
             <a href="carrello.php" class="text-dark btn btn-light">Carrello</a>
             <a href="ordini.php" class="text-dark btn btn-light">I miei ordini</a>
+            <a href="acquisto.php" class="text-dark btn btn-light">Prodotti</a>
         <?php else: ?>
             <a href="acquisto.php" class="text-dark btn btn-light">Gestisci Prodotti</a>
             <a href="ordini.php" class="text-dark btn btn-light">Visualizza ordini</a>
@@ -77,6 +78,7 @@
                     <li><a href="fruttaPreferita.php">Frutta Preferita</a></li>
                     <li><a href="carrello.php">Carrello</a></li>
                     <li><a href="ordini.php">I miei ordini</a></li>
+                    <li><a href="acquisto.php">Prodotti</a></li>
                 <?php else: ?>
                     <li><a href="acquisto.php">Gestisci Prodotti</a></li>
                     <li><a href="ordini.php">Visualizza ordini</a></li>
