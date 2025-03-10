@@ -21,14 +21,14 @@
             <div class="card border-0 shadow-sm p-4">
                 <div class="card-body">
                     <h2 class="card-title text-dark fw-bold"> <?php echo $templateParams["articolo"][0]["NomeProdotto"]; ?></h2>
-                    <p class="fs-5 text-muted">€<?php echo $templateParams["articolo"][0]["PrezzoProdotto"]; ?> ad Hg</p>
+                    <p class="fs-5 text-muted">€<?php echo $templateParams["articolo"][0]["PrezzoProdotto"]; ?> ad Kg</p>
                     <p><?php echo $templateParams["articolo"][0]["DescrizioneProdotto"]; ?></p>
 
                     <?php if(!$templateParams["isUtenteAdmin"]): ?>
                         <form action="" method="POST">
                             <ul class="p-0 form">
                                 <li class="mb-3">
-                                    <p>Quantità in Hg:</p>
+                                    <p>Quantità in Kg:</p>
                                     <label for="quantita" class="form-label" hidden></label>
                                     <input type="number" name="quantita" id="quantita" class="form-control" min="0"
                                     max="<?php echo $templateParams["articolo"][0]["QuantitaDisponibile"]; ?>" value="0" autocomplete="" />

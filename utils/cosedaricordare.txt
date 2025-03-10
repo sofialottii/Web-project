@@ -50,3 +50,27 @@ modo, per rimetterlo nei preferiti bisognerebbe tornare nella pagina di acquisto
 -capire come gestire il cambiamento dello stato di tracciamento
 
 MODIFICHE FATTE:
+
+
+
+
+
+
+
+COSA DA fare
+- singolo prodotto bootstrap
+- barra laterale bootstrap
+- nav 
+- bootstrap singolo ordine
+- footer che foota
+- bootstrap riepilogo ordine
+- taglia prezzo
+- bootstrap tracciamento ordine
+- procedi pagamento modifiche varie
+- recensioni Admin bootstrap
+- modifica campi bootstrap  
+
+- grafiche:
+    -bottoni
+    -colore
+    -font

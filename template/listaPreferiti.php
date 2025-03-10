@@ -25,7 +25,7 @@
                         </section>
                         <footer class="text-center">
                             <p class="fs-3 fw-bold"><?php echo $prodotto["NomeProdotto"]; ?></p>
-                            <p>Prezzo per 100 gr: €<?php echo $prodotto["PrezzoProdotto"]; ?>0</p>
+                            <p>Prezzo per 1000 gr: €<?php echo $prodotto["PrezzoProdotto"]; ?>0</p>
                         </footer>
                     </article>
                     <label for="bottoneSubmit" hidden></label><input type="submit" id="bottoneSubmit" name="bt" value="bt" hidden />
