@@ -5,10 +5,10 @@
     <?php foreach($templateParams["profilo"] as $info):?>
         <tr>
             <th scope="row">Nome</th>
-            <td class="text-break"><?php echo $info["Nome"];?></td>
+            <td><?php echo $info["Nome"];?></td>
         </tr><tr>
             <th scope="row">Cognome </th>
-            <td class="text-break"><?php echo $info["Cognome"];?></td>
+            <td><?php echo $info["Cognome"];?></td>
         </tr><tr>
             <th scope="row">E-Mail </th>
             <td class="text-break"><?php echo $info["E_mail"];?></td>
