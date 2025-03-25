@@ -6,6 +6,11 @@
     --background: rgb(255, 214, 138);
     --text: #000000;
     --error: #b00020;
+    /* prove porpora
+    --primary: #670035;
+    --secondary: #d70068;
+    --background: rgb(254, 204, 112);
+    */
 }
 
 /* regole di reset */
@@ -35,8 +40,9 @@ body {
     font-size: 18px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Mansalva&family=Shadows+Into+Light+Two&display=swap');
 body>header>h1, article>h2, section>h2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Mansalva', cursive;
     color: var(--secondary);
     text-align: center;
     font-weight: 600;
@@ -162,7 +168,7 @@ body>main>section>div>ul>li>a, .bottone {
     padding: 5px 10%;
     font-size: 16px;
     border-radius: 5px;
-    background-color: #750000;
+    background-color: var(--primary);
     color: #f4f4f4;
     font-weight: 600;
 }
@@ -227,7 +233,7 @@ h2 span {
         }
     
         header div form input[type="submit"]:active {
-            background-color: #cc0000;
+            background-color: var(--secondary);
             transform: scale(0.95);
         }
 }
