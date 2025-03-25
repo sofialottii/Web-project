@@ -37,7 +37,7 @@
             <?php else: ?>
                 <div class="dropdown">
                     <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" width="16px" height="16px" aria-expanded="false">
-                        <img src="../utils/img/icons/imgAccesso.png" alt="icona accesso" />
+                        <img src="../utils/img/icons/specchio.png" alt="icona accesso" />
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item noscale" href="register.php">Registrati</a></li>
