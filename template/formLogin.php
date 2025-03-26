@@ -7,19 +7,23 @@
     <form action="#" method="POST">
     <ul class="p-0 form">
         <li>
-            <label for="E_mail" class="form-label">E-mail</label><input type="email" id="E_mail" name="E_mail" class="form-control" autocomplete="on" />
+            <label for="E_mail" class="form-label">E-mail</label>
+            <input type="email" id="E_mail" name="E_mail" class="form-control" autocomplete="on" />
         </li>
         <li class="mb-3">
-            <label for="password" class="form-label">Password</label><input type="password" id="password" name="password" class="form-control" autocomplete="off" />
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-control" autocomplete="off" />
         </li>
         <li class="text-center mb-3">
-            <label for="accedi" class="form-label" hidden></label><input type="submit" name="accedi" id="accedi" value="Accedi" class="w-75" />
+            <label for="accedi" class="form-label" hidden></label>
+            <input type="submit" name="accedi" id="accedi" value="Accedi" class="w-75" />
         </li>
         <li class="text-center mb-3">
-            <label for="iscriviti" class="form-label" hidden></label> <input type="submit" id="iscriviti" name="iscriviti" value="Iscriviti" class="w-75" />
+            <label for="iscriviti" class="form-label" hidden></label> 
+            <input type="submit" id="iscriviti" name="iscriviti" value="Iscriviti" class="w-75" />
         </li>
         <li class="text-center mb-3">
-            <label for="cont" class="form-label" hidden></label> 
+            <label for="cont" class="form-label"  hidden></label> 
             <a href="index.php" class="bottone" >Continua senza accedere</a>
         </li>
     </ul>

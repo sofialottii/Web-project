@@ -1,11 +1,11 @@
 <div class="row justify-content-center m-0">
-<section  class="temporaneo mt-5 col-10 col-md-8 col-lg-5 pb-0">
+<section class="temporaneo mt-5 col-10 col-md-8 col-lg-4 pb-0">
     <h2>MODIFICA IL TUO PROFILO</h2>
     <?php if(isset($templateParams["erroreDati"])): ?>
     <p class="text-danger"><?php echo $templateParams["erroreDati"]; ?></p>
     <?php endif; ?>
     <form action="#" method="POST">
-    <ul class="form p-0">
+    <ul class="p-0 form">
         <li class="mb-3">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" id="nome" name="nome" autocomplete="on" value="<?php echo $templateParams["profilo"][0]["Nome"] ?> " class="form-control" />
@@ -27,14 +27,16 @@
                 <option value="Altro">Altro</option>
             </select>
         </li>
-        <li class="d-block">
-            <a href="profilo.php">Ho Cambiato idea</a>
-            <label for="ModificaCampi" hidden></label><input type="submit" name="ModificaCampi" id="ModificaCampi" value="Salva Modifiche" />
+        <li class="text-center mb-3">
+            <label for="ModificaCampi"></label><input
+                 type="submit" name="ModificaCampi" id="ModificaCampi" value="Salva Modifiche" class="w-75" />
+            </label>        
         </li>
-        <a href="profilo.php" hidden>Ho Cambiato idea</a>
-        
+        <li class="text-center mb-3">
+            <a href="profilo.php" class="bottone">Ho Cambiato idea</a>
+        </li>
     </ul>
 </form>
-<img src="../utils/img/Grimilde-CestoMele.png" alt="Grimilde con un cesto di mele">
+<img src="../utils/img/Grimilde-CestoMele.png" class="mx-auto rounded d-block img-fluid ">
 </section>
     </div>

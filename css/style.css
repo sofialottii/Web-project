@@ -161,7 +161,7 @@ body>main>section, .temporaneo {
 
 
 form input[type="submit"],
-body>main>section>div>ul>li>a, .bottone {
+body>main>section>div>ul>li>a{
     /*width: 60%;*/
     text-align: center;
     text-decoration: none;
@@ -171,6 +171,27 @@ body>main>section>div>ul>li>a, .bottone {
     background-color: var(--primary);
     color: #f4f4f4;
     font-weight: 600;
+}
+.bottone{
+    display: inline-block;
+    text-align: center;
+    padding: 5px 10%;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: #f4f4f4;
+    font-weight: 600;
+    text-decoration: none;
+    /*box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);*/
+    width: 75%;
+    border: 2px solid black;
+}
+.bottone:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
+.bottone:active {
+    transform: scale(0.95);
 }
 
 /* RECENSIONI */

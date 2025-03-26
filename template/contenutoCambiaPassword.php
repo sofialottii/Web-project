@@ -1,5 +1,5 @@
 <div class="row justify-content-center m-0">
-<section class="temporaneo mt-5 col-10 col-md-8 col-lg-5 pb-0">
+<section class="temporaneo mt-5 col-10 col-md-8 col-lg-4 pb-0">
     <h2 class="mb-3">PROFILO</h2>
     <?php if(isset($templateParams["errorelogin"])): ?>
     <p class="text-danger"><?php echo $templateParams["errorelogin"]; ?></p>
@@ -23,9 +23,9 @@
                 <input type="submit" name="aggiornaPassword" id="aggiornaPassword" value="Salva Password"  class="w-75"/>
             </li>
             <li  class="text-center mb-3">
-                <a href="profilo.php" >Ho cambiato idea</a>
+                <a href="profilo.php" class="bottone">Ho cambiato idea</a>
             </li>
-            <a href="profilo.php" hidden>Ho cambiato idea</a>
+            
             
         </ul>
     </form>

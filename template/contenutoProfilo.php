@@ -21,13 +21,13 @@
     <div class="text-center">
         <ul class="p-0">
             <li class="text-center mb-3">
-                <a href="index.php" >Torna alla home</a>
+                <a href="index.php" class="bottone">Torna alla home</a>
             </li>
             <li class="text-center mb-3">
-                <a href="modificaCampi.php"  >Modifica campi</a>
+                <a href="modificaCampi.php"  class="bottone">Modifica campi</a>
             </li>
             <li class="text-center mb-3">
-                <a href="modificaPassword.php" >Modifica password</a>
+                <a href="modificaPassword.php" class="bottone">Modifica password</a>
             </li>
         </ul>
     </div>
