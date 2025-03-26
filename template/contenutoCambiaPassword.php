@@ -23,7 +23,7 @@
                 <input type="submit" name="aggiornaPassword" id="aggiornaPassword" value="Salva Password"  class="w-75"/>
             </li>
             <li  class="text-center mb-3">
-                <a href="profilo.php" class="bottone">Ho cambiato idea</a>
+                <a href="profilo.php" class="bottone w-75">Ho cambiato idea</a>
             </li>
             
             

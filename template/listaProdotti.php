@@ -87,7 +87,7 @@
 
 
 
-<p class="mt-4 mb-0 text-center"><a href="index.php">Torna alla home</a></p>
+<p class="mt-4 mb-0 text-center"><a href="index.php" class="bottone">Torna alla home</a></p>
 <!-- bottone carrello -->
 <?php if(isUserLoggedIn() && !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
 <form action="carrello.php" method="POST">

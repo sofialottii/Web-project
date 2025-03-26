@@ -36,7 +36,7 @@
     </div>
     <?php endforeach; ?>
         <div class="text-center mt-4">
-            <a href="index.php" class="btn btn-secondary">Torna alla home</a>
+            <a href="index.php" class="bottone">Torna alla home</a>
         </div>
     </div>
 </div>

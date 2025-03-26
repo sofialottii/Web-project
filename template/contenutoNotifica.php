@@ -17,7 +17,7 @@
                     <input type="hidden" id="idNot" name="IdNotifica" value ="<?php echo $templateParams["notifica"][0]["IdNotifica"]?>"/>
                 </li>
                 <li class="d-flex justify-content-between align-items-center mt-3">
-                    <a href="storicoNotifiche.php">Torna alle notifiche</a>
+                    <a href="storicoNotifiche.php" class="bottone">Torna alle notifiche</a>
                     <label for="rimuovi" hidden></label><input type="submit" id="rimuovi" name="rimuovi" value="Rimuovi"/>
                 </li>
                 <a href="storicoNotifiche.php" hidden>Indietro</a>

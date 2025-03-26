@@ -33,7 +33,7 @@
             </label>        
         </li>
         <li class="text-center mb-3">
-            <a href="profilo.php" class="bottone">Ho Cambiato idea</a>
+            <a href="profilo.php" class="bottone w-75">Ho Cambiato idea</a>
         </li>
     </ul>
 </form>

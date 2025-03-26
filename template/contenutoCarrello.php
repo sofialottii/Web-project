@@ -1,6 +1,6 @@
 <div class="container">
     <form action="" method="POST" class="text-center my-4">
-        <label for="svuotaCarrello" hidden></label><input type="submit" name="svuotaCarrello" id="svuotaCarrello" value="Svuota carrello" />
+        <label for="svuotaCarrello" hidden></label><input type="submit" name="svuotaCarrello" id="svuotaCarrello" value="Svuota carrello"/>
     </form>
     <?php if(isset($templateParams["errore"])): ?>
         <div class="alert alert-danger text-center align-items-center mx-5 mt-3" role="alert">
@@ -68,9 +68,9 @@
 
 <p class="fs-2 text-uppercase text-center" >Totale: €<?php echo prezzoTotale($templateParams["carrello"]); ?></p>
 
-<p class="text-center"><a href="acquisto.php">Torna agli acquisti</a></p>
+<p class="text-center"><a href="acquisto.php" class="bottone">Torna agli acquisti</a>
 <form action="" method="POST" class="text-center">
     <label for="vaiInCassa" hidden></label><input type="submit" name="vaiInCassa" id="vaiInCassa" value="Vai alla cassa" />
-</form>
+</form></p>
 </div>
 

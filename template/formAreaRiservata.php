@@ -13,10 +13,10 @@
                 <label for="password" class="form-label">Password</label><input type="password" id="password" name="password" class="form-control" autocomplete="off" />
             </li>
             <li class="text-center">
-                <label for="accedi" class="form-label" hidden></label><input type="submit" name="accedi" id="accedi" value="Accedi come admin" />
+                <label for="accedi" class="form-label" hidden></label><input type="submit" name="accedi" id="accedi" value="Accedi come admin" class="mb-4" />
             </li>
             <li class="text-center">
-                <a href="index.php">Continua senza accedere</a>
+                <a href="index.php" class="bottone">Continua senza accedere</a>
             </li>
         </ul>
         </form>

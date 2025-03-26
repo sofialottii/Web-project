@@ -53,5 +53,5 @@
     
     <?php endif; ?>
 
-    <p class="text-center mt-4"><a href="index.php" >Torna alla home</a></p>
+    <p class="text-center mt-4"><a href="index.php" class="bottone">Torna alla home</a></p>
 </div>

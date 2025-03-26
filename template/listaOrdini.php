@@ -72,7 +72,7 @@
         </div>
     </div>
     <?php endif; ?>
-    <p class="mt-3"><a href="index.php">Torna alla home</a></p>
+    <p class="mt-3"><a href="index.php" class="bottone">Torna alla home</a></p>
 
 <script src="../js/hoverSection.js">    
 </script>

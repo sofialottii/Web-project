@@ -34,9 +34,9 @@
             </li>
             <li class="text-center d-block">
                 <label for="creaRecensione" hidden></label>
-                <input type="submit" id="creaRecensione" name="creaRecensione" value="Pubblica"  />
+                <input type="submit" id="creaRecensione" name="creaRecensione" value="Pubblica" />
             
-                <a href="index.php">Indietro</a>
+                <a href="index.php" class="bottone">Indietro</a>
             </li>
             <!--<li>
                 <a href="index.php">Indietro</a>

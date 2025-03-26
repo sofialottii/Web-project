@@ -183,7 +183,7 @@ body>main>section>div>ul>li>a{
     font-weight: 600;
     text-decoration: none;
     /*box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);*/
-    width: 75%;
+    /*width: 75%;*/
     border: 2px solid black;
 }
 .bottone:hover {

@@ -24,7 +24,7 @@
         </li>
         <li class="text-center mb-3">
             <label for="cont" class="form-label"  hidden></label> 
-            <a href="index.php" class="bottone" >Continua senza accedere</a>
+            <a href="index.php" class="bottone w-75" >Continua senza accedere</a>
         </li>
     </ul>
 </form>

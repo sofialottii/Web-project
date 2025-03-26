@@ -43,7 +43,7 @@
                                 </li>
                                 <?php endif; ?>
                                 <li class="d-block">
-                                    <a href="acquisto.php">Torna agli acquisti</a>
+                                    <a href="acquisto.php" class="bottone mb-3">Torna agli acquisti</a>
                                     <label for="aggiungiCarrello" hidden></label><input type="submit" name="aggiungiCarrello" id="aggiungiCarrello"
                                     <?php if($templateParams["articolo"][0]["QuantitaDisponibile"] == 0):?>disabled class="btn btn-dark border border-black"<?php endif;?>
                                     <?php if(isUserLoggedIn()): ?> value="Aggiungi" <?php else: ?> disabled value="fai il login" class="btn btn-dark border border-black"<?php endif; ?> />
@@ -84,7 +84,7 @@
                                     <input type="submit" id="cambiaVisibilita" name="cambiaVisibilita" value="Rendi <?php if($templateParams["articolo"][0]["Visibile"] == 'Y'):?>invisibile<?php else:?>visibile<?php endif;?>" />
                                 </li>
                                 <li>
-                                    <a href="acquisto.php">Torna ai prodotti</a>
+                                <a href="acquisto.php" class="bottone mb-3"> Torna ai prodotti</a>
                                 </li>
                             </ul>
                         </form>

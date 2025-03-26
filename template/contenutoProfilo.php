@@ -1,5 +1,5 @@
 <div class="row justify-content-center m-0">
-<section class="temporaneo mt-5 col-10 col-md-8 col-lg-4 pb-0">
+<section class="temporaneo mt-5 col-10 col-md-8 col-lg-5 pb-0">
     <h2>PROFILO</h2>
     <table class="table table-borderless text-justify-center">
     <?php foreach($templateParams["profilo"] as $info):?>
@@ -21,13 +21,13 @@
     <div class="text-center">
         <ul class="p-0">
             <li class="text-center mb-3">
-                <a href="index.php" class="bottone">Torna alla home</a>
+                <a href="index.php" class="bottone w-75">Torna alla home</a>
             </li>
             <li class="text-center mb-3">
-                <a href="modificaCampi.php"  class="bottone">Modifica campi</a>
+                <a href="modificaCampi.php"  class="bottone w-75">Modifica campi</a>
             </li>
             <li class="text-center mb-3">
-                <a href="modificaPassword.php" class="bottone">Modifica password</a>
+                <a href="modificaPassword.php" class="bottone w-75">Modifica password</a>
             </li>
         </ul>
     </div>
