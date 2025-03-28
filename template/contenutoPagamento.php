@@ -1,5 +1,5 @@
 
-<p class="fs-1 text-center text-uppercase fw-bold mt-3">Totale: €<?php echo $totale; ?></p>
+<p class="fs-1 text-center text-uppercase fw-bold mt-3">Totale: €<?php echo number_format($totale,2,'.',' '); ?></p>
 
 <div class="row justify-content-evenly mt-3 m-0 align-items-stretch">
 <section class="col-10 col-md-5 temporaneo">

@@ -31,7 +31,7 @@
                         
                         <div class="d-flex justify-content-between mt-2">
                             <div class="d-block justify-content-between align-items-center mt-2">
-                                <p class="mt-2 fw-bold h5">Importo: €<?php echo $ordin["ImportoTotale"]; ?></p>
+                                <p class="mt-2 fw-bold h5">Importo: €<?php echo number_format($ordin["ImportoTotale"],2,'.',' '); ?></p>
                                 <?php if(!$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
                                     <footer>
                                         <p><a href="tracciamentoOrdine.php?IDOrdine=<?php echo $ordin["IDOrdine"]; ?>">Traccia ordine</a></p>

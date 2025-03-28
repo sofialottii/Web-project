@@ -49,6 +49,11 @@ if (isset($_POST["aggiungiCarrello"])) {
     exit;
 }
 
+if(isset($_POST["carrelloAccedi"])){
+    header("location: login.php");
+    exit;
+}
+
 if(isset($_POST["cambiaRifornimento"])){
     $confermaAggiunta = $_POST["quantitaRifornimento"] == "" ? 0 : $_POST["quantitaRifornimento"];
     $nuovaQuantita = $templateParams["articolo"][0]["QuantitaDisponibile"] + ($confermaAggiunta);

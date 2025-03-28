@@ -507,23 +507,6 @@ class DatabaseHelper{
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-
-    /* ORDINI SINGOLI */
-    /*public function getElementiOrdini($id, $mail){
-        $stmt = $this->db->prepare("SELECT c.IDProdotto, p.NomeProdotto, c.QuantitaOrdinata, t.PrezzoProdotto, p.ImmagineProdotto, o.ImportoTotale
-                                    FROM contiene c
-                                    JOIN PRODOTTO p ON c.IDProdotto = p.IDProdotto 
-                                    JOIN TARIFFARIO t ON c.IDProdotto = t.IDProdotto
-                                    JOIN ORDINE o ON o.IDOrdine = c.IDOrdine AND E_mail = ?
-                                    WHERE c.IDOrdine = ?");
-        $stmt->bind_param("si", $mail, $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }*/
-
-
-
     public function getElementiOrdine($id, $mail){
         $stmt = $this->db->prepare("SELECT c.IDProdotto, p.NomeProdotto, c.QuantitaOrdinata, t.PrezzoProdotto, p.ImmagineProdotto,
                                     (c.QuantitaOrdinata * t.PrezzoProdotto) AS ImportoTotale
@@ -533,6 +516,17 @@ class DatabaseHelper{
                                     AND C.E_mail = ?
                                     AND EXISTS ( SELECT 1 FROM ORDINE o WHERE o.IDOrdine = c.IDOrdine AND o.E_mail = ?)");
         $stmt->bind_param("iss",$id, $mail, $mail);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getTotaleOrdine($id, $mail){
+        $stmt = $this->db->prepare("SELECT ImportoTotale
+                                    FROM ORDINE
+                                    WHERE IDOrdine = ?
+                                    AND E_mail = ?");
+        $stmt->bind_param("is", $id, $mail);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);

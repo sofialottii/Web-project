@@ -27,7 +27,7 @@
                             </section>
                             <footer>
                                 <p class="fs-3 fw-bold text-center"><?php echo $prodotto["NomeProdotto"]; ?></p>
-                                <p class="text-center">Prezzo per 1000 gr: €<?php echo $prodotto["PrezzoProdotto"]; ?></p>
+                                <p class="text-center">Prezzo per 1000 gr: €<?php echo number_format($prodotto["PrezzoProdotto"],2,'.',' '); ?></p>
                             </footer>
                         </article>
                         <label for="bottoneSubmit" hidden></label><input type="submit" id="bottoneSubmit" name="bt" value="bt" hidden />

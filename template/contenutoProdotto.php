@@ -21,7 +21,7 @@
             <div class="card border-0 shadow-sm p-4">
                 <div class="card-body">
                     <h2 class="card-title text-dark fw-bold"> <?php echo $templateParams["articolo"][0]["NomeProdotto"]; ?></h2>
-                    <p class="fs-5 text-muted">€<?php echo $templateParams["articolo"][0]["PrezzoProdotto"]; ?> ad Kg</p>
+                    <p class="fs-5 text-muted">€<?php echo number_format($templateParams["articolo"][0]["PrezzoProdotto"],2,'.',' '); ?> a Kg</p>
                     <p><?php echo $templateParams["articolo"][0]["DescrizioneProdotto"]; ?></p>
 
                     <?php if(!$templateParams["isUtenteAdmin"]): ?>
@@ -44,9 +44,13 @@
                                 <?php endif; ?>
                                 <li class="d-block">
                                     <a href="acquisto.php" class="bottone mb-3">Torna agli acquisti</a>
-                                    <label for="aggiungiCarrello" hidden></label><input type="submit" name="aggiungiCarrello" id="aggiungiCarrello"
-                                    <?php if($templateParams["articolo"][0]["QuantitaDisponibile"] == 0):?>disabled class="btn btn-dark border border-black"<?php endif;?>
-                                    <?php if(isUserLoggedIn()): ?> value="Aggiungi" <?php else: ?> disabled value="fai il login" class="btn btn-dark border border-black"<?php endif; ?> />
+                                    <?php if (isUserLoggedIn()): ?>
+                                        <label for="aggiungiCarrello" hidden></label><input type="submit" value="Aggiungi" name="aggiungiCarrello" id="aggiungiCarrello"
+                                        <?php if($templateParams["articolo"][0]["QuantitaDisponibile"] == 0):?>disabled class="btn btn-dark border border-black"<?php endif;?> />
+                                    <?php else: ?>
+                                        <label for="carrelloAccedi" hidden></label><input type="submit" value="Fai il login" name="carrelloAccedi" id="carrelloAccedi"
+                                        class="bottone" />
+                                    <?php endif; ?>
                                 </li>
                                 <a href="acquisto.php" hidden>Torna agli acquisti</a>
                             </ul>

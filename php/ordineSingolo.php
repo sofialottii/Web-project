@@ -20,7 +20,7 @@ $templateParams["titolo"] = "Grimilde's - Ordine " . $_GET["IdSingoloOrdine"]; /
 $templateParams["nome"] = "contenutoOrdine.php";
 
 $templateParams["contenuto"] = $dbh->getElementiOrdine($_GET["IdSingoloOrdine"], $_GET["mail"]);
-
+$templateParams["totale"] = $dbh->getTotaleOrdine($_GET["IdSingoloOrdine"], $_GET["mail"]);
 
 require("../template/base.php");
 ?>

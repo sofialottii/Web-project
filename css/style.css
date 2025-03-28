@@ -184,7 +184,7 @@ body>main>section>div>ul>li>a{
     text-decoration: none;
     /*box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);*/
     /*width: 75%;*/
-    border: 2px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.4);
 }
 .bottone:hover {
     transform: scale(1.05);
@@ -329,29 +329,3 @@ tr > td img {
     object-fit: cover;
     border-radius: 5px;
 }
-
-
-
-
-/*li>a:hover,
-footer>p>a:hover,
-main>p>a:hover,
-section>p>a:hover,
-body>main>article>a:last-child:hover,
-form>p>a:hover {
-    background-color: lightgray;
-    transform: scale(1.05);
-}
-    
-
-a:hover:not(h1>a) {
-    background-color: lightgray;
-}
-    
-.cliccabile {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-
-}*/

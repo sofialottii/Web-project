@@ -31,13 +31,13 @@
                                     </td>
                                     <td>
 
-                                        <p>€<?php echo $elemento["PrezzoProdotto"];?></p>
+                                        <p>€<?php echo number_format($elemento["PrezzoProdotto"],2,'.',' ');?></p>
                                     </td>
                                     <td>
                                         <p><?php echo $elemento["QuantitaOrdinata"];?></p>
                                     </td>
                                     <td>
-                                        <p>€<?php echo $elemento["QuantitaOrdinata"]*$elemento["PrezzoProdotto"];?></p>
+                                        <p>€<?php echo number_format($elemento["QuantitaOrdinata"]*$elemento["PrezzoProdotto"],2,'.',' ');?></p>
                                     </td>
                                 </tr>
                             <?php endforeach;?>
@@ -47,7 +47,7 @@
             </div>
         </div>
         <p class="text-center"><a href="acquisto.php" class="bottone">Indietro</a></p>
-        <p class="fs-2 text-uppercase text-center" >Totale: SOFIA LA QUERY€<?php  ?></p>
+        <p class="fs-2 text-uppercase text-center" >Totale: €<?php echo number_format($templateParams["totale"][0]["ImportoTotale"],2,'.',' ');  ?></p>
 
     </div>
    

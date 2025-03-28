@@ -41,7 +41,7 @@
                                         <label for="rimuovi" hidden></label><input type="submit" id="rimuovi" name="rimuovi" value="Rimuovi" />
                                     </form>
                                 </td>
-                                <td>€<?php echo $prodotto["PrezzoProdotto"]; ?></td>
+                                <td>€<?php echo number_format($prodotto["PrezzoProdotto"],2,'.',' '); ?></td>
                                 <td>
                                     <form action="" method="POST">
                                         <!-- le due label seguenti sono hidden -->
@@ -54,7 +54,7 @@
                                         <label for="aggiorna" hidden></label><input type="submit" id="aggiorna" name="aggiorna" value="Aggiorna" />
                                     </form>
                                 </td>
-                                <td>€<?php echo $prodotto["PrezzoProdotto"]*$prodotto["QuantitaInCarrello"]; ?></td>
+                                <td>€<?php echo number_format($prodotto["PrezzoProdotto"]*$prodotto["QuantitaInCarrello"],2,'.',' '); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -66,7 +66,7 @@
     <?php endif; ?>
 
 
-<p class="fs-2 text-uppercase text-center" >Totale: €<?php echo prezzoTotale($templateParams["carrello"]); ?></p>
+<p class="fs-2 text-uppercase text-center mt-3" >Totale: €<?php echo number_format(prezzoTotale($templateParams["carrello"]),2,'.',' '); ?></p>
 
 <p class="text-center"><a href="acquisto.php" class="bottone">Torna agli acquisti</a>
 <form action="" method="POST" class="text-center">
