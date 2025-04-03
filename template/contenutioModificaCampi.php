@@ -29,14 +29,13 @@
         </li>
         <li class="text-center mb-3">
             <label for="ModificaCampi"></label><input
-                 type="submit" name="ModificaCampi" id="ModificaCampi" value="Salva Modifiche" class="w-75" />
-            </label>        
+                 type="submit" name="ModificaCampi" id="ModificaCampi" value="Salva Modifiche" class="w-75" />        
         </li>
         <li class="text-center mb-3">
             <a href="profilo.php" class="bottone w-75">Ho Cambiato idea</a>
         </li>
     </ul>
 </form>
-<img src="../utils/img/Grimilde-CestoMele.png" class="mx-auto rounded d-block img-fluid ">
+<img src="../utils/img/Grimilde-CestoMele.png" class="mx-auto rounded d-block img-fluid" alt="" >
 </section>
     </div>

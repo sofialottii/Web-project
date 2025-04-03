@@ -4,7 +4,7 @@
     <?php if(isset($templateParams["errorelogin"])): ?>
     <p class="text-danger"><?php echo $templateParams["errorelogin"]; ?></p>
     <?php endif; ?>
-    <form action="" method="POST">
+    <form action="#" method="POST">
         <ul class="p-0 form">
             <li class="mb-3">
                 <label for="vecchia_password" class="form-label">Vecchia Password</label>
@@ -19,7 +19,6 @@
                 <input type="password" id="conferma_password" name="conferma_password" autocomplete="off" class="form-control"/>
             </li>
             <li  class="text-center mb-3">
-                </label>
                 <input type="submit" name="aggiornaPassword" id="aggiornaPassword" value="Salva Password"  class="w-75"/>
             </li>
             <li  class="text-center mb-3">
