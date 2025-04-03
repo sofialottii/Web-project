@@ -79,7 +79,7 @@
        
 </section>
 </div>
-<p class="text-uppercase text-center mt-3"><a href="carrello.php" class="text-primary">Annulla il pagamento</a></p>
+<p class="text-uppercase text-center mt-3"><a href="carrello.php" class="bottone px-4 mx-3">Annulla il pagamento</a></p>
 
 
 <script src="../js/metodoPagamento.js">

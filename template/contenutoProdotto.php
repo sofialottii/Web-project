@@ -10,7 +10,7 @@
             <!--bottone preferiti-->
             <?php if(isUserLoggedIn() && !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
                 <label for="cambia_cuore<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>" hidden></label>
-                <button id="cambia_cuore_<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>" class="btn-pagProdotto d-block m-2 m-md-0" type="button">
+                <button id="cambia_cuore<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>" class="btn-pagProdotto d-block m-2 m-md-0" type="button">
                     <img src="<?php echo checkPreferito($templateParams['articolo'][0]['IDProdotto']); ?>" alt="cuore-vuoto" />        
                 </button>
             <?php endif; ?>
@@ -25,13 +25,13 @@
                     <p><?php echo $templateParams["articolo"][0]["DescrizioneProdotto"]; ?></p>
 
                     <?php if(!$templateParams["isUtenteAdmin"]): ?>
-                        <form action="" method="POST">
+                        <form action="#" method="POST">
                             <ul class="p-0 form">
                                 <li class="mb-3">
                                     <p>Quantità in Kg:</p>
                                     <label for="quantita" class="form-label" hidden></label>
                                     <input type="number" name="quantita" id="quantita" class="form-control" min="0"
-                                    max="<?php echo $templateParams["articolo"][0]["QuantitaDisponibile"]; ?>" value="0" autocomplete="" />
+                                    max="<?php echo $templateParams["articolo"][0]["QuantitaDisponibile"]; ?>" value="0" autocomplete="off" />
                                 </li>
                                 <?php if($templateParams["articolo"][0]["QuantitaDisponibile"] <= 5):?>
                                 <li>
@@ -52,20 +52,19 @@
                                         class="bottone" />
                                     <?php endif; ?>
                                 </li>
-                                <a href="acquisto.php" hidden>Torna agli acquisti</a>
                             </ul>
                         </form>
                     
 
                     <!-- lato admin -->
                     <?php else: ?>
-                        <form action="" method="POST">
+                        <form action="#" method="POST">
                             <ul class="p-0 form">
                                 <li>
                                     <p>Disponibilità prodotto attuale: <?php echo $templateParams["articolo"][0]["QuantitaDisponibile"]; ?></p>
                                 </li>
                                 <li class="mb-2 form-floating">
-                                    <input type="number" autocomplete="" name="quantitaRifornimento" id="quantitaRifornimento" class="form-control"
+                                    <input type="number" autocomplete="off" name="quantitaRifornimento" id="quantitaRifornimento" class="form-control"
                                         min="-<?php echo $templateParams["articolo"][0]["QuantitaDisponibile"]; ?>" value="1" />
                                     
                                     <label for="quantitaRifornimento">Quantità rifornimento</label>
@@ -75,7 +74,7 @@
                                     <input type="submit" name="cambiaRifornimento" id="cambiaRifornimento" value="RIFORNISCI"/>
                                 </li>
                                 <li class="mb-2 form-floating">
-                                    <input type="number" autocomplete="" id="nuovoPrezzo" name="nuovoPrezzo" class="form-control"
+                                    <input type="number" autocomplete="off" id="nuovoPrezzo" name="nuovoPrezzo" class="form-control"
                                         min="0" step="0.01" placeholder="€<?php echo $templateParams["articolo"][0]["PrezzoProdotto"] ?>" />
                                     <label for="nuovoPrezzo" class="text-secondary">Nuovo prezzo:</label>
                                 </li>
@@ -83,9 +82,9 @@
                                     <label for="cambiaPrezzo" class="form-label" hidden></label>
                                     <input type="submit" id="cambiaPrezzo" name="cambiaPrezzo" value="CAMBIA PREZZO" />
                                 </li>
-                                <li class="d-block text-center mb-3">
+                                <li class="d-block text-end mb-3">
                                     <label for="cambiaVisibilita" class="form-label" hidden></label>
-                                    <input type="submit" id="cambiaVisibilita" name="cambiaVisibilita" value="Rendi <?php if($templateParams["articolo"][0]["Visibile"] == 'Y'):?>invisibile<?php else:?>visibile<?php endif;?>" />
+                                    <input type="submit" id="cambiaVisibilita" name="cambiaVisibilita" class="px-4" value="RENDI <?php if($templateParams["articolo"][0]["Visibile"] == 'Y'):?>INVISIBILE<?php else:?>VISIBILE<?php endif;?>" />
                                 </li>
                                 <li>
                                 <a href="acquisto.php" class="bottone mb-3"> Torna ai prodotti</a>
@@ -102,7 +101,7 @@
 </article>
 
 <script>
-    document.getElementById("cambia_cuore_<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>").addEventListener("click", function() {
+    document.getElementById("cambia_cuore<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>").addEventListener("click", function() {
         event.preventDefault();
 
         fetch("acquisto.php?IDProdotto=<?php echo $templateParams["articolo"][0]['IDProdotto']; ?>", {
@@ -111,7 +110,7 @@
         .then(response => response.text())
         .then(data => {
             // cambiamo l'immagine con quella ricevuta dalla funzione PHP
-            const img = document.querySelector("#cambia_cuore_<?php echo $templateParams["articolo"][0]['IDProdotto']; ?> img");
+            const img = document.querySelector("#cambia_cuore<?php echo $templateParams["articolo"][0]['IDProdotto']; ?> img");
             img.src = data.trim(); // controlliamo che il dato ricevuto sia il percorso dell'immagine
             console.log(data.trim());
         })

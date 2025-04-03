@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <p class="text-center"><a href="acquisto.php" class="bottone">Indietro</a></p>
+        <p class="text-center"><a href="ordini.php" class="bottone">Indietro</a></p>
         <p class="fs-2 text-uppercase text-center" >Totale: €<?php echo number_format($templateParams["totale"][0]["ImportoTotale"],2,'.',' ');  ?></p>
 
     </div>
