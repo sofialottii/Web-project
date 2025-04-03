@@ -334,3 +334,7 @@ tr > td img {
 .nasc {
     display: none;
 }
+
+.redbg {
+    background-color: var(--primary)  !important;
+}
