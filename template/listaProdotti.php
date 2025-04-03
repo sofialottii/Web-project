@@ -11,9 +11,10 @@
         <?php foreach($templateParams["prodotti"] as $prodotto): ?>
             <div class="col-12 col-md-6 col-lg-3">
                     <form action="prodotto.php" method="GET">
-                        <label for="idProd" hidden></label><input type="hidden" name="IDProdotto" value="<?php echo $prodotto['IDProdotto']; ?>" />
+                        <label for="idProd<?php echo $prodotto['IDProdotto']; ?>" class="d-none"></label><input type="number" class="d-none" name="IDProdotto" id="idProd<?php echo $prodotto['IDProdotto']; ?>" value="<?php echo $prodotto['IDProdotto']; ?>" />
                         
                         <article id="prodotto_<?php echo $prodotto['IDProdotto']; ?>" class="cliccabile click temporaneo">
+                            <h2 class="d-none">Prodotto</h2>
                             <?php if(isUserLoggedIn() && !$dbh->isUtenteAdmin($_SESSION["E_mail"])): ?>
                             <header>
                                 <!--uso ajax per cambiare il cuore-->
@@ -23,6 +24,7 @@
                             </header> 
                             <?php endif; ?> 
                             <section>
+                                <h3 class="d-none">Immagine prodotto</h3>
                                 <img src="<?php echo $prodotto['ImmagineProdotto'];?>" alt="<?php echo $prodotto["NomeProdotto"]; ?>" />
                             </section>
                             <footer>
@@ -30,7 +32,7 @@
                                 <p class="text-center">Prezzo per 1000 gr: €<?php echo number_format($prodotto["PrezzoProdotto"],2,'.',' '); ?></p>
                             </footer>
                         </article>
-                        <label for="bottoneSubmit" hidden></label><input type="submit" id="bottoneSubmit" name="bt" value="bt" hidden />
+                        <label for="bottoneSubmit<?php echo $prodotto['IDProdotto'] ?>" hidden></label><input type="submit" id="bottoneSubmit<?php echo $prodotto['IDProdotto'] ?>" name="bt" value="bt" class="d-none" />
                     </form>
                 
             </div>
@@ -71,6 +73,7 @@
                 <a href="aggiungiProdotto.php">
                     <article class="click temporaneo border border-0">
                         <section class="text-center my-4">
+                            <h2 class="d-none">Aggiungi prodotto</h2>
                             <img src="../utils/img/icons/aggiungi.png" alt="aggiungi" />
                         </section>
                         <footer>
@@ -95,7 +98,7 @@
     
     <button type="submit" id="vaiCarrello" value="Vai al carrello">
         <img src="../utils/img/icons/carrello.png" alt="carrello" />
-        <nav><?php echo count($templateParams["carrello"]); ?></nav>
+        <span><?php echo count($templateParams["carrello"]); ?></span>
     </button>
     
 </form>

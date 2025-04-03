@@ -330,3 +330,7 @@ tr > td img {
     object-fit: cover;
     border-radius: 5px;
 }
+
+.nasc {
+    display: none;
+}
