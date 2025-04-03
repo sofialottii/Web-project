@@ -97,8 +97,8 @@
 
         <form action="#" method="POST">
             <?php if(isset($_SESSION["E_mail"])): ?>
-                <label for="logoutButton" hidden></label>
-                <input type="submit" id="logoutButton" name="logout" value="Logout" class="btn btn-outline-danger w-100" />
+                <label for="logoutButton2" hidden></label>
+                <input type="submit" id="logoutButton2" name="logout" value="Logout" class="btn btn-outline-danger w-100" />
             <?php else: ?>
                 <ul class="list-unstyled">
                     <li>

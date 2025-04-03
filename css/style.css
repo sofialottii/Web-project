@@ -161,7 +161,7 @@ body>main>section, .temporaneo {
 
 
 form input[type="submit"],
-body>main>section>div>ul>li>a{
+body>main>section>div>ul>li>a, .bottone2{
     /*width: 60%;*/
     text-align: center;
     text-decoration: none;
