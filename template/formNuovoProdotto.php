@@ -5,23 +5,24 @@
         <form action="aggiungiProdotto.php" method="POST" enctype="multipart/form-data">
             <ul class="p-0 form">
                 <li class="mb-3">
-                    <label for="immagine" class="form-label">Immagine</label><input type="file" id="immagine" name="immagine" class="form-control" autocomplete required />
+                    <label for="immagine" class="form-label">Immagine</label><input type="file" id="immagine" name="immagine" class="form-control" required />
                 </li>
                 <li class="mb-3">
-                    <label for="nome" class="form-label">Nome prodotto</label><input type="text" id="nome" name="nome" class="form-control" autocomplete required />
+                    <label for="nome" class="form-label">Nome prodotto</label><input type="text" id="nome" name="nome" class="form-control" autocomplete="off" required />
                 </li>
                 <li class="mb-3">
-                    <label for="descrizione" class="form-label">Descrizione</label><textarea id="descrizione" name="descrizione" class="form-control" autocomplete required></textarea>
+                    <label for="descrizione" class="form-label">Descrizione</label><textarea id="descrizione" name="descrizione" class="form-control" autocomplete="off" required></textarea>
                 </li>
                 <li class="mb-3">
-                    <label for="prezzo" class="form-label">Prezzo</label><input type="number" id="prezzo" name="prezzo" class="form-control" step="0.01" autocomplete required />
+                    <label for="prezzo" class="form-label">Prezzo</label><input type="number" id="prezzo" name="prezzo" class="form-control" step="0.01" autocomplete="off" required />
                 </li>
                 <li class="mb-3">
-                    <label for="quantita" class="form-label">Quantità</label><input type="number" id="quantita" name="quantita" class="form-control" autocomplete required />
+                    <label for="quantita" class="form-label">Quantità</label><input type="number" id="quantita" name="quantita" class="form-control" autocomplete="off" required />
                 </li>
                 <li class="mb-3">
                     <label for="visibilita" class="form-label">Visibilità</label>
                     <select id="visibilita" name="visibilita" class="form-select" required>
+                        <option value="" selected disabled hidden>Seleziona un'opzione</option>
                         <option value="Y">Visibile</option>
                         <option value="N">Non visibile</option>
                     </select>

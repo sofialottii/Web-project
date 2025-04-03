@@ -26,7 +26,7 @@
         </li>
         <li class="mb-3">
             <label for="sesso">Sesso</label><select name="sesso" id="sesso" autocomplete="off" class="form-select" required>
-                <option value="Nessuno" selected="selected" hidden>Scegli sesso</option>
+                <option value="" selected disabled hidden>Scegli sesso</option>
                 <option value="Uomo">Uomo</option>
                 <option value="Donna">Donna</option>
                 <option value="Altro">Altro</option>

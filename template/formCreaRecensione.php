@@ -11,7 +11,7 @@
                 <textarea id="testoRecensione" name="testoRecensione" class="form-control" autocomplete="off"></textarea>
             </li>
             <li class="text-center">
-                <label for="numeroStelle">Seleziona stelle:</label>
+                <span>Seleziona stelle:</span>
                 <div>
                     <input type="radio" id="star1" name="rating" value="1" hidden />
                     <label for="star1">★</label>

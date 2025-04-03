@@ -12,8 +12,9 @@
         <?php foreach($templateParams["prodotti"] as $prodotto): ?>
             <div class="col-12 col-md-6 col-lg-3">
                 <form action="prodotto.php" method="GET">
-                    <label for="btn1" hidden></label><input type="hidden" id="btn1" name="IDProdotto" value="<?php echo $prodotto['IDProdotto']; ?>" />
+                    <label for="btn1<?php echo $prodotto['IDProdotto']; ?>" hidden></label><input type="number" class="d-none" id="btn1<?php echo $prodotto['IDProdotto']; ?>" name="IDProdotto" value="<?php echo $prodotto['IDProdotto']; ?>" />
                     <article id="prodotto_<?php echo $prodotto['IDProdotto']; ?>" class="cliccabile click temporaneo">
+                        <h2 class="d-none">Prodotto</h2>
                         <header>
                             <!--uso ajax per cambiare il cuore-->
                             <label for="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>" hidden></label><button id="cambia_cuore_<?php echo $prodotto['IDProdotto']; ?>">
@@ -21,6 +22,7 @@
                             </button>
                         </header>
                         <section>
+                            <h3 class="d-none">Immagine prodotto</h3>
                             <img src="<?php echo $prodotto['ImmagineProdotto']; ?>" alt="<?php echo $prodotto["NomeProdotto"]; ?>" />
                         </section>
                         <footer class="text-center">
@@ -28,7 +30,7 @@
                             <p>Prezzo per 1000 gr: €<?php echo number_format($prodotto["PrezzoProdotto"],2,'.',' '); ?></p>
                         </footer>
                     </article>
-                    <label for="bottoneSubmit" hidden></label><input type="submit" id="bottoneSubmit" name="bt" value="bt" hidden />
+                    <label for="bottoneSubmit<?php echo $prodotto['IDProdotto']; ?>" hidden></label><input type="submit" id="bottoneSubmit<?php echo $prodotto['IDProdotto']; ?>" name="bt" value="bt" hidden />
                 </form>
 
 
@@ -76,7 +78,7 @@
     
     <button type="submit" id="vaiCarrello" value="Vai al carrello">
         <img src="../utils/img/icons/carrello.png" alt="carrello" />
-        <nav><?php echo count($templateParams["carrello"]); ?></nav>
+        <span><?php echo count($templateParams["carrello"]); ?></span>
     </button>
     
 </form>

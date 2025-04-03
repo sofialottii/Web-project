@@ -72,6 +72,7 @@
             <div class="col-12 col-md-6 col-lg-3">
                 <a href="aggiungiProdotto.php">
                     <article class="click temporaneo border border-0">
+                        <h2 class="d-none">Aggiungi prodotto</h2>
                         <section class="text-center my-4">
                             <h2 class="d-none">Aggiungi prodotto</h2>
                             <img src="../utils/img/icons/aggiungi.png" alt="aggiungi" />
