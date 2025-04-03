@@ -29,14 +29,14 @@
             <?php endif; ?>
         </a>
 
-        <form action="" method="POST" class="m-0 p-0">
+        <form action="#" method="POST" class="m-0 p-0">
             <?php if(isset($_SESSION["E_mail"])): ?>
                 <label for="logoutButton" hidden></label>
                 <button type="submit" id="logoutButton" name="logout" class="btn btn-danger">Logout</button>
                 
             <?php else: ?>
                 <div class="dropdown">
-                    <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" width="16px" height="16px" aria-expanded="false">
+                    <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="../utils/img/icons/specchio.png" alt="icona accesso" />
                     </a>
                     <ul class="dropdown-menu">
@@ -53,7 +53,7 @@
 
 <!-- Offcanvas per schermi piccoli -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
-    <header class="offcanvas-header">
+    <div class="offcanvas-header">
         <div class="container">
             <div class="row">
                 <div class="col-3">
@@ -68,7 +68,7 @@
                 </div>
             </div>
         </div>
-    </header>    
+    </div>    
     <hr class="offcanvas-header">
     <div class="offcanvas-body">
         <nav>
@@ -95,7 +95,7 @@
             </ul>
         </nav>
 
-        <form action="" method="POST">
+        <form action="#" method="POST">
             <?php if(isset($_SESSION["E_mail"])): ?>
                 <label for="logoutButton" hidden></label>
                 <input type="submit" id="logoutButton" name="logout" value="Logout" class="btn btn-outline-danger w-100" />
